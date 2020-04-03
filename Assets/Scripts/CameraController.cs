@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     private float xOffset;
     
-    [SerializeField]private GameObject player;        
+    [SerializeField] private GameObject player;        
     // Initialization
     void Start () 
     {

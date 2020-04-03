@@ -79,15 +79,10 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.IsTouchingLayers(ground))
         {
-            print("GROUND TOCH");
             state = State.Running;
         }else if (Math.Abs(rb.velocity.y) > 1f)
         {
             state = (flyTrigger) ? State.Flying : State.Falling;
-        }
-        else
-        {
-            state = State.Running;
         }
         
         anim.SetInteger(StateAnimId, (int)state);
