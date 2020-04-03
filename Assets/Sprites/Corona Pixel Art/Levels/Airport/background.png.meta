@@ -1,55 +1,115 @@
 fileFormatVersion: 2
-guid: da3ddb8c577e00e438a5dd42b5f41924
+guid: 795f2f67b4a17b9479e7d12c5e9f4732
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5192154946636149784
-    second: Juan_Barbijo_0
+      213: -7443756053782179069
+    second: background_0
   - first:
-      213: 3503487617017709635
-    second: Juan_Barbijo_1
+      213: -3192133289119773823
+    second: background_1
   - first:
-      213: 4086123516294204869
-    second: Juan_Barbijo_2
+      213: 3970015981214305365
+    second: background_2
   - first:
-      213: -4224025395623158559
-    second: Juan_Barbijo_3
+      213: 1405897620634370583
+    second: background_3
   - first:
-      213: 3721346273518765129
-    second: Juan_Barbijo_4
+      213: 2415078317887781457
+    second: background_4
   - first:
-      213: -2159227521620161266
-    second: Juan_Barbijo_5
+      213: 1316490896907413468
+    second: background_5
   - first:
-      213: 1337606241252990327
-    second: Juan_Barbijo_6
+      213: 8343477328892443928
+    second: background_6
   - first:
-      213: 227325074461031912
-    second: Juan_Barbijo_7
+      213: 7898562296661958002
+    second: background_7
   - first:
-      213: 6594961307727261889
-    second: Juan_Barbijo_8
+      213: 986969114328154071
+    second: background_8
   - first:
-      213: -5044600684465587560
-    second: Juan_Barbijo_9
+      213: -6344343437890535301
+    second: background_9
   - first:
-      213: -6214915255617905788
-    second: Juan_Barbijo_10
+      213: 7001778013311136900
+    second: background_10
   - first:
-      213: 2448715268371451956
-    second: Juan_Barbijo_11
+      213: 4328097311078286071
+    second: background_11
   - first:
-      213: -6960026430042531774
-    second: Juan_Barbijo_12
+      213: 4372148480733514280
+    second: background_12
   - first:
-      213: 6436598881008514052
-    second: Juan_Barbijo_13
+      213: 8900154682771799127
+    second: background_13
   - first:
-      213: -6387186190484937880
-    second: Juan_Barbijo_14
+      213: 6063939892028557472
+    second: background_14
   - first:
-      213: -4930455545508939470
-    second: Juan_Barbijo_15
+      213: 3414901824912693521
+    second: background_15
+  - first:
+      213: 554659820273570864
+    second: background_16
+  - first:
+      213: -709579608419119541
+    second: background_17
+  - first:
+      213: -6444662470419259896
+    second: background_18
+  - first:
+      213: -2841738272403921048
+    second: background_19
+  - first:
+      213: -8846625461509582439
+    second: background_20
+  - first:
+      213: -8017813488550349263
+    second: background_21
+  - first:
+      213: 7573440505101220439
+    second: background_22
+  - first:
+      213: -6863712573513296491
+    second: background_23
+  - first:
+      213: -8495518608564199154
+    second: background_24
+  - first:
+      213: 5054532152264460952
+    second: background_25
+  - first:
+      213: -8595306022536147679
+    second: background_26
+  - first:
+      213: -664377540809205162
+    second: background_27
+  - first:
+      213: -2151087672213475925
+    second: background_28
+  - first:
+      213: 2998442183771500188
+    second: background_29
+  - first:
+      213: 5932175197008134668
+    second: background_30
+  - first:
+      213: 3782439835773572349
+    second: background_31
+  - first:
+      213: 8052486614023233278
+    second: background_32
+  - first:
+      213: -8142366524633573335
+    second: background_33
+  - first:
+      213: -7947557920358419523
+    second: background_34
+  - first:
+      213: 7984682239260073557
+    second: background_35
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -79,21 +139,21 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,9 +170,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -122,9 +182,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,9 +194,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Windows Store Apps
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -146,9 +206,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: tvOS
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -158,9 +218,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -170,9 +230,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -182,9 +242,9 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -195,337 +255,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Juan_Barbijo_0
+      name: background_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 160
-        width: 74
-        height: 106
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 814f80d2a6d3e0840800000000000000
-      internalID: 5192154946636149784
+      spriteID: 30356abce4772b890800000000000000
+      internalID: -7443756053782179069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_1
+      name: background_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 146
-        width: 86
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 300
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3440257ec63ee9030800000000000000
-      internalID: 3503487617017709635
+      spriteID: 18b015aafa343b3d0800000000000000
+      internalID: -3192133289119773823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_2
+      name: background_2
       rect:
         serializedVersion: 2
-        x: 218
-        y: 166
-        width: 106
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 600
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cd061950b3d4b830800000000000000
-      internalID: 4086123516294204869
+      spriteID: 55c07e83084581730800000000000000
+      internalID: 3970015981214305365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_3
+      name: background_3
       rect:
         serializedVersion: 2
-        x: 338
-        y: 164
-        width: 92
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 900
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ec17a3584f3165c0800000000000000
-      internalID: -4224025395623158559
+      spriteID: 7128a7cef60c28310800000000000000
+      internalID: 1405897620634370583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_4
+      name: background_4
       rect:
         serializedVersion: 2
-        x: 452
-        y: 162
-        width: 78
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1200
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9444f4f18b0e4a330800000000000000
-      internalID: 3721346273518765129
+      spriteID: 15af27a3fe4148120800000000000000
+      internalID: 2415078317887781457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_5
+      name: background_5
       rect:
         serializedVersion: 2
-        x: 554
-        y: 148
-        width: 82
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1500
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0d45985202e802e0800000000000000
-      internalID: -2159227521620161266
+      spriteID: cd7a334ee7d154210800000000000000
+      internalID: 1316490896907413468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_6
+      name: background_6
       rect:
         serializedVersion: 2
-        x: 652
-        y: 164
-        width: 100
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1800
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77dda3b1ac1209210800000000000000
-      internalID: 1337606241252990327
+      spriteID: 81db82ccc6cf9c370800000000000000
+      internalID: 8343477328892443928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_7
+      name: background_7
       rect:
         serializedVersion: 2
-        x: 770
-        y: 162
-        width: 92
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2100
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8edf9c763fe972300800000000000000
-      internalID: 227325074461031912
+      spriteID: 27d54d87f845d9d60800000000000000
+      internalID: 7898562296661958002
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_8
+      name: background_8
       rect:
         serializedVersion: 2
-        x: 2
-        y: 22
-        width: 92
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2400
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c077862e52068b50800000000000000
-      internalID: 6594961307727261889
+      spriteID: 7dfbfc72e2b62bd00800000000000000
+      internalID: 986969114328154071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_9
+      name: background_9
       rect:
         serializedVersion: 2
-        x: 112
-        y: 24
-        width: 100
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 2700
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89a7cb8a76afdf9b0800000000000000
-      internalID: -5044600684465587560
+      spriteID: b70447bc14d54f7a0800000000000000
+      internalID: -6344343437890535301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_10
+      name: background_10
       rect:
         serializedVersion: 2
-        x: 228
-        y: 8
-        width: 82
-        height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3000
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48b1db7c08f20c9a0800000000000000
-      internalID: -6214915255617905788
+      spriteID: 484fc8f81005b2160800000000000000
+      internalID: 7001778013311136900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Juan_Barbijo_11
+      name: background_11
       rect:
         serializedVersion: 2
-        x: 334
-        y: 22
-        width: 78
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 3300
+        y: 0
+        width: 300
+        height: 600
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4301b5f00959bf120800000000000000
-      internalID: 2448715268371451956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Juan_Barbijo_12
-      rect:
-        serializedVersion: 2
-        x: 434
-        y: 24
-        width: 92
-        height: 102
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2481cf176d4096f90800000000000000
-      internalID: -6960026430042531774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Juan_Barbijo_13
-      rect:
-        serializedVersion: 2
-        x: 540
-        y: 26
-        width: 106
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40470386494635950800000000000000
-      internalID: 6436598881008514052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Juan_Barbijo_14
-      rect:
-        serializedVersion: 2
-        x: 650
-        y: 6
-        width: 86
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8636dd120082c57a0800000000000000
-      internalID: -6387186190484937880
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Juan_Barbijo_15
-      rect:
-        serializedVersion: 2
-        x: 762
-        y: 20
-        width: 74
-        height: 106
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 239b515ddc0839bb0800000000000000
-      internalID: -4930455545508939470
+      spriteID: 7f2052cb29d701c30800000000000000
+      internalID: 4328097311078286071
       vertices: []
       indices: 
       edges: []

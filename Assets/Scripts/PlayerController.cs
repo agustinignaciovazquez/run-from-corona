@@ -9,25 +9,26 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Collider2D coll;
     [SerializeField] private LayerMask ground;
-    
+    [SerializeField] private LayerMask roof;
     //Game variables
     [SerializeField] private float moveSpeed = 1f;
-    [SerializeField] private float endlessSpeed = 3f;
+    [SerializeField] private float endlessSpeed = 6f;
     [SerializeField] private float rotationSpeed = 2f;
-    [SerializeField] private float jetpackForce = 50f;
+    [SerializeField] private float jetpackForce = 40;
     [SerializeField] private float normalizeRotationSpeed = 0.5f;
     //FSM
     private enum State
     {
-        idle,
-        running,
-        flying
+        Running,
+        Flying,
+        Falling,
     };
-    private State state = State.idle;
+    private State state = State.Running;
 
     private int directionTrigger = 0;
     private bool flyTrigger = false;
-    
+    private static readonly int StateAnimId = Animator.StringToHash("State");
+
     //private static readonly int Walking = Animator.StringToHash("Walking");
 
     // Start is called before the first frame update
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        coll = GetComponentInChildren<Collider2D>();
+        coll = GetComponent<Collider2D>();
     }  
     
 
@@ -44,13 +45,12 @@ public class PlayerController : MonoBehaviour
     {
         directionTrigger = (int)Input.GetAxis("Horizontal");
         flyTrigger = Input.GetButton("Jump");
+        SetPlayerState();
     }
 
     void FixedUpdate()
     {
         SetPlayerMovement();
-        SetPlayerState();
-        
     }
 
     private void SetPlayerMovement()
@@ -60,15 +60,11 @@ public class PlayerController : MonoBehaviour
         
         if (flyTrigger)
         {
-            print("JUMP");
             if (!coll.IsTouchingLayers(ground))
             {
                 //Player not touching the ground, we can rotate according to movement
                 Vector3 playerRotation = new Vector3(0,0,-directionTrigger * rotationSpeed);
                 transform.Rotate(playerRotation);
-            }else
-            {
-                print("GROUND");
             }
             //Jetpack Force according to rotation and others
             rb.AddForce( transform.rotation * Vector2.up * jetpackForce);
@@ -81,7 +77,20 @@ public class PlayerController : MonoBehaviour
     
     private void SetPlayerState()
     {
+        if (coll.IsTouchingLayers(ground))
+        {
+            print("GROUND TOCH");
+            state = State.Running;
+        }else if (Math.Abs(rb.velocity.y) > 1f)
+        {
+            state = (flyTrigger) ? State.Flying : State.Falling;
+        }
+        else
+        {
+            state = State.Running;
+        }
         
+        anim.SetInteger(StateAnimId, (int)state);
     } 
     
 }

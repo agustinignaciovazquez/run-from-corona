@@ -1,0 +1,812 @@
+fileFormatVersion: 2
+guid: da3ddb8c577e00e438a5dd42b5f41924
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5192154946636149784
+    second: Juan_Barbijo_0
+  - first:
+      213: 3503487617017709635
+    second: Juan_Barbijo_1
+  - first:
+      213: 4086123516294204869
+    second: Juan_Barbijo_2
+  - first:
+      213: -4224025395623158559
+    second: Juan_Barbijo_3
+  - first:
+      213: 3721346273518765129
+    second: Juan_Barbijo_4
+  - first:
+      213: -2159227521620161266
+    second: Juan_Barbijo_5
+  - first:
+      213: 1337606241252990327
+    second: Juan_Barbijo_6
+  - first:
+      213: 227325074461031912
+    second: Juan_Barbijo_7
+  - first:
+      213: 6594961307727261889
+    second: Juan_Barbijo_8
+  - first:
+      213: -5044600684465587560
+    second: Juan_Barbijo_9
+  - first:
+      213: -6214915255617905788
+    second: Juan_Barbijo_10
+  - first:
+      213: 2448715268371451956
+    second: Juan_Barbijo_11
+  - first:
+      213: -6960026430042531774
+    second: Juan_Barbijo_12
+  - first:
+      213: 6436598881008514052
+    second: Juan_Barbijo_13
+  - first:
+      213: -6387186190484937880
+    second: Juan_Barbijo_14
+  - first:
+      213: -4930455545508939470
+    second: Juan_Barbijo_15
+  - first:
+      213: -7759873213876671105
+    second: Juan_Barbijo_0
+  - first:
+      213: -486535732122522773
+    second: Juan_Barbijo_1
+  - first:
+      213: 7556359030296387698
+    second: Juan_Barbijo_2
+  - first:
+      213: 4975255495252226737
+    second: Juan_Barbijo_3
+  - first:
+      213: 6173075808956328509
+    second: Juan_Barbijo_4
+  - first:
+      213: 6452901646336550995
+    second: Juan_Barbijo_5
+  - first:
+      213: -7057338426515520253
+    second: Juan_Barbijo_6
+  - first:
+      213: -570884715390677510
+    second: Juan_Barbijo_7
+  - first:
+      213: 3313841422876925857
+    second: Juan_Barbijo_8
+  - first:
+      213: 1809724800068631045
+    second: Juan_Barbijo_9
+  - first:
+      213: -7419657134119835
+    second: Juan_Barbijo_10
+  - first:
+      213: -2850069396569860726
+    second: Juan_Barbijo_11
+  - first:
+      213: -4307310581228472595
+    second: Juan_Barbijo_12
+  - first:
+      213: 6622599487252353679
+    second: Juan_Barbijo_16
+  - first:
+      213: -1215542633682208695
+    second: Juan_Barbijo_17
+  - first:
+      213: -524536638587873790
+    second: Juan_Barbijo_18
+  - first:
+      213: -729033417994586039
+    second: Juan_Barbijo_19
+  - first:
+      213: 907106374283116378
+    second: Juan_Barbijo_20
+  - first:
+      213: 5030789716961158426
+    second: Juan_Barbijo_21
+  - first:
+      213: -7718519121559117610
+    second: Juan_Barbijo_22
+  - first:
+      213: 1010356040690033350
+    second: Juan_Barbijo_23
+  - first:
+      213: 6587451917677151805
+    second: Juan_Barbijo_13
+  - first:
+      213: 5041404806696679370
+    second: Juan_Barbijo_14
+  - first:
+      213: -2372253751968163856
+    second: Juan_Barbijo_15
+  - first:
+      213: -6862313528142764165
+    second: Juan_Barbijo_16
+  - first:
+      213: 6173109788847523167
+    second: Juan_Barbijo_17
+  - first:
+      213: -2749836598731591437
+    second: Juan_Barbijo_18
+  - first:
+      213: 2904710167853032895
+    second: Juan_Barbijo_19
+  - first:
+      213: 7712087253811850058
+    second: Juan_Barbijo_20
+  - first:
+      213: 1832308980119696815
+    second: Juan_Barbijo_21
+  - first:
+      213: -1229483310873348211
+    second: Juan_Barbijo_22
+  - first:
+      213: 2206500091715812315
+    second: Juan_Barbijo_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 78
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Juan_Barbijo_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 911
+        width: 74
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7defc0fc646f4490800000000000000
+      internalID: -7759873213876671105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_1
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 897
+        width: 86
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b6d44545a7f39f0800000000000000
+      internalID: -486535732122522773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_2
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 917
+        width: 106
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270a124b0849dd860800000000000000
+      internalID: 7556359030296387698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_3
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 915
+        width: 92
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2b15d4388ab0540800000000000000
+      internalID: 4975255495252226737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_4
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 913
+        width: 78
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a266cedbb2ba550800000000000000
+      internalID: 6173075808956328509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_5
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 899
+        width: 82
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3586c60cbdf4d8950800000000000000
+      internalID: 6452901646336550995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_6
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 915
+        width: 100
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30504dba71c4f0e90800000000000000
+      internalID: -7057338426515520253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_7
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 913
+        width: 92
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd4073406fc318f0800000000000000
+      internalID: -570884715390677510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 764
+        width: 82
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1afdd8477312dfd20800000000000000
+      internalID: 3313841422876925857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_9
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 769
+        width: 84
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a3e490e1f6d1910800000000000000
+      internalID: 1809724800068631045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_10
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 775
+        width: 58
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5646a247cd3a5eff0800000000000000
+      internalID: -7419657134119835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_11
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 761
+        width: 71
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85dd30fbf48278d0800000000000000
+      internalID: -2850069396569860726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_12
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 752
+        width: 65
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de67894f8db5934c0800000000000000
+      internalID: -4307310581228472595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_13
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 752
+        width: 64
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36cc180e945b6b50800000000000000
+      internalID: 6587451917677151805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_14
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 758
+        width: 65
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac73a1016faa6f540800000000000000
+      internalID: 5041404806696679370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_15
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 755
+        width: 64
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f799d408cf041fd0800000000000000
+      internalID: -2372253751968163856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 603
+        width: 65
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7761b9443a24c0a0800000000000000
+      internalID: -6862313528142764165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_17
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 606
+        width: 76
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f554ebb75aa4ba550800000000000000
+      internalID: 6173109788847523167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_18
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 612
+        width: 78
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f03c36ce2e96d9d0800000000000000
+      internalID: -2749836598731591437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_19
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 613
+        width: 81
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb56852028a9f4820800000000000000
+      internalID: 2904710167853032895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_20
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 612
+        width: 83
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4be5483f76d60b60800000000000000
+      internalID: 7712087253811850058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_21
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 606
+        width: 86
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa5fac63f4bad6910800000000000000
+      internalID: 1832308980119696815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_22
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 598
+        width: 78
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d877f1e517fffeee0800000000000000
+      internalID: -1229483310873348211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Juan_Barbijo_23
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 615
+        width: 70
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdb769394201f9e10800000000000000
+      internalID: 2206500091715812315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
