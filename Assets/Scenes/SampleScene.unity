@@ -258,7 +258,7 @@ MonoBehaviour:
   roof:
     serializedVersion: 2
     m_Bits: 512
-  moveSpeed: 1
+  moveSpeed: 3
   scrollingSpeed: 6
   rotationSpeed: 2
   jetpackForce: 40
@@ -709,7 +709,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: fb9c4c4d662b01c49bb48db63be067f3, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
