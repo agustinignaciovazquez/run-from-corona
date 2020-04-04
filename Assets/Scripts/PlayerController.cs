@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask roof;
     //Game variables
     [SerializeField] private float moveSpeed = 1f;
-    [SerializeField] private float endlessSpeed = 6f;
+    [SerializeField] private float scrollingSpeed = 6f;
     [SerializeField] private float rotationSpeed = 2f;
     [SerializeField] private float jetpackForce = 40;
     [SerializeField] private float normalizeRotationSpeed = 0.5f;
@@ -55,8 +55,6 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerMovement()
     {
-        //Set player Velocity
-        rb.velocity = new Vector2( directionTrigger * moveSpeed + endlessSpeed, rb.velocity.y);
         
         if (flyTrigger)
         {
@@ -65,6 +63,9 @@ public class PlayerController : MonoBehaviour
                 //Player not touching the ground, we can rotate according to movement
                 Vector3 playerRotation = new Vector3(0,0,-directionTrigger * rotationSpeed);
                 transform.Rotate(playerRotation);
+                //Player not touching ground, we can move to the sides
+                //Set player Velocity
+                rb.velocity = new Vector2( directionTrigger * moveSpeed, rb.velocity.y);
             }
             //Jetpack Force according to rotation and others
             rb.AddForce( transform.rotation * Vector2.up * jetpackForce);
@@ -86,6 +87,10 @@ public class PlayerController : MonoBehaviour
         }
         
         anim.SetInteger(StateAnimId, (int)state);
-    } 
-    
+    }
+
+    public float getScrollingSpeed()
+    {
+        return scrollingSpeed;
+    }
 }

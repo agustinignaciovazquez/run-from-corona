@@ -5,36 +5,31 @@ using UnityEngine.UIElements;
 
 public class RepeatBackground : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-    [SerializeField] private GameObject camera;
-    private float cameraRelativeOffset = 1f;
     private float backgroundSize;
     private float backgroundLimitOffset;
     
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         backgroundSize = GetComponent<SpriteRenderer>().size.x; 
-        backgroundLimitOffset = backgroundSize + transform.position.x;
-        cameraRelativeOffset = camera.transform.position.x - player.transform.position.x;
+        backgroundLimitOffset = backgroundSize;
     }
     
     // Update is called once per frame
     void Update()
     {
         Transform backgroundTransform = transform;
-        Vector3 playerPosition = player.transform.position;
-        if (playerPosition.x - backgroundLimitOffset > cameraRelativeOffset)
+        Vector3 backGroundPosition = backgroundTransform.position;
+        if (backGroundPosition.x  + backgroundLimitOffset < 0)
         {
-            RepositionBackground(backgroundTransform, playerPosition);
+            RepositionBackground(backgroundTransform);
         }
     }
 
-    private void RepositionBackground(Transform backgroundTransform, Vector2 playerPosition)
+    private void RepositionBackground(Transform backgroundTransform)
     {
         Vector2 groundOffset = new Vector2(backgroundSize * 2.0f,0);
         Vector2 newBackgroundPosition = (Vector2) backgroundTransform.position + groundOffset;
         backgroundTransform.position = newBackgroundPosition;
-        backgroundLimitOffset = newBackgroundPosition.x + backgroundSize;
     }
 }
