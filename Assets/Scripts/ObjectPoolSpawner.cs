@@ -1,0 +1,132 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ObjectPoolSpawner : MonoBehaviour
+{
+    [SerializeField] private List<ObjectPoolItem> itemsToPool;
+    
+    [System.Serializable]
+    public class ObjectPoolItem {
+        [SerializeField] private int amountToPool;
+        [SerializeField] private GameObject objectToPool;
+        [SerializeField] private bool shouldExpand;
+
+        public int AmountToPool => amountToPool;
+
+        public GameObject ObjectToPool => objectToPool;
+
+        public bool ShouldExpand => shouldExpand;
+    }
+    
+    
+   
+    private Dictionary<string, ObjectPoolQueue> pooledObjects;
+    private static ObjectPoolSpawner SharedInstance;
+    
+    void Awake() {
+        SharedInstance = this;
+    }
+    
+    // Start is called before the first frame update
+    void Start () {
+        pooledObjects = new Dictionary<string, ObjectPoolQueue>();
+        foreach (ObjectPoolItem item in itemsToPool)
+        {
+            if(item.ObjectToPool != null)
+                AddToDictionary(item.ObjectToPool.tag, item);
+        }
+    }
+    private ObjectPoolQueue AddToDictionary(String tag, ObjectPoolItem obj)
+    {
+        if (pooledObjects.ContainsKey(tag))
+        {
+            Debug.LogWarning("Pool with tag "+tag+" alredy exists.");
+            throw new ArgumentException();
+        }
+
+        ObjectPoolQueue objectPoolQueue = new ObjectPoolQueue(obj.AmountToPool, obj.ObjectToPool, obj.ShouldExpand);
+        pooledObjects.Add(tag, objectPoolQueue);
+        return objectPoolQueue;
+    }
+    
+    public GameObject SpawnObject(string tag) {
+        if (!pooledObjects.ContainsKey(tag))
+        {
+            Debug.LogWarning("Pool with tag "+tag+" not found.");
+            return null;
+        }
+
+        GameObject objectToSpawn = pooledObjects[tag].SpawnObject();
+        if (objectToSpawn == null)
+        {
+            Debug.LogWarning("Pool with tag "+tag+" is full.");
+            return null;
+        }
+        
+        objectToSpawn.SetActive(true);
+        
+        ObjectPoolInterface objectPoolInterface = objectToSpawn.GetComponent<ObjectPoolInterface>();
+        
+        if(objectPoolInterface != null)
+            objectPoolInterface.OnObjectSpawn();
+        
+        return objectToSpawn;
+    }
+
+    public static ObjectPoolSpawner GetSharedInstance => SharedInstance;
+    private class ObjectPoolQueue {
+        private int amountToPool;
+        private Queue<GameObject> objectPool;
+        private bool shouldExpand;
+
+        public ObjectPoolQueue(int amountToPool, GameObject go, bool shouldExpand)
+        {
+            if(amountToPool < 1 || go == null)
+                throw new ArgumentException();
+            
+            this.amountToPool = amountToPool;
+            this.objectPool = new Queue<GameObject>();
+            this.shouldExpand = shouldExpand;
+            FillObjectPool(go);
+          
+        }
+        private void FillObjectPool(GameObject go)
+        {
+            for (int i = 0; i < AmountToPool; i++) {
+                GameObject obj = (GameObject)Instantiate(go);
+                obj.SetActive(false);
+                objectPool.Enqueue(obj);
+            }
+        }
+        public GameObject SpawnObject()
+        {
+            GameObject objectToSpawn = objectPool.Peek();
+            if (objectToSpawn.activeSelf)
+            {
+                if (!this.shouldExpand)
+                {
+                    Debug.LogWarning("Pool with tag "+objectToSpawn.tag+" is full.");
+                    return null;
+                }
+                
+                GameObject obj = (GameObject)Instantiate(objectToSpawn);
+                //obj.SetActive(false);
+                this.amountToPool++;
+                objectToSpawn = obj;
+            }
+            else
+            {
+                objectToSpawn = objectPool.Dequeue();
+                print(objectToSpawn);
+            }
+            
+            objectPool.Enqueue(objectToSpawn);
+            return objectToSpawn;
+        }
+        
+        public int AmountToPool => amountToPool;
+        public bool ShouldExpand => shouldExpand;
+    }
+}

@@ -8,8 +8,11 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private Collider2D coll;
+    private ObjectPoolSpawner objectPoolSpawner;
+    
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask roof;
+    
     //Game variables
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float scrollingSpeed = 6f;
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
+        objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;;
     }  
     
 
@@ -55,9 +59,9 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerMovement()
     {
-        
         if (flyTrigger)
         {
+            objectPoolSpawner.SpawnObject(this.tag);
             if (!coll.IsTouchingLayers(ground))
             {
                 //Player not touching the ground, we can rotate according to movement
