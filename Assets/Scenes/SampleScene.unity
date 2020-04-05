@@ -544,7 +544,7 @@ GameObject:
   - component: {fileID: 755927761}
   - component: {fileID: 755927760}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ObjectSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -769,7 +769,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1083401694}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: fb9c4c4d662b01c49bb48db63be067f3, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
