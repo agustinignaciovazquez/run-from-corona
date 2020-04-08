@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private Collider2D coll;
-    private ObjectPoolSpawner objectPoolSpawner;
+    //private ObjectPoolSpawner objectPoolSpawner;
     
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask roof;
@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     private int directionTrigger = 0;
     private bool flyTrigger = false;
+
     private static readonly int StateAnimId = Animator.StringToHash("State");
 
     //private static readonly int Walking = Animator.StringToHash("Walking");
@@ -40,13 +41,14 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
-        objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;;
+        //objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;;
     }  
     
 
     // Update is called once per frame
     void Update()
     {
+     
         directionTrigger = (int)Input.GetAxis("Horizontal");
         flyTrigger = Input.GetButton("Jump");
         SetPlayerState();
@@ -61,7 +63,8 @@ public class PlayerController : MonoBehaviour
     {
         if (flyTrigger)
         {
-            objectPoolSpawner.SpawnObject(this.tag);
+            //objectPoolSpawner.SpawnObject(this.tag);
+            
             if (!coll.IsTouchingLayers(ground))
             {
                 //Player not touching the ground, we can rotate according to movement

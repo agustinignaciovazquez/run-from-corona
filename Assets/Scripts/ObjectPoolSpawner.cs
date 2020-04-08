@@ -51,7 +51,7 @@ public class ObjectPoolSpawner : MonoBehaviour
         return objectPoolQueue;
     }
     
-    public GameObject SpawnObject(string tag) {
+    public GameObject SpawnObject(string tag, Vector2 position, Quaternion rotation ) {
         if (!pooledObjects.ContainsKey(tag))
         {
             Debug.LogWarning("Pool with tag "+tag+" not found.");
@@ -66,6 +66,8 @@ public class ObjectPoolSpawner : MonoBehaviour
         }
         
         objectToSpawn.SetActive(true);
+        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.rotation = rotation;
         
         ObjectPoolInterface objectPoolInterface = objectToSpawn.GetComponent<ObjectPoolInterface>();
         
