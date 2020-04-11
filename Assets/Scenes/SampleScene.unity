@@ -273,8 +273,8 @@ GameObject:
   - component: {fileID: 374889533}
   - component: {fileID: 374889532}
   - component: {fileID: 374889531}
-  - component: {fileID: 374889529}
   - component: {fileID: 374889530}
+  - component: {fileID: 374889529}
   - component: {fileID: 374889528}
   m_Layer: 0
   m_Name: Player
@@ -323,7 +323,7 @@ MonoBehaviour:
   moveSpeed: 3
   scrollingSpeed: 6
   rotationSpeed: 2
-  jetpackForce: 70
+  jetpackForce: 40
   normalizeRotationSpeed: 3
 --- !u!61 &374889530
 BoxCollider2D:
@@ -363,7 +363,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2.17
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
@@ -551,7 +551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &731350197
 MonoBehaviour:
   m_ObjectHideFlags: 0
