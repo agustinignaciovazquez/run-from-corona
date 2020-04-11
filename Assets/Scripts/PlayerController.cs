@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float scrollingSpeed = 6f;
     [SerializeField] private float rotationSpeed = 2f;
-    [SerializeField] private float jetpackForce = 40;
+    [SerializeField] private float jetpackForce = 70f;
     [SerializeField] private float normalizeRotationSpeed = 0.5f;
     //FSM
     private enum State
@@ -63,16 +63,10 @@ public class PlayerController : MonoBehaviour
     {
         if (flyTrigger)
         {
-            //objectPoolSpawner.SpawnObject(this.tag);
-            
+            //If player not touching ground we can rotate according to movement
             if (!coll.IsTouchingLayers(ground))
             {
-                //Player not touching the ground, we can rotate according to movement
-                Vector3 playerRotation = new Vector3(0,0,-directionTrigger * rotationSpeed);
-                transform.Rotate(playerRotation);
-                //Player not touching ground, we can move to the sides
-                //Set player Velocity
-                rb.velocity = new Vector2( directionTrigger * moveSpeed, rb.velocity.y);
+                RotateFlyingPlayer();
             }
             //Jetpack Force according to rotation and others
             rb.AddForce( transform.rotation * Vector2.up * jetpackForce);
@@ -81,6 +75,16 @@ public class PlayerController : MonoBehaviour
         
         //Normalize the rotation
         transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.identity, Time.deltaTime * normalizeRotationSpeed);
+    }
+    private void RotateFlyingPlayer()
+    {
+        //Player not touching the ground, we can rotate 
+            Vector3 playerRotation = new Vector3(0,0,-directionTrigger * rotationSpeed);
+            transform.Rotate(playerRotation);
+            //Player not touching ground, we can move to the sides
+            //Set player Velocity
+            rb.velocity = new Vector2( directionTrigger * moveSpeed, rb.velocity.y);
+        
     }
     
     private void SetPlayerState()
@@ -96,7 +100,7 @@ public class PlayerController : MonoBehaviour
         anim.SetInteger(StateAnimId, (int)state);
     }
 
-    public float getScrollingSpeed()
+    public float GetScrollingSpeed()
     {
         return scrollingSpeed;
     }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4919356398335676242}
   - component: {fileID: 4919356398335676243}
   - component: {fileID: 4919356398335676332}
-  - component: {fileID: 5891396062973211155}
+  - component: {fileID: 7309092804472151062}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -118,7 +118,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.4618187, y: -0.50798607}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -129,9 +129,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 6.5232935, y: 5.8250055}
   m_EdgeRadius: 0
---- !u!114 &5891396062973211155
+--- !u!114 &7309092804472151062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0311d78f558ce446bb480a51b10097f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 4919356398335676243}
   damage: 40
-  bulletSpeed: 40
+  bulletSpeed: 10

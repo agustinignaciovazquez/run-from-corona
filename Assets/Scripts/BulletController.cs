@@ -5,16 +5,17 @@ using UnityEngine;
 public class BulletController : MonoBehaviour, ObjectPoolInterface
 {
     //private Rigidbody2D rb;
+    private Rigidbody2D rb;
     private Collider2D coll;
 
-    [SerializeField] private Rigidbody2D rb;
+    
     [SerializeField] private float damage = 40f;
     [SerializeField] private float bulletSpeed = 10f;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame

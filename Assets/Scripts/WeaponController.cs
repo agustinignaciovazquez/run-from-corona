@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour{
+    
     private ObjectPoolSpawner objectPoolSpawner;
     private bool fireTrigger = false;
    

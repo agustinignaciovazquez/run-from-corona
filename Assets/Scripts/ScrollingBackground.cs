@@ -17,7 +17,7 @@ public class ScrollingBackground : MonoBehaviour
         backgroundSize = GetComponent<SpriteRenderer>().size.x; 
         backgroundLimitOffset = backgroundSize;
         rb = GetComponent<Rigidbody2D>();
-        scrollVelocity = player.GetComponent<PlayerController>().getScrollingSpeed();
+        scrollVelocity = player.GetComponent<PlayerController>().GetScrollingSpeed();
         rb.velocity = new Vector2(-scrollVelocity, 0f);
         
     }
