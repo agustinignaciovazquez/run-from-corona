@@ -5,11 +5,12 @@ using UnityEngine;
 public class ScrollingBackground : MonoBehaviour
 {
     [SerializeField] private GameObject player;
+    
     private Rigidbody2D rb;
     private float scrollVelocity;
-    
     private float backgroundSize;
     private float backgroundLimitOffset;
+    private PlayerController playerController;
     
     // Start is called before the first frame update
     void Awake()
@@ -17,21 +18,26 @@ public class ScrollingBackground : MonoBehaviour
         backgroundSize = GetComponent<SpriteRenderer>().size.x; 
         backgroundLimitOffset = backgroundSize;
         rb = GetComponent<Rigidbody2D>();
-        scrollVelocity = player.GetComponent<PlayerController>().GetScrollingSpeed();
-        rb.velocity = new Vector2(-scrollVelocity, 0f);
-        
+        playerController = player.GetComponent<PlayerController>();
+        SetBackgroundVelocity();
     }
 
+    void SetBackgroundVelocity()
+    {
+        scrollVelocity = playerController.GetScrollingSpeed();
+        rb.velocity = new Vector2(-scrollVelocity, 0f);
+    }
+    
     // Update is called once per frame
     void Update()
     {
-        //TODO ADD Difficulty throw time
         Transform backgroundTransform = transform;
         Vector3 backGroundPosition = backgroundTransform.position;
-        if (backGroundPosition.x  + backgroundLimitOffset < 0)
+        if (backGroundPosition.x + backgroundLimitOffset < 0)
         {
             RepositionBackground(backgroundTransform);
         }
+        SetBackgroundVelocity();
     }
     
     private void RepositionBackground(Transform backgroundTransform)

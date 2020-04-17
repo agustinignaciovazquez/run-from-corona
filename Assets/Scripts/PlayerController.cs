@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask roof;
     
     //Game variables
-    [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float scrollingSpeed = 6f;
     [SerializeField] private float rotationSpeed = 2f;
-    [SerializeField] private float jetpackForce = 70f;
-    [SerializeField] private float normalizeRotationSpeed = 0.5f;
+    [SerializeField] private float jetpackForce = 40f;
+    [SerializeField] private float normalizeRotationSpeed = 3f;
+    [SerializeField] private float infectionDefense = 0f;
+    
     //FSM
     private enum State
     {
@@ -38,6 +40,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(infectionDefense < 0 || infectionDefense > 1)
+            throw new ArgumentException();
+        
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
@@ -48,7 +53,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
         directionTrigger = (int)Input.GetAxis("Horizontal");
         flyTrigger = Input.GetButton("Jump");
         SetPlayerState();
@@ -103,5 +107,9 @@ public class PlayerController : MonoBehaviour
     public float GetScrollingSpeed()
     {
         return scrollingSpeed;
+    }
+    public float GetInfectionDefense()
+    {
+        return infectionDefense;
     }
 }
