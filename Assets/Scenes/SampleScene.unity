@@ -661,7 +661,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35de70dff54e24e46aca3172dd3d7928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 0.3
+  itemsToSpawn:
+  - spawnObject: {fileID: 1739319219}
+    spawnProbability: 0.99
+    rangeN:
+      minNum: 1
+      maxNum: 100
+    rangeX:
+      minNum: 5
+      maxNum: 20
+    rangeY:
+      minNum: 1
+      maxNum: 10
+  spawnRate: 10
 --- !u!4 &659182455
 Transform:
   m_ObjectHideFlags: 0

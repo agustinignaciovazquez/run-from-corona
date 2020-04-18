@@ -23,10 +23,10 @@ public class ObjectPoolSpawner : MonoBehaviour
     
    
     private Dictionary<string, ObjectPoolQueue> pooledObjects;
-    private static ObjectPoolSpawner SharedInstance;
+    private static ObjectPoolSpawner _sharedInstance;
     
     void Awake() {
-        SharedInstance = this;
+        _sharedInstance = this;
     }
     
     // Start is called before the first frame update
@@ -77,7 +77,7 @@ public class ObjectPoolSpawner : MonoBehaviour
         return objectToSpawn;
     }
 
-    public static ObjectPoolSpawner GetSharedInstance => SharedInstance;
+    public static ObjectPoolSpawner GetSharedInstance => _sharedInstance;
     private class ObjectPoolQueue {
         private int amountToPool;
         private Queue<GameObject> objectPool;
