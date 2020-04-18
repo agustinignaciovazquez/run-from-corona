@@ -28,15 +28,4 @@ public class BulletController : MonoBehaviour, ObjectPoolInterface
     {
         rb.velocity = new Vector2(   bulletSpeed, rb.velocity.y);
     }
-    
-    protected virtual void OnTriggerEnter2D(Collider2D other)
-    {
-        //Outbounds
-        if (other.gameObject.CompareTag("Outbounds"))
-        {
-            //Auto delete ourselves
-            print("OUTBOUNDS");
-            this.gameObject.SetActive(false);
-        }
-    }
 }

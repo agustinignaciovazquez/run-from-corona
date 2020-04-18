@@ -15,11 +15,11 @@ public class PlayerController : MonoBehaviour
     
     //Game variables
     [SerializeField] private float moveSpeed = 3f;
-    [SerializeField] private float scrollingSpeed = 6f;
+    [SerializeField] private float scrollingSpeed = 4f;
     [SerializeField] private float rotationSpeed = 2f;
     [SerializeField] private float jetpackForce = 40f;
     [SerializeField] private float normalizeRotationSpeed = 3f;
-    [SerializeField] private float infectionDefense = 0f;
+    [SerializeField] private float infectionDefense = 0.01f;
     
     //FSM
     private enum State
