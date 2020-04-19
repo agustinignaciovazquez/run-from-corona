@@ -13,18 +13,29 @@ public class EnemySpawner : MonoBehaviour
     public class SpawnItem {
         [SerializeField] private GameObject spawnObject;
         [SerializeField] private float spawnProbability;
+        [SerializeField] private float stepX;
+        [SerializeField] private float stepY;
         [SerializeField] private RangeNum rangeN;
         [SerializeField] private RangeNum rangeX;
         [SerializeField] private RangeNum rangeY;
-
-        SpawnItem()
+        
+        public float SpawnProbability()
         {
-            //TODO ADD VERIFICATION FOR RANGE N AND PROBABILITY
+            if (spawnProbability < 0f || spawnProbability > 1f)
+                throw new ArgumentException();
+            return spawnProbability;
         }
 
+        public RangeNum RangeN()
+        {
+            if (rangeN.MinNum < 0)
+                throw new ArgumentException();
+            return rangeN;
+        }
+        
         public string Tag => spawnObject.tag;
-        public float SpawnProbability => spawnProbability;
-        public RangeNum RangeN => rangeN;
+        public float StepX => stepX;
+        public float StepY => stepY;
         public RangeNum RangeX => rangeX;
         public RangeNum RangeY => rangeY;
     }
@@ -40,60 +51,67 @@ public class EnemySpawner : MonoBehaviour
     
     [SerializeField] private float spawnRate = 13F;
     
-    private Random random;
+    private static Random _random;
     private float nextSpawn = 0.0F;
-    private ObjectPoolSpawner objectPoolSpawner;
+    private static ObjectPoolSpawner _objectPoolSpawner;
     
     // Start is called before the first frame update
     void Start()
     {
-        objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
-        random = new Random();
+        _objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
+        _random = new Random();
     }
 
     // Update is called once per frame
     void Update()
     {
         //TODO DO THIS BY DISTANCE 
+        GameObject self = this.gameObject;
         if(Time.time > nextSpawn)
         {
-            SpawnItems();
+            SpawnItems(self, itemsToSpawn);
             nextSpawn = Time.time + spawnRate;
         }
     }
 
-    void SpawnItems()
+    static void SpawnItems(GameObject self, List<SpawnItem> itemsToSpawn)
     {
+       
         foreach(SpawnItem item in itemsToSpawn)
         {
-            if (RollDice(item.SpawnProbability))
+            if (RollDice(item.SpawnProbability()))
             {
-                SpawnPattern(item);
+                SpawnPattern(self, item);
             }
         }
     }
-    void SpawnPattern(SpawnItem spawnItem)
+    static void SpawnPattern(GameObject self, SpawnItem spawnItem)
     {
-        Transform transform1 = this.transform;
+        Transform transform1 = self.transform;
         Vector2 position = transform1.position;
-        int n = (int) RandomBetween(spawnItem.RangeN.MinNum, spawnItem.RangeN.MaxNum);
+        int n = (int) RandomBetween(spawnItem.RangeN().MinNum, spawnItem.RangeN().MaxNum);
+        float stepX = 0;
+        float stepY = 0;
+        
         for (int i = 0; i < n; i++)
         {
             float x = (float) RandomBetween(spawnItem.RangeX.MinNum, spawnItem.RangeX.MaxNum);
             float y = (float) RandomBetween(spawnItem.RangeY.MinNum, spawnItem.RangeY.MaxNum);
-            Vector2 p = new Vector2(position.x + x, position.y + y);
-           objectPoolSpawner.SpawnObject(spawnItem.Tag, p, transform1.rotation);
+            Vector2 p = new Vector2(position.x + x + stepX , position.y + y + stepY);
+            _objectPoolSpawner.SpawnObject(spawnItem.Tag, p, transform1.rotation);
+            stepX += spawnItem.StepX;
+            stepY += spawnItem.StepY;
         }
     }
     
-    private double RandomBetween(double min, double max)
+    private static double RandomBetween(double min, double max)
     {
-        return random.NextDouble() * (max - min) + min;
+        return _random.NextDouble() * (max - min) + min;
     }
     
-    private bool RollDice(float spawnPercentage)
+    private static bool RollDice(float spawnPercentage)
     {
-        var randomValue = random.NextDouble();
+        var randomValue = _random.NextDouble();
         if (randomValue < spawnPercentage)
         {
             return true;
