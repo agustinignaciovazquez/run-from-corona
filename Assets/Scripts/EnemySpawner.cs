@@ -98,7 +98,9 @@ public class EnemySpawner : MonoBehaviour
             float x = (float) RandomBetween(spawnItem.RangeX.MinNum, spawnItem.RangeX.MaxNum);
             float y = (float) RandomBetween(spawnItem.RangeY.MinNum, spawnItem.RangeY.MaxNum);
             Vector2 p = new Vector2(position.x + x + stepX , position.y + y + stepY);
-            _objectPoolSpawner.SpawnObject(spawnItem.Tag, p, transform1.rotation);
+            float randomScale = (float) (_random.NextDouble() + 1f) /2f;
+            Vector2 scale = new Vector2(randomScale, randomScale);
+            _objectPoolSpawner.SpawnObject(spawnItem.Tag, p, scale);
             stepX += spawnItem.StepX;
             stepY += spawnItem.StepY;
         }

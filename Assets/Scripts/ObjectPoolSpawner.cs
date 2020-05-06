@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class ObjectPoolSpawner : MonoBehaviour
@@ -51,7 +52,7 @@ public class ObjectPoolSpawner : MonoBehaviour
         return objectPoolQueue;
     }
     
-    public GameObject SpawnObject(string tag, Vector2 position, Quaternion rotation ) {
+    public GameObject SpawnObject(string tag, Vector2 position, Quaternion? rotation, Vector3? scale) {
         if (!pooledObjects.ContainsKey(tag))
         {
             Debug.LogWarning("Pool with tag "+tag+" not found.");
@@ -66,8 +67,14 @@ public class ObjectPoolSpawner : MonoBehaviour
         }
         
         objectToSpawn.SetActive(true);
+        
         objectToSpawn.transform.position = position;
-        objectToSpawn.transform.rotation = rotation;
+        if(rotation.HasValue)
+            objectToSpawn.transform.rotation = rotation.Value;
+        if (scale.HasValue)
+            objectToSpawn.transform.localScale = scale.Value;
+            
+
         
         ObjectPoolInterface objectPoolInterface = objectToSpawn.GetComponent<ObjectPoolInterface>();
         
@@ -77,6 +84,22 @@ public class ObjectPoolSpawner : MonoBehaviour
         return objectToSpawn;
     }
 
+    public GameObject SpawnObject(string tag, Vector2 position)
+    {
+        return SpawnObject(tag, position, null, null);
+    }
+    
+    public GameObject SpawnObject(string tag, Vector2 position, Quaternion rotation)
+    {
+        return SpawnObject(tag, position, rotation, null);
+    }
+    
+    public GameObject SpawnObject(string tag, Vector2 position, Vector3 scale)
+    {
+        return SpawnObject(tag, position, null, scale);
+    }
+    
+    
     public static ObjectPoolSpawner GetSharedInstance => _sharedInstance;
     private class ObjectPoolQueue {
         private int amountToPool;

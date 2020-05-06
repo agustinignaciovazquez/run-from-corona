@@ -9,6 +9,7 @@ TagManager:
   - InvisibleWall
   - Outbounds
   - Covid
+  - Green Explosion
   layers:
   - Default
   - TransparentFX

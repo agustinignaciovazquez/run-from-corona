@@ -29,7 +29,7 @@ public class WeaponController : MonoBehaviour{
         {
             var transform1 = this.transform;
             nextFire = Time.time + fireRate;
-            objectPoolSpawner.SpawnObject("Bullet", transform1.position, transform1.rotation);
+            objectPoolSpawner.SpawnObject("Bullet", transform1.position);
         }
     }
     

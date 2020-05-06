@@ -29,7 +29,5 @@ public class COVIDEnemy : AbstractEnemy
     public override void OnObjectSpawn()
     {
         base.OnObjectSpawn();
-        float randomScale = (float) (Random.NextDouble() + 1f) /2f;
-        this.gameObject.transform.localScale = new Vector2(randomScale, randomScale);
     }
 }

@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ef330fdfc925c4f93f84b424638057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1732572657749238518, guid: 0476426d12a39f84b88ecd31ac7b89b3, type: 3}
   infectProbability: 0.99
   factorProportionalSpeed: 0.8
 --- !u!114 &3299841109139812232

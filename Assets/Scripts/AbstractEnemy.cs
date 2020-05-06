@@ -14,6 +14,8 @@ public class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
     [SerializeField] private GameObject player;
     [SerializeField] private float infectProbability = 0.99f;
     [SerializeField] private float factorProportionalSpeed = 0.9f;
+   
+    private ObjectPoolSpawner objectPoolSpawner;
     
     // Start is called before the first frame update
     protected virtual void Awake()
@@ -26,6 +28,7 @@ public class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         Random = new Random();
         Rb = GetComponent<Rigidbody2D>();
         PlayerController = player.GetComponent<PlayerController>();
+        objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
     }
     
     // Update is called once per frame
@@ -59,10 +62,16 @@ public class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         //Desinfect Bullet Collision
         if (other.gameObject.CompareTag("Bullet"))
         {
+            var transform1 = this.transform;
+            var scale = transform1.localScale;
             //Delete bullet
             other.gameObject.SetActive(false);
-            //TODO Create animation here
+            
+            //Animate explosion
+            objectPoolSpawner.SpawnObject("Green Explosion", transform1.position, new Vector3(scale.x/2,scale.y/2,scale.z/2));
+            
             print("DESINFECTED");
+            
             //Auto delete ourselves
             this.gameObject.SetActive(false);
         }
