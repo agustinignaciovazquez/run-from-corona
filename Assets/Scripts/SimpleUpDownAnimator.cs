@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
 public class SimpleUpDownAnimator : MonoBehaviour
 {
@@ -10,13 +9,13 @@ public class SimpleUpDownAnimator : MonoBehaviour
     
     private float nextAnimationTime = 0f;
     private int nextAxis = 1;
-    private Random random;
+    private RandomSingleton random;
     private Rigidbody2D rb;
     //TODO IMPLEMENT X MOVEMENT TOO 
     // Start is called before the first frame update
     void Start()
     {
-        random = new Random();
+        random = RandomSingleton.GetSharedInstance;
         rb = GetComponent<Rigidbody2D>();
     }
 

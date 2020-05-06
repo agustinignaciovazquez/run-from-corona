@@ -2,11 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
 
 public class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
 {
-    protected Random Random;
+    protected RandomSingleton Random;
     protected Rigidbody2D Rb;
     protected PlayerController PlayerController;
     protected float ScrollVelocity;
@@ -25,7 +24,7 @@ public class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
             throw new ArgumentException();
         
         //Initializate variables
-        Random = new Random();
+        Random = RandomSingleton.GetSharedInstance;
         Rb = GetComponent<Rigidbody2D>();
         PlayerController = player.GetComponent<PlayerController>();
         objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
@@ -49,7 +48,7 @@ public class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         if (other.gameObject.CompareTag(player.tag))
         {
             var infectionPlayerProbability = InfectPlayerProbability();
-            if(InfectionRollDice(infectionPlayerProbability))
+            if(Random.RollDice(infectionPlayerProbability))
             {
                 print("MUERTO");
             }
@@ -77,16 +76,6 @@ public class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         }
     }
     
-    private bool InfectionRollDice(float infectionPercentage)
-    {
-        var randomValue = Random.NextDouble();
-        if (randomValue < infectionPercentage)
-        {
-            return true;
-        }
-
-        return false;
-    }
     public float GetInfectProbability()
     {
         return this.infectProbability;

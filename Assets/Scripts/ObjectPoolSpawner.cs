@@ -99,7 +99,6 @@ public class ObjectPoolSpawner : MonoBehaviour
         return SpawnObject(tag, position, null, scale);
     }
     
-    
     public static ObjectPoolSpawner GetSharedInstance => _sharedInstance;
     private class ObjectPoolQueue {
         private int amountToPool;
