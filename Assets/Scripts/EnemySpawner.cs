@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
         [SerializeField] private RangeNum rangeN;
         [SerializeField] private RangeNum rangeX;
         [SerializeField] private RangeNum rangeY;
-        
+        [SerializeField] private RangeNum rangeScale;
         public float SpawnProbability()
         {
             if (spawnProbability < 0f || spawnProbability > 1f)
@@ -36,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
         public float StepY => stepY;
         public RangeNum RangeX => rangeX;
         public RangeNum RangeY => rangeY;
+        public RangeNum RangeScale => rangeScale;
         
         [System.Serializable]
         public class RangeNum {
@@ -97,7 +98,7 @@ public class EnemySpawner : MonoBehaviour
             Vector2 p = GetRandomPositionVector(spawnItem, position, stepX, stepY);
             
             //Random scale
-            Vector2 scale = _random.GetRandomVector(0.5f, 2f);
+            Vector2 scale = _random.GetRandomVector(spawnItem.RangeScale.MinNum, spawnItem.RangeScale.MaxNum);
             
             _objectPoolSpawner.SpawnObject(spawnItem.Tag, p, scale);
             stepX += spawnItem.StepX;
