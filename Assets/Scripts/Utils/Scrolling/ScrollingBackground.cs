@@ -2,42 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrollingBackground : MonoBehaviour
+public class ScrollingBackground : ScrollingVelocity
 {
-    [SerializeField] private GameObject player;
-    
-    private Rigidbody2D rb;
-    private float scrollVelocity;
     private float backgroundSize;
     private float backgroundLimitOffset;
-    private PlayerController playerController;
     
     // Start is called before the first frame update
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         backgroundSize = GetComponent<SpriteRenderer>().size.x; 
         backgroundLimitOffset = backgroundSize;
-        rb = GetComponent<Rigidbody2D>();
-        playerController = player.GetComponent<PlayerController>();
-        SetBackgroundVelocity();
-    }
-
-    void SetBackgroundVelocity()
-    {
-        scrollVelocity = playerController.GetScrollingSpeed();
-        rb.velocity = new Vector2(-scrollVelocity, 0f);
     }
     
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         Transform backgroundTransform = transform;
         Vector3 backGroundPosition = backgroundTransform.position;
         if (backGroundPosition.x + backgroundLimitOffset < 0)
         {
             RepositionBackground(backgroundTransform);
         }
-        SetBackgroundVelocity();
     }
     
     private void RepositionBackground(Transform backgroundTransform)

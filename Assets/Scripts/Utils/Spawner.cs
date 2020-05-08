@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    
-    [SerializeField] private List<SpawnItem> itemsToSpawn;
-    [SerializeField] private float startX = 15f;
-    [SerializeField] private float startY = 0f;
     [System.Serializable]
     public class SpawnItem {
         [SerializeField] private GameObject spawnObject;
@@ -38,18 +34,26 @@ public class Spawner : MonoBehaviour
         public RangeNum RangeX => rangeX;
         public RangeNum RangeY => rangeY;
         public RangeNum RangeScale => rangeScale;
-        
-        [System.Serializable]
-        public class RangeNum {
-            [SerializeField] private float minNum;
-            [SerializeField] private float maxNum;
-        
-            public float MinNum => minNum;
-            public float MaxNum => maxNum;
-        }
     }
     
-    [SerializeField] private float spawnRate = 13F;
+    [System.Serializable]
+    public class RangeNum {
+        [SerializeField] private float minNum;
+        [SerializeField] private float maxNum;
+        
+        public float MinNum => minNum;
+        public float MaxNum => maxNum;
+    }
+    [SerializeField] private float startX = 15f;
+    [SerializeField] private float startY = 0f;
+    [SerializeField] private float stepX = 15f;
+    [SerializeField] private float stepY = 0f;
+    [SerializeField] private RangeNum rangeX;
+    [SerializeField] private RangeNum rangeY;
+    [SerializeField] private RangeNum rangeN;
+    [SerializeField] private float spawnDistance = 13F;
+    [SerializeField] private GameObject distanceReference;
+    [SerializeField] private List<SpawnItem> itemsToSpawn;
     
     private float nextSpawn = 0.0F;
     private static RandomSingleton _random;
@@ -77,17 +81,18 @@ public class Spawner : MonoBehaviour
         itemsToSpawn.Sort((i1,i2)=>
             i1.SpawnProbability().CompareTo(i2.SpawnProbability()));
     }
+    
     // Update is called once per frame
     void Update()
     {
-        //TODO DO THIS BY DISTANCE 
+        float distance = distanceReference.transform.position.x * -1f;
         GameObject self = this.gameObject;
-        if(Time.time > nextSpawn)
+        if(distance > nextSpawn)
         {
             SpawnItem item = SelectRandomItem(self, itemsToSpawn);
             if(item != null)
                 SpawnPattern(self, item);
-            nextSpawn = Time.time + spawnRate;
+            nextSpawn = distance + spawnDistance;
         }
     }
 
