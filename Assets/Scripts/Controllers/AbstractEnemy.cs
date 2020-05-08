@@ -3,18 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
+public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
 {
-    protected RandomSingleton Random;
-    protected Rigidbody2D Rb;
-    protected PlayerController PlayerController;
-    protected float ScrollVelocity;
+    private RandomSingleton Random;
+    private Rigidbody2D Rb;
+    private PlayerController PlayerController;
+    private float ScrollVelocity;
+    private ObjectPoolSpawner objectPoolSpawner;
     
     [SerializeField] private GameObject player;
     [SerializeField] private float infectProbability = 0.99f;
     [SerializeField] private float factorProportionalSpeed = 0.9f;
-   
-    private ObjectPoolSpawner objectPoolSpawner;
     
     // Start is called before the first frame update
     protected virtual void Awake()
@@ -61,13 +60,11 @@ public class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         //Desinfect Bullet Collision
         if (other.gameObject.CompareTag("Bullet"))
         {
-            var transform1 = this.transform;
-            var scale = transform1.localScale;
             //Delete bullet
             other.gameObject.SetActive(false);
             
             //Animate explosion
-            objectPoolSpawner.SpawnObject("Green Explosion", transform1.position, new Vector3(scale.x/2,scale.y/2,scale.z/2));
+            OnEnemyDeathAnimation();
             
             print("DESINFECTED");
             
@@ -92,4 +89,22 @@ public class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
     {
         SetBackgroundVelocity();
     }
+
+    public abstract void OnEnemyDeathAnimation();
+    
+    public RandomSingleton Random1 => Random;
+
+    public Rigidbody2D Rb1 => Rb;
+
+    public PlayerController PlayerController1 => PlayerController;
+
+    public float ScrollVelocity1 => ScrollVelocity;
+
+    public ObjectPoolSpawner ObjectPoolSpawner => objectPoolSpawner;
+
+    public GameObject Player => player;
+
+    public float InfectProbability => infectProbability;
+
+    public float FactorProportionalSpeed => factorProportionalSpeed;
 }

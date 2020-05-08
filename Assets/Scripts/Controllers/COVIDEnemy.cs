@@ -30,4 +30,11 @@ public class COVIDEnemy : AbstractEnemy
     {
         base.OnObjectSpawn();
     }
+
+    public override void OnEnemyDeathAnimation()
+    { 
+        var transform1 = this.transform;
+        var scale = transform1.localScale;
+        ObjectPoolSpawner.SpawnObject("Green Explosion", transform1.position, new Vector3(scale.x/2,scale.y/2,scale.z/2));
+    }
 }

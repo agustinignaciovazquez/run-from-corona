@@ -29,8 +29,7 @@ public class SimpleUpDownAnimator : MonoBehaviour
     {
         if (Time.time > nextAnimationTime)
         {
-            float rand = ((float) random.NextDouble() + 1f) / 2f; // [0.5 - 1 ]
-            rb.velocity = new Vector2(rb.velocity.x, nextAxis * rand * animationBounds);
+            rb.velocity = new Vector2(rb.velocity.x, nextAxis * animationBounds);
             nextAxis = -1 * nextAxis;
             nextAnimationTime = Time.time + animationRate;
         }

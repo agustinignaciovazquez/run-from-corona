@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     
     [SerializeField] private List<SpawnItem> itemsToSpawn;
-    
+    [SerializeField] private float startX = 15f;
+    [SerializeField] private float startY = 0f;
     [System.Serializable]
     public class SpawnItem {
         [SerializeField] private GameObject spawnObject;
@@ -59,8 +60,23 @@ public class EnemySpawner : MonoBehaviour
     {
         _objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
         _random = RandomSingleton.GetSharedInstance;
+        CheckParametersAndSort();
     }
 
+    private void CheckParametersAndSort()
+    {
+        float total = 0;
+        foreach (SpawnItem item in itemsToSpawn)
+        {
+            total += item.SpawnProbability();
+        }
+        if (total > 1f)
+            throw new ArgumentException("Spawn probability > 0");
+        
+        //Sort items for algorithm
+        itemsToSpawn.Sort((i1,i2)=>
+            i1.SpawnProbability().CompareTo(i2.SpawnProbability()));
+    }
     // Update is called once per frame
     void Update()
     {
@@ -68,11 +84,26 @@ public class EnemySpawner : MonoBehaviour
         GameObject self = this.gameObject;
         if(Time.time > nextSpawn)
         {
-            SpawnItems(self, itemsToSpawn);
+            SpawnItem item = SelectRandomItem(self, itemsToSpawn);
+            if(item != null)
+                SpawnPattern(self, item);
             nextSpawn = Time.time + spawnRate;
         }
     }
 
+    static SpawnItem SelectRandomItem(GameObject self, List<SpawnItem> itemsToSpawn)
+    {
+        double rand = _random.NextDouble();
+        float percentage = 0f;
+        foreach (SpawnItem item in itemsToSpawn)
+        {
+            if (item.SpawnProbability() > (rand - percentage))
+                return item;
+            percentage += item.SpawnProbability();
+        }
+
+        return null;
+    }
     static void SpawnItems(GameObject self, List<SpawnItem> itemsToSpawn)
     {
        

@@ -255,7 +255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71011665}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.511274, y: -0.2087979, z: -34.92741}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -535,24 +535,111 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsToSpawn:
-  - spawnObject: {fileID: 3328818338866572203, guid: 6254550393da6494296f782c38d30e12,
+  - spawnObject: {fileID: 987322702366524526, guid: e0f5afaa0d1fceb468e699fc9ce3d9ed,
       type: 3}
-    spawnProbability: 0.99
-    stepX: 3
+    spawnProbability: 0.15
+    stepX: 25
     stepY: 0
     rangeN:
-      minNum: 15
-      maxNum: 25
+      minNum: 1
+      maxNum: 2
     rangeX:
       minNum: 0
-      maxNum: 3
+      maxNum: 75
     rangeY:
-      minNum: 0
-      maxNum: 4
+      minNum: -5
+      maxNum: 5
     rangeScale:
-      minNum: 0.25
-      maxNum: 1
-  spawnRate: 10
+      minNum: 0.96
+      maxNum: 1.29
+  - spawnObject: {fileID: 3323922870078609429, guid: 73f36cc8b6c6c1d49ac1a4c4d7662133,
+      type: 3}
+    spawnProbability: 0.15
+    stepX: 25
+    stepY: 0
+    rangeN:
+      minNum: 1
+      maxNum: 2
+    rangeX:
+      minNum: 0
+      maxNum: 75
+    rangeY:
+      minNum: -5
+      maxNum: 5
+    rangeScale:
+      minNum: 0.96
+      maxNum: 1.29
+  - spawnObject: {fileID: 3788335378739105106, guid: cb023cb9cdfcb2d46adb9be6497a8702,
+      type: 3}
+    spawnProbability: 0.15
+    stepX: 25
+    stepY: 0
+    rangeN:
+      minNum: 1
+      maxNum: 2
+    rangeX:
+      minNum: 0
+      maxNum: 75
+    rangeY:
+      minNum: -5
+      maxNum: 5
+    rangeScale:
+      minNum: 0.96
+      maxNum: 1.29
+  - spawnObject: {fileID: 3345001852889575039, guid: ae67d40e6b0df3446b1dff6a0c1dd67e,
+      type: 3}
+    spawnProbability: 0.15
+    stepX: 25
+    stepY: 0
+    rangeN:
+      minNum: 1
+      maxNum: 2
+    rangeX:
+      minNum: 0
+      maxNum: 75
+    rangeY:
+      minNum: -5
+      maxNum: 5
+    rangeScale:
+      minNum: 0.96
+      maxNum: 1.29
+  - spawnObject: {fileID: 5617055414102719011, guid: 2cd4527000b130a45bed5ae5537fdb7f,
+      type: 3}
+    spawnProbability: 0.15
+    stepX: 25
+    stepY: 0
+    rangeN:
+      minNum: 1
+      maxNum: 2
+    rangeX:
+      minNum: 0
+      maxNum: 75
+    rangeY:
+      minNum: -5
+      maxNum: 5
+    rangeScale:
+      minNum: 0.96
+      maxNum: 1.29
+  - spawnObject: {fileID: 4135407039766892246, guid: 6370efbff40d83e40b7b163ddbcf94af,
+      type: 3}
+    spawnProbability: 0.15
+    stepX: 25
+    stepY: 0
+    rangeN:
+      minNum: 1
+      maxNum: 2
+    rangeX:
+      minNum: 0
+      maxNum: 75
+    rangeY:
+      minNum: -5
+      maxNum: 5
+    rangeScale:
+      minNum: 0.96
+      maxNum: 1.29
+  startX: 15
+  startY: 15
+  spawnRate: 2
 --- !u!4 &659182455
 Transform:
   m_ObjectHideFlags: 0
@@ -561,7 +648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659182453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -601,8 +688,20 @@ MonoBehaviour:
     objectToPool: {fileID: 6386271089862346935, guid: 299343e8ebeb1684086d1425a7eee807,
       type: 3}
     shouldExpand: 0
-  - amountToPool: 100
-    objectToPool: {fileID: 3328818338866572203, guid: 6254550393da6494296f782c38d30e12,
+  - amountToPool: 10
+    objectToPool: {fileID: 987322702366524526, guid: e0f5afaa0d1fceb468e699fc9ce3d9ed,
+      type: 3}
+    shouldExpand: 0
+  - amountToPool: 10
+    objectToPool: {fileID: 3323922870078609429, guid: 73f36cc8b6c6c1d49ac1a4c4d7662133,
+      type: 3}
+    shouldExpand: 0
+  - amountToPool: 10
+    objectToPool: {fileID: 3788335378739105106, guid: cb023cb9cdfcb2d46adb9be6497a8702,
+      type: 3}
+    shouldExpand: 0
+  - amountToPool: 10
+    objectToPool: {fileID: 3345001852889575039, guid: ae67d40e6b0df3446b1dff6a0c1dd67e,
       type: 3}
     shouldExpand: 0
   - amountToPool: 25

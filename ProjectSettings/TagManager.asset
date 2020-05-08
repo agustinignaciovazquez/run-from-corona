@@ -10,6 +10,10 @@ TagManager:
   - Outbounds
   - Covid
   - Green Explosion
+  - COVIDPattern I
+  - COVIDPattern II
+  - COVIDPattern III
+  - COVIDPattern IV
   layers:
   - Default
   - TransparentFX
