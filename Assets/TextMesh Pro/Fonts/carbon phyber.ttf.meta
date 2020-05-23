@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 99a4fcbdacc0ac24d90166153b7db792
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Carbon
+  fontNames:
+  - Carbon
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 6275a94b95269d64698a61b4616846be, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
