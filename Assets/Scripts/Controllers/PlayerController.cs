@@ -130,8 +130,12 @@ public class PlayerController : MonoBehaviour
 
     void RegenerateEnergy(float energyToRegen)
     {
-        currentEnergy += energyToRegen;
-        energyBar.SetEnergy(currentEnergy);
+        if (currentEnergy < maxEnergy)
+        {
+            currentEnergy += energyToRegen;
+            energyBar.SetEnergy(currentEnergy);
+        }
+        
     }
 
     void ReduceEnergy(float energyToLose)

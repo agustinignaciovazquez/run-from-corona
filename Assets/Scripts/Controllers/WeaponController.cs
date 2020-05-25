@@ -42,8 +42,16 @@ public class WeaponController : MonoBehaviour{
     
     void AddAmmo(int amount)
     {
-        currentBullets += amount;
-        bullets.SetBullets(amount);
+        if (currentBullets<maxBullets)
+        {
+            currentBullets += amount;
+            if (currentBullets > maxBullets)
+            {
+                currentBullets = maxBullets;
+            }
+            bullets.SetBullets(amount);
+        }
+       
     }
 
     void ReduceAmmo()
