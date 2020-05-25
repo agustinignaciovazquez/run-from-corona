@@ -35,6 +35,12 @@ public class PlayerController : MonoBehaviour
 
     private static readonly int StateAnimId = Animator.StringToHash("State");
 
+    public float maxEnergy = 100f;
+    public float currentEnergy;
+    public float energyRegen = 0.3f;
+    public float energySpend = 0.3f;
+    public EnergyBar energyBar;
+    
     //private static readonly int Walking = Animator.StringToHash("Walking");
 
     // Start is called before the first frame update
@@ -47,6 +53,8 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
         //objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;;
+        currentEnergy = maxEnergy;
+        energyBar.SetMaxEnergy(maxEnergy);
     }  
     
 
@@ -65,8 +73,9 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerMovement()
     {
-        if (flyTrigger)
+        if (flyTrigger && currentEnergy >= 0.3f)
         {
+            ReduceEnergy(energySpend);
             //If player not touching ground we can rotate according to movement
             if (!coll.IsTouchingLayers(ground))
             {
@@ -75,6 +84,12 @@ public class PlayerController : MonoBehaviour
             //Jetpack Force according to rotation and others
             rb.AddForce( transform.rotation * Vector2.up * jetpackForce);
         }
+        else
+        {
+            RegenerateEnergy(energyRegen); 
+        }
+
+        
         
         
         //Normalize the rotation
@@ -111,5 +126,17 @@ public class PlayerController : MonoBehaviour
     public float GetInfectionDefense()
     {
         return infectionDefense;
+    }
+
+    void RegenerateEnergy(float energyToRegen)
+    {
+        currentEnergy += energyToRegen;
+        energyBar.SetEnergy(currentEnergy);
+    }
+
+    void ReduceEnergy(float energyToLose)
+    {
+        currentEnergy -= energyToLose;
+        energyBar.SetEnergy(currentEnergy);
     }
 }
