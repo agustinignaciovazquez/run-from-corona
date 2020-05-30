@@ -305,7 +305,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &91974946
 GameObject:
@@ -1044,19 +1044,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35de70dff54e24e46aca3172dd3d7928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startX: 15
-  startY: 15
-  stepX: 15
-  stepY: 0
-  rangeX:
-    minNum: 0
-    maxNum: 0
-  rangeY:
-    minNum: 0
-    maxNum: 0
-  rangeN:
-    minNum: 0
-    maxNum: 0
   spawnDistance: 13
   distanceReference: {fileID: 698374720}
   itemsToSpawn:
@@ -1170,7 +1157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659182453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1307,7 +1294,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724477840
 GameObject:
@@ -1486,6 +1473,10 @@ MonoBehaviour:
   - amountToPool: 25
     objectToPool: {fileID: 136800, guid: 50c0d8c73dfeed248826c384c274984d, type: 3}
     shouldExpand: 0
+  - amountToPool: 25
+    objectToPool: {fileID: 5068371464476324724, guid: 8b414a665cea6df43b58a806352cdf37,
+      type: 3}
+    shouldExpand: 0
 --- !u!4 &755927761
 Transform:
   m_ObjectHideFlags: 0
@@ -1654,7 +1645,7 @@ Transform:
   - {fileID: 40999822}
   - {fileID: 986417193}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &886144831
 GameObject:
@@ -2072,7 +2063,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: x 25
+  m_Text: x40
 --- !u!222 &1445775027
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2596,7 +2587,7 @@ RectTransform:
   - {fileID: 297247322}
   - {fileID: 728293941}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2616,7 +2607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 467499364}
---- !u!1 &1621568079
+--- !u!1 &1623559072
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2624,48 +2615,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1621568081}
-  - component: {fileID: 1621568080}
+  - component: {fileID: 1623559074}
+  - component: {fileID: 1623559073}
   m_Layer: 0
-  m_Name: Force Camera Ratios
+  m_Name: PickupSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1621568080
+--- !u!114 &1623559073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621568079}
+  m_GameObject: {fileID: 1623559072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e188ee899633d0b49870a5ae38b7359d, type: 3}
+  m_Script: {fileID: 11500000, guid: 35de70dff54e24e46aca3172dd3d7928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratio: {x: 16, y: 9}
-  forceRatioOnAwake: 1
-  listenForWindowChanges: 1
-  createCameraForLetterBoxRendering: 1
-  findCamerasAutomatically: 1
-  letterBoxCameraColor: {r: 0, g: 0, b: 0, a: 1}
-  cameras: []
-  letterBoxCamera: {fileID: 0}
---- !u!4 &1621568081
+  spawnDistance: 13
+  distanceReference: {fileID: 698374720}
+  itemsToSpawn:
+  - spawnObject: {fileID: 5068371464476324724, guid: 8b414a665cea6df43b58a806352cdf37,
+      type: 3}
+    spawnProbability: 0.99
+    stepX: 2
+    stepY: 0
+    rangeN:
+      minNum: 1
+      maxNum: 2
+    rangeX:
+      minNum: 0
+      maxNum: 20
+    rangeY:
+      minNum: 0
+      maxNum: 5
+    rangeScale:
+      minNum: 0
+      maxNum: 0
+--- !u!4 &1623559074
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621568079}
+  m_GameObject: {fileID: 1623559072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 25, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1668957647
 GameObject:
@@ -3187,7 +3190,7 @@ PrefabInstance:
     - target: {fileID: 1732572657749238524, guid: 0476426d12a39f84b88ecd31ac7b89b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1732572657749238524, guid: 0476426d12a39f84b88ecd31ac7b89b3,
         type: 3}
@@ -3212,6 +3215,16 @@ PrefabInstance:
     - target: {fileID: 1732572658098076276, guid: 0476426d12a39f84b88ecd31ac7b89b3,
         type: 3}
       propertyPath: maxBullets
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732572658098076276, guid: 0476426d12a39f84b88ecd31ac7b89b3,
+        type: 3}
+      propertyPath: bulletsText
+      value: 
+      objectReference: {fileID: 728293942}
+    - target: {fileID: 1732572658098076276, guid: 0476426d12a39f84b88ecd31ac7b89b3,
+        type: 3}
+      propertyPath: currentBullets
       value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []

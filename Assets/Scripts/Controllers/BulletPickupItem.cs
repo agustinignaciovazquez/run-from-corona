@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class BulletPickupItem : AbstractPickupItem
 {
-    //private WeaponController weaponController;
+   private WeaponController weaponController;
     [SerializeField] private int pickupQuantity = 5;
-    protected virtual void Awake()
+    protected virtual void Start()
     {
-        LayerMask pc = PlayerController.Ground;
-        print(pc);
+        weaponController = PlayerController.Weapon.GetComponent<WeaponController>();
     }
 
     // Update is called once per frame
@@ -20,7 +19,7 @@ public class BulletPickupItem : AbstractPickupItem
 
     public override void OnPickup()
     {
-        //weaponController.AddAmmo(pickupQuantity);
+        weaponController.AddAmmo(pickupQuantity);
     }
 
     public override void OnPickupAnimation()

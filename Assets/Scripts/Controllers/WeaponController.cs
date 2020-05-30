@@ -13,13 +13,14 @@ public class WeaponController : MonoBehaviour{
 
     [SerializeField] private int maxBullets = 50;
     [SerializeField] private int currentBullets = 25;
-    [SerializeField] private Bullets bulletsText;
+    private static BulletTextSingleton _bulletsText;
     
     // Start is called before the first frame update
     void Start(){
         objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
+        _bulletsText = BulletTextSingleton.SharedInstance;
         //currentBullets = maxBullets;
-        bulletsText.SetBullets(currentBullets);
+        _bulletsText.SetBullets(currentBullets);
     }
 
     // Update is called once per frame
@@ -46,6 +47,7 @@ public class WeaponController : MonoBehaviour{
     
     public void AddAmmo(int amount)
     {
+        print(currentBullets);
         if (currentBullets < maxBullets)
         {
             currentBullets += amount;
@@ -53,15 +55,16 @@ public class WeaponController : MonoBehaviour{
             {
                 currentBullets = maxBullets;
             }
-            bulletsText.SetBullets(amount);
+            _bulletsText.SetBullets(currentBullets);
         }
+        print(currentBullets);
        
     }
 
     void ReduceAmmo()
     {
         currentBullets--;
-        bulletsText.SetBullets(currentBullets);
+        _bulletsText.SetBullets(currentBullets);
     }
     
     
