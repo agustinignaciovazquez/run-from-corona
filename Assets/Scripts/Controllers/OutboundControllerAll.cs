@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OutboundControllerLeft : MonoBehaviour
+public class OutboundControllerAll : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,9 +18,10 @@ public class OutboundControllerLeft : MonoBehaviour
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         //Outbounds
-        //Delete other object
-        print("OUTBOUNDS");
-        other.gameObject.SetActive(false);
+        //Delete other object unless is player
+        if(!other.CompareTag("Player"))
+            other.gameObject.SetActive(false);
+
     }
     
 }
