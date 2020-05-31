@@ -11,8 +11,8 @@ public class WeaponController : MonoBehaviour{
     [SerializeField] private float fireRate = 0.3F;
     private float nextFire = 0.0F;
 
-    [SerializeField] private int maxBullets = 50;
-    [SerializeField] private int currentBullets = 25;
+    [SerializeField] private static int maxBullets = 50;
+    [SerializeField] private static int currentBullets = 25;
     private static BulletTextSingleton _bulletsText;
     
     // Start is called before the first frame update
