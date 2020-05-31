@@ -1059,8 +1059,8 @@ MonoBehaviour:
       minNum: 0
       maxNum: 15
     rangeY:
-      minNum: -5
-      maxNum: 5
+      minNum: -4
+      maxNum: 3
     rangeScale:
       minNum: 0.96
       maxNum: 1.29
@@ -2641,7 +2641,7 @@ MonoBehaviour:
   itemsToSpawn:
   - spawnObject: {fileID: 5068371464476324724, guid: 8b414a665cea6df43b58a806352cdf37,
       type: 3}
-    spawnProbability: 0.99
+    spawnProbability: 0.5
     stepX: 2
     stepY: 0
     rangeN:
@@ -2651,8 +2651,8 @@ MonoBehaviour:
       minNum: 0
       maxNum: 20
     rangeY:
-      minNum: 0
-      maxNum: 5
+      minNum: -3
+      maxNum: 3
     rangeScale:
       minNum: 0
       maxNum: 0
