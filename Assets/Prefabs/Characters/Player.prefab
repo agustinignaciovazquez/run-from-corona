@@ -151,7 +151,7 @@ MonoBehaviour:
   roof:
     serializedVersion: 2
     m_Bits: 512
-  weapon: {fileID: 1732572658098076277}
+  weapon: {fileID: 1732572658098076276}
   moveSpeed: 3
   scrollingSpeed: 4
   rotationSpeed: 2
@@ -226,5 +226,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.3
-  maxBullets: 50
-  currentBullets: 25
