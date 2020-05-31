@@ -8,7 +8,7 @@ public class BulletPickupItem : AbstractPickupItem
     [SerializeField] private int pickupQuantity = 5;
     protected virtual void Start()
     {
-        weaponController = PlayerController.Weapon.GetComponent<WeaponController>();
+        weaponController = PlayerController.Weapon;
     }
 
     // Update is called once per frame
