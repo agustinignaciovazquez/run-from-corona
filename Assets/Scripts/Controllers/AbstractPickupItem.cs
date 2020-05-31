@@ -44,7 +44,7 @@ public abstract class AbstractPickupItem : MonoBehaviour, ObjectPoolInterface
             OnPickup();
             OnPickupAnimation();
             //Auto delete ourselves
-            gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
     }
     public virtual void OnObjectSpawn()

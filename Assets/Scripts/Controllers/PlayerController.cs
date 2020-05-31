@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask roof;
-    [SerializeField] private WeaponController weapon;
+    [SerializeField] private GameObject weapon;
     
     //Game variables
     [SerializeField] private float moveSpeed = 3f;
@@ -150,5 +150,5 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask Roof => roof;
 
-    public WeaponController Weapon => weapon;
+    public GameObject Weapon => weapon;
 }

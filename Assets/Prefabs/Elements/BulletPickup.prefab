@@ -4738,9 +4738,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5068371464476324730}
   - component: {fileID: 5068371464476324731}
+  - component: {fileID: 956941413659850875}
   - component: {fileID: 6714010476570180604}
   - component: {fileID: 5976862383002511465}
-  - component: {fileID: 956941413659850875}
   m_Layer: 0
   m_Name: BulletPickup
   m_TagString: BulletPickup
@@ -4813,6 +4813,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &956941413659850875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5068371464476324724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38e2d547a670b654dbf0dfa25e8148e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1732572657749238518, guid: 0476426d12a39f84b88ecd31ac7b89b3, type: 3}
+  factorProportionalSpeed: 1
+  pickupQuantity: 5
 --- !u!50 &6714010476570180604
 Rigidbody2D:
   serializedVersion: 4
@@ -4860,21 +4875,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.86, y: 1.82}
   m_EdgeRadius: 0
---- !u!114 &956941413659850875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5068371464476324724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38e2d547a670b654dbf0dfa25e8148e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1732572657749238518, guid: 0476426d12a39f84b88ecd31ac7b89b3, type: 3}
-  factorProportionalSpeed: 1
-  pickupQuantity: 5
 --- !u!1 &5068371464600600394
 GameObject:
   m_ObjectHideFlags: 0
