@@ -151,12 +151,18 @@ MonoBehaviour:
   roof:
     serializedVersion: 2
     m_Bits: 512
+  weapon: {fileID: 1732572658098076277}
   moveSpeed: 3
   scrollingSpeed: 4
   rotationSpeed: 2
   jetpackForce: 40
   normalizeRotationSpeed: 3
   infectionDefense: 0.01
+  maxEnergy: 100
+  currentEnergy: 0
+  energyRegen: 0.3
+  energySpend: 0.3
+  energyBar: {fileID: 0}
 --- !u!95 &1732572657749238521
 Animator:
   serializedVersion: 3
@@ -220,3 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.3
+  maxBullets: 50
+  currentBullets: 25
+  bulletsText: {fileID: 6812150820258089291, guid: 38883be2da3a7304383454cdd7666e24,
+    type: 3}

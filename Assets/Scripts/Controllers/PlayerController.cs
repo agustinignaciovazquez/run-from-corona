@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask roof;
+    [SerializeField] private GameObject weapon;
     
     //Game variables
     [SerializeField] private float moveSpeed = 3f;
@@ -20,6 +21,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jetpackForce = 40f;
     [SerializeField] private float normalizeRotationSpeed = 3f;
     [SerializeField] private float infectionDefense = 0.01f;
+    
+    
+    //Jetpack Energy Vars
+    [SerializeField] private float maxEnergy = 100f;
+    [SerializeField] private float currentEnergy;
+    [SerializeField] private float energyRegen = 0.3f;
+    [SerializeField] private float energySpend = 0.3f;
+    [SerializeField] private EnergyBar energyBar;
     
     //FSM
     private enum State
@@ -35,11 +44,7 @@ public class PlayerController : MonoBehaviour
 
     private static readonly int StateAnimId = Animator.StringToHash("State");
 
-    public float maxEnergy = 100f;
-    public float currentEnergy;
-    public float energyRegen = 0.3f;
-    public float energySpend = 0.3f;
-    public EnergyBar energyBar;
+    
     
     //private static readonly int Walking = Animator.StringToHash("Walking");
 
@@ -88,9 +93,6 @@ public class PlayerController : MonoBehaviour
         {
             RegenerateEnergy(energyRegen); 
         }
-
-        
-        
         
         //Normalize the rotation
         transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.identity, Time.deltaTime * normalizeRotationSpeed);
@@ -143,4 +145,10 @@ public class PlayerController : MonoBehaviour
         currentEnergy -= energyToLose;
         energyBar.SetEnergy(currentEnergy);
     }
+
+    public LayerMask Ground => ground;
+
+    public LayerMask Roof => roof;
+
+    public GameObject Weapon => weapon;
 }

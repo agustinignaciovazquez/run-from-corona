@@ -11,15 +11,16 @@ public class WeaponController : MonoBehaviour{
     [SerializeField] private float fireRate = 0.3F;
     private float nextFire = 0.0F;
 
-    public int maxBullets = 25;
-    public int currentBullets = 0;
-    public Bullets bullets;
+    [SerializeField] private int maxBullets = 50;
+    [SerializeField] private int currentBullets = 25;
+    private static BulletTextSingleton _bulletsText;
     
     // Start is called before the first frame update
     void Start(){
         objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
-        currentBullets = maxBullets;
-        bullets.SetBullets(maxBullets);
+        _bulletsText = BulletTextSingleton.SharedInstance;
+        //currentBullets = maxBullets;
+        _bulletsText.SetBullets(currentBullets);
     }
 
     // Update is called once per frame
@@ -31,33 +32,39 @@ public class WeaponController : MonoBehaviour{
 
     void Fire()
     {
-        if(fireTrigger && Time.time > nextFire && currentBullets > 0)
-        {
+        if(CanShoot()) {
             var transform1 = this.transform;
             nextFire = Time.time + fireRate;
             objectPoolSpawner.SpawnObject("Bullet", transform1.position);
             ReduceAmmo();
         }
     }
-    
-    void AddAmmo(int amount)
+
+    private bool CanShoot()
     {
-        if (currentBullets<maxBullets)
+        return (fireTrigger && Time.time > nextFire && currentBullets > 0);
+    }
+    
+    public void AddAmmo(int amount)
+    {
+        print(currentBullets);
+        if (currentBullets < maxBullets)
         {
             currentBullets += amount;
             if (currentBullets > maxBullets)
             {
                 currentBullets = maxBullets;
             }
-            bullets.SetBullets(amount);
+            _bulletsText.SetBullets(currentBullets);
         }
+        print(currentBullets);
        
     }
 
     void ReduceAmmo()
     {
         currentBullets--;
-        bullets.SetBullets(currentBullets);
+        _bulletsText.SetBullets(currentBullets);
     }
     
     

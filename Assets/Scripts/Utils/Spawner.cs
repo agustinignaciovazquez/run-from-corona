@@ -44,13 +44,6 @@ public class Spawner : MonoBehaviour
         public float MinNum => minNum;
         public float MaxNum => maxNum;
     }
-    [SerializeField] private float startX = 15f;
-    [SerializeField] private float startY = 0f;
-    [SerializeField] private float stepX = 15f;
-    [SerializeField] private float stepY = 0f;
-    [SerializeField] private RangeNum rangeX;
-    [SerializeField] private RangeNum rangeY;
-    [SerializeField] private RangeNum rangeN;
     [SerializeField] private float spawnDistance = 13F;
     [SerializeField] private GameObject distanceReference;
     [SerializeField] private List<SpawnItem> itemsToSpawn;
@@ -75,7 +68,7 @@ public class Spawner : MonoBehaviour
             total += item.SpawnProbability();
         }
         if (total > 1f)
-            throw new ArgumentException("Spawn probability > 0");
+            throw new ArgumentException("Spawn probability > 1");
         
         //Sort items for algorithm
         itemsToSpawn.Sort((i1,i2)=>
@@ -135,8 +128,12 @@ public class Spawner : MonoBehaviour
             
             //Random scale
             Vector2 scale = _random.GetRandomVector(spawnItem.RangeScale.MinNum, spawnItem.RangeScale.MaxNum);
+            //If scale equals zero we default to the natural scale
+            if (scale == Vector2.zero)
+                _objectPoolSpawner.SpawnObject(spawnItem.Tag, p);
+            else
+                _objectPoolSpawner.SpawnObject(spawnItem.Tag, p, scale);
             
-            _objectPoolSpawner.SpawnObject(spawnItem.Tag, p, scale);
             stepX += spawnItem.StepX;
             stepY += spawnItem.StepY;
         }
