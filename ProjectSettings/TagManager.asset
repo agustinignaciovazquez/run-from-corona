@@ -15,6 +15,7 @@ TagManager:
   - COVIDPattern III
   - COVIDPattern IV
   - DistanceCalculator
+  - ShopItem
   layers:
   - Default
   - TransparentFX
