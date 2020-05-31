@@ -8,11 +8,17 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private Collider2D coll;
+    private BulletTextSingleton _bulletsText;
     //private ObjectPoolSpawner objectPoolSpawner;
     
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask roof;
-    [SerializeField] private WeaponController weapon;
+    
+    //Weapon variables
+    [SerializeField] private float fireRate = 0.3F;
+    [SerializeField] private int maxBullets = 50;
+    [SerializeField] private int currentBullets = 25;
+  
     
     //Game variables
     [SerializeField] private float moveSpeed = 3f;
@@ -22,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float normalizeRotationSpeed = 3f;
     [SerializeField] private float infectionDefense = 0.01f;
     
+    //Coin variables
+    [SerializeField] private int initialCoins = 0;
     
     //Jetpack Energy Vars
     [SerializeField] private float maxEnergy = 100f;
@@ -60,6 +68,8 @@ public class PlayerController : MonoBehaviour
         //objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;;
         currentEnergy = maxEnergy;
         energyBar.SetMaxEnergy(maxEnergy);
+        _bulletsText = BulletTextSingleton.SharedInstance;
+        _bulletsText.SetBullets(currentBullets);
     }  
     
 
@@ -145,10 +155,32 @@ public class PlayerController : MonoBehaviour
         currentEnergy -= energyToLose;
         energyBar.SetEnergy(currentEnergy);
     }
+    public void AddAmmo(int amount)
+    {
+        _bulletsText = BulletTextSingleton.SharedInstance;
+        if (currentBullets < maxBullets)
+        {
+            currentBullets += amount;
+            if (currentBullets > maxBullets)
+            {
+                currentBullets = maxBullets;
+            }
+        }
+        _bulletsText.SetBullets(currentBullets);
+    }
 
+    public void ReduceAmmo(int amount)
+    {
+        currentBullets = currentBullets - amount;
+        _bulletsText.SetBullets(currentBullets);
+    }
     public LayerMask Ground => ground;
 
     public LayerMask Roof => roof;
 
-    public WeaponController Weapon => weapon;
+    public float FireRate => fireRate;
+
+    public int MaxBullets => maxBullets;
+
+    public int CurrentBullets => currentBullets;
 }

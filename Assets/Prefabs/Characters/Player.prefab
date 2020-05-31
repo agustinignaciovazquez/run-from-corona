@@ -151,13 +151,18 @@ MonoBehaviour:
   roof:
     serializedVersion: 2
     m_Bits: 512
-  weapon: {fileID: 1732572658098076276}
+  fireRate: 0.3
+  maxBullets: 50
+  currentBullets: 25
+  _bulletsText: {fileID: 2181063764929888480, guid: 89ba498d3e9834f50bc6243d005b25c0,
+    type: 3}
   moveSpeed: 3
   scrollingSpeed: 4
   rotationSpeed: 2
   jetpackForce: 40
   normalizeRotationSpeed: 3
   infectionDefense: 0.01
+  initialCoins: 0
   maxEnergy: 100
   currentEnergy: 0
   energyRegen: 0.3
@@ -225,4 +230,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86dcc56c6e79244d8d63ba0313e1075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.3
+  playerController: {fileID: 0}

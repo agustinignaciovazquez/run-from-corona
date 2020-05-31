@@ -16,6 +16,8 @@ TagManager:
   - COVIDPattern IV
   - Covid
   - People
+  - ShopItem
+  - CoinPickup
   layers:
   - Default
   - TransparentFX
@@ -25,8 +27,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Ground
+  - Roof
   - 
   - 
   - 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletPickupItem : AbstractPickupItem
+public class CoinPickupItem : AbstractPickupItem
 {
     [SerializeField] private int pickupQuantity = 5;
 
