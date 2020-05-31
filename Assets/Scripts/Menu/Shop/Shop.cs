@@ -47,9 +47,9 @@ public class Shop : MonoBehaviour
                 itemObject.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => OnButtonClickEquip(si, itemObject));
             }
 
-            if (si.itemName != PlayerItemsState.Instance.currentSkin.itemName &&
-                si.itemName != PlayerItemsState.Instance.currentWeapon.itemName &&
-                si.itemName != PlayerItemsState.Instance.currentJetpack.itemName) continue;
+            if (si.itemName != PlayerPrefs.GetString("Weapon") &&
+                si.itemName != PlayerPrefs.GetString("Skin") &&
+                si.itemName != PlayerPrefs.GetString("Jetpack")) continue;
             itemObject.transform.GetChild(3).gameObject.SetActive(false);
             itemObject.transform.GetChild(4).gameObject.SetActive(true);
 
