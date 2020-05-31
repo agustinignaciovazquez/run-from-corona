@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 809648153
+  m_SortingLayerID: -1807681023
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 227325074461031912, guid: da3ddb8c577e00e438a5dd42b5f41924, type: 3}
@@ -228,5 +228,3 @@ MonoBehaviour:
   fireRate: 0.3
   maxBullets: 50
   currentBullets: 25
-  bulletsText: {fileID: 6812150820258089291, guid: 38883be2da3a7304383454cdd7666e24,
-    type: 3}
