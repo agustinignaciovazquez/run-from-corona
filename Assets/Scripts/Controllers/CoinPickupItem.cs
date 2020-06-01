@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CoinPickupItem : AbstractPickupItem
 {
-    [SerializeField] private int pickupQuantity = 5;
+    [SerializeField] private int pickupQuantity = 1;
 
     public override void OnPickup()
     {
-        PlayerController.AddAmmo(pickupQuantity);
+        PlayerController.AddCoin(pickupQuantity);
     }
 
     public override void OnPickupAnimation()

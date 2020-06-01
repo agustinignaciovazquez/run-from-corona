@@ -1164,6 +1164,9 @@ MonoBehaviour:
     rangeY:
       minNum: -4
       maxNum: 3
+    paddingY:
+      minNum: 0
+      maxNum: 0
     rangeScale:
       minNum: 0.96
       maxNum: 1.29
@@ -1181,6 +1184,9 @@ MonoBehaviour:
     rangeY:
       minNum: -5
       maxNum: 5
+    paddingY:
+      minNum: 0
+      maxNum: 0
     rangeScale:
       minNum: 0.96
       maxNum: 1.29
@@ -1198,6 +1204,9 @@ MonoBehaviour:
     rangeY:
       minNum: -5
       maxNum: 5
+    paddingY:
+      minNum: 0
+      maxNum: 0
     rangeScale:
       minNum: 0.96
       maxNum: 1.29
@@ -1215,6 +1224,9 @@ MonoBehaviour:
     rangeY:
       minNum: -5
       maxNum: 5
+    paddingY:
+      minNum: 0
+      maxNum: 0
     rangeScale:
       minNum: 0.96
       maxNum: 1.29
@@ -1232,6 +1244,9 @@ MonoBehaviour:
     rangeY:
       minNum: -5
       maxNum: 5
+    paddingY:
+      minNum: 0
+      maxNum: 0
     rangeScale:
       minNum: 0.96
       maxNum: 1.29
@@ -1249,6 +1264,9 @@ MonoBehaviour:
     rangeY:
       minNum: -5
       maxNum: 5
+    paddingY:
+      minNum: 0
+      maxNum: 0
     rangeScale:
       minNum: 0.96
       maxNum: 1.29
@@ -1481,7 +1499,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 728293941}
-  - component: {fileID: 728293942}
   m_Layer: 5
   m_Name: Bullets
   m_TagString: Untagged
@@ -1510,19 +1527,6 @@ RectTransform:
   m_AnchoredPosition: {x: -433, y: 467.75}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &728293942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 728293940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37708647f532d134f8224ab6c342a684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletText: {fileID: 1445775026}
 --- !u!1 &755927759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1578,6 +1582,10 @@ MonoBehaviour:
     shouldExpand: 0
   - amountToPool: 25
     objectToPool: {fileID: 6212343786186564815, guid: d1185fc78df9b48d99ed932b1b09eb3b,
+      type: 3}
+    shouldExpand: 0
+  - amountToPool: 150
+    objectToPool: {fileID: 3979244554782393485, guid: 41500c466148c48feaa78bc043192b37,
       type: 3}
     shouldExpand: 0
 --- !u!4 &755927761
@@ -2327,6 +2335,7 @@ GameObject:
   - component: {fileID: 1445775027}
   - component: {fileID: 1445775026}
   - component: {fileID: 1445775028}
+  - component: {fileID: 1445775029}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2408,6 +2417,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!114 &1445775029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445775024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37708647f532d134f8224ab6c342a684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletText: {fileID: 1445775026}
 --- !u!1 &1501058814
 GameObject:
   m_ObjectHideFlags: 0
@@ -2591,7 +2613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd19d65deaa78344faf71dde621e8da6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinsText: {fileID: 0}
+  coinsText: {fileID: 1503764107}
 --- !u!1 &1505613644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3145,7 +3167,7 @@ MonoBehaviour:
   - spawnObject: {fileID: 6212343786186564815, guid: d1185fc78df9b48d99ed932b1b09eb3b,
       type: 3}
     spawnProbability: 0.5
-    stepX: 2
+    stepX: 1
     stepY: 0
     rangeN:
       minNum: 1
@@ -3154,6 +3176,29 @@ MonoBehaviour:
       minNum: 0
       maxNum: 20
     rangeY:
+      minNum: -1
+      maxNum: 1
+    paddingY:
+      minNum: -3
+      maxNum: 3
+    rangeScale:
+      minNum: 0
+      maxNum: 0
+  - spawnObject: {fileID: 3979244554782393485, guid: 41500c466148c48feaa78bc043192b37,
+      type: 3}
+    spawnProbability: 0.5
+    stepX: 1
+    stepY: 0
+    rangeN:
+      minNum: 2
+      maxNum: 14
+    rangeX:
+      minNum: 0
+      maxNum: 0
+    rangeY:
+      minNum: 0
+      maxNum: 0
+    paddingY:
       minNum: -3
       maxNum: 3
     rangeScale:
@@ -3676,7 +3721,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _bulletsText
       value: 
-      objectReference: {fileID: 728293942}
+      objectReference: {fileID: 0}
     - target: {fileID: 1732572657749238524, guid: 0476426d12a39f84b88ecd31ac7b89b3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3736,7 +3781,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bullets
       value: 
-      objectReference: {fileID: 728293942}
+      objectReference: {fileID: 0}
     - target: {fileID: 1732572658098076276, guid: 0476426d12a39f84b88ecd31ac7b89b3,
         type: 3}
       propertyPath: maxBullets
@@ -3746,7 +3791,7 @@ PrefabInstance:
         type: 3}
       propertyPath: bulletsText
       value: 
-      objectReference: {fileID: 728293942}
+      objectReference: {fileID: 0}
     - target: {fileID: 1732572658098076276, guid: 0476426d12a39f84b88ecd31ac7b89b3,
         type: 3}
       propertyPath: currentBullets

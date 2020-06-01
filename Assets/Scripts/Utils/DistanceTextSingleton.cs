@@ -20,7 +20,7 @@ public class DistanceTextSingleton : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         float distance = distanceReference.transform.position.x * -1f;
         SetDistance((int)distance);

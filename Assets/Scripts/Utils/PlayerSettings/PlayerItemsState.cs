@@ -10,6 +10,10 @@ public class PlayerItemsState : MonoBehaviour {
     public ShopItem currentSkin;
     public ShopItem currentJetpack;
 
+    [SerializeField] private int currentBullets = 25;
+    [SerializeField] private int currentCoins = 0;
+    [SerializeField] private int maxBullets = 50;
+    
     private void Awake(){
 
         if (Instance == null){
@@ -23,5 +27,21 @@ public class PlayerItemsState : MonoBehaviour {
     }
     
     //Rest of your class code
+    public int CurrentBullets
+    {
+        get => currentBullets;
+        set => currentBullets = value;
+    }
 
+    public int MaxBullets
+    {
+        get => maxBullets;
+        set => maxBullets = value;
+    }
+
+    public int CurrentCoins
+    {
+        get => currentCoins;
+        set => currentCoins = value;
+    }
 }

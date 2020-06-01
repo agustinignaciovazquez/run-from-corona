@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour
         [SerializeField] private RangeNum rangeN;
         [SerializeField] private RangeNum rangeX;
         [SerializeField] private RangeNum rangeY;
+        [SerializeField] private RangeNum paddingY;
         [SerializeField] private RangeNum rangeScale;
         public float SpawnProbability()
         {
@@ -33,6 +34,7 @@ public class Spawner : MonoBehaviour
         public float StepY => stepY;
         public RangeNum RangeX => rangeX;
         public RangeNum RangeY => rangeY;
+        public RangeNum PaddingY => paddingY;
         public RangeNum RangeScale => rangeScale;
     }
     
@@ -44,7 +46,7 @@ public class Spawner : MonoBehaviour
         public float MinNum => minNum;
         public float MaxNum => maxNum;
     }
-    [SerializeField] private float spawnDistance = 13F;
+    [SerializeField] private float spawnDistance = 25f;
     [SerializeField] private GameObject distanceReference;
     [SerializeField] private List<SpawnItem> itemsToSpawn;
     
@@ -120,11 +122,11 @@ public class Spawner : MonoBehaviour
         int n = (int) _random.RandomBetween(spawnItem.RangeN().MinNum, spawnItem.RangeN().MaxNum);
         float stepX = 0;
         float stepY = 0;
-        
+        float paddingY = (float) _random.RandomBetween(spawnItem.PaddingY.MinNum, spawnItem.PaddingY.MaxNum);
         for (int i = 0; i < n; i++)
         {
             //Random positioner
-            Vector2 p = GetRandomPositionVector(spawnItem, position, stepX, stepY);
+            Vector2 p = GetRandomPositionVector(spawnItem, position, stepX, paddingY + stepY);
             
             //Random scale
             Vector2 scale = _random.GetRandomVector(spawnItem.RangeScale.MinNum, spawnItem.RangeScale.MaxNum);

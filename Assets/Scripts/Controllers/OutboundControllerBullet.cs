@@ -10,7 +10,6 @@ public class OutboundControllerBullet : MonoBehaviour
         {
             //Outbounds
             //Delete other object
-            print("OUTBOUNDS");
             other.gameObject.SetActive(false);
         }
         
