@@ -19,11 +19,13 @@ public class MainMenu : MonoBehaviour
     
     public void OpenShop()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene("ShopMenu");
     }
     
     public void StartGame()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene("GameScene");
     }
     

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Toby
   m_EditorClassIdentifier: 
   itemName: Toby
-  sprite: {fileID: 2465746166884020215, guid: 595455060f74ad64b8c6e73ef963ec3d, type: 3}
+  sprite: {fileID: 4086123516294204869, guid: da3ddb8c577e00e438a5dd42b5f41924, type: 3}
   cost: 0
   currency: 0
   currencySprite: {fileID: 0}
