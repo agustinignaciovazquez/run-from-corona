@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1732572657749238523}
   - component: {fileID: 1732572657749238520}
   - component: {fileID: 1732572657749238521}
+  - component: {fileID: 3533297136379373203}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -151,7 +152,7 @@ MonoBehaviour:
   roof:
     serializedVersion: 2
     m_Bits: 512
-  weapon: {fileID: 1732572658098076276}
+  fireRate: 0.3
   moveSpeed: 3
   scrollingSpeed: 4
   rotationSpeed: 2
@@ -182,6 +183,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3533297136379373203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732572657749238518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1697a49739dad4990b1c881c84c10d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: {fileID: 0}
+  currentSkin: {fileID: 0}
+  currentJetpack: {fileID: 0}
+  currentBullets: 25
+  initialCoins: 0
+  maxBullets: 50
 --- !u!1 &1732572658098076277
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,4 +244,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86dcc56c6e79244d8d63ba0313e1075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.3
+  playerController: {fileID: 0}

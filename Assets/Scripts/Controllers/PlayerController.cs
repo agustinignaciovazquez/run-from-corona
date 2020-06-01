@@ -8,11 +8,17 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private Collider2D coll;
-    //private ObjectPoolSpawner objectPoolSpawner;
+    private PlayerItemsState playerItemsState;
     
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask roof;
-    [SerializeField] private WeaponController weapon;
+    
+    //Weapon variables
+    [SerializeField] private float fireRate = 0.3F;
+    
+    //UI Singletons
+    private BulletTextSingleton bulletsText;
+    private CoinsTextSingleton coinsText;
     
     //Game variables
     [SerializeField] private float moveSpeed = 3f;
@@ -21,7 +27,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jetpackForce = 40f;
     [SerializeField] private float normalizeRotationSpeed = 3f;
     [SerializeField] private float infectionDefense = 0.01f;
-    
     
     //Jetpack Energy Vars
     [SerializeField] private float maxEnergy = 100f;
@@ -43,8 +48,6 @@ public class PlayerController : MonoBehaviour
     private bool flyTrigger = false;
 
     private static readonly int StateAnimId = Animator.StringToHash("State");
-
-    
     
     //private static readonly int Walking = Animator.StringToHash("Walking");
 
@@ -57,9 +60,15 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
-        //objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;;
+
         currentEnergy = maxEnergy;
         energyBar.SetMaxEnergy(maxEnergy);
+        
+        playerItemsState = PlayerItemsState.Instance;
+        bulletsText = BulletTextSingleton.SharedInstance;
+        coinsText = CoinsTextSingleton.SharedInstance;
+        bulletsText.SetBullets(playerItemsState.CurrentBullets);
+        coinsText.SetCoins(playerItemsState.CurrentCoins);
     }  
     
 
@@ -67,7 +76,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         directionTrigger = (int)Input.GetAxis("Horizontal");
-        flyTrigger = Input.GetButton("Jump");
+        flyTrigger = Input.GetButton("Jump") && currentEnergy >= 0.3f;
         SetPlayerState();
     }
 
@@ -78,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerMovement()
     {
-        if (flyTrigger && currentEnergy >= 0.3f)
+        if (flyTrigger)
         {
             ReduceEnergy(energySpend);
             //If player not touching ground we can rotate according to movement
@@ -145,10 +154,41 @@ public class PlayerController : MonoBehaviour
         currentEnergy -= energyToLose;
         energyBar.SetEnergy(currentEnergy);
     }
+    public void AddAmmo(int amount)
+    {
+        bulletsText = BulletTextSingleton.SharedInstance;
+        playerItemsState = PlayerItemsState.Instance;
+        if (playerItemsState.CurrentBullets < playerItemsState.MaxBullets)
+        {
+            playerItemsState.CurrentBullets += amount;
+            if (playerItemsState.CurrentBullets > playerItemsState.MaxBullets)
+            {
+                playerItemsState.CurrentBullets = playerItemsState.MaxBullets;
+            }
+        }
+        bulletsText.SetBullets(playerItemsState.CurrentBullets);
+    }
 
+    public void AddCoin(int amount)
+    {
+        coinsText = CoinsTextSingleton.SharedInstance;
+        playerItemsState = PlayerItemsState.Instance;
+        playerItemsState.CurrentCoins += amount;
+        coinsText.SetCoins(playerItemsState.CurrentCoins);
+    }
+    
+    public void ReduceAmmo(int amount)
+    {
+        playerItemsState.CurrentBullets = playerItemsState.CurrentBullets - amount;
+        bulletsText.SetBullets(playerItemsState.CurrentBullets);
+    }
     public LayerMask Ground => ground;
 
     public LayerMask Roof => roof;
 
-    public WeaponController Weapon => weapon;
+    public float FireRate => fireRate;
+
+    public int MaxBullets => playerItemsState.MaxBullets;
+
+    public int CurrentBullets => playerItemsState.CurrentBullets;
 }
