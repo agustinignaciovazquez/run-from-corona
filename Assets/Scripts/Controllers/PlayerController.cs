@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         directionTrigger = (int)Input.GetAxis("Horizontal");
-        flyTrigger = Input.GetButton("Jump");
+        flyTrigger = Input.GetButton("Jump") && currentEnergy >= 0.3f;
         SetPlayerState();
     }
 
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     private void SetPlayerMovement()
     {
-        if (flyTrigger && currentEnergy >= 0.3f)
+        if (flyTrigger)
         {
             ReduceEnergy(energySpend);
             //If player not touching ground we can rotate according to movement
