@@ -81,7 +81,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.74, y: 1.06}
+  m_Size: {x: 1.1794872, y: 1.3333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -125,8 +125,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.1794872, y: 1.3333334}
-    newSize: {x: 0.74, y: 1.06}
+    oldSize: {x: 2.8846154, y: 2.8205128}
+    newSize: {x: 1.1794872, y: 1.3333334}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   currentSkin: {fileID: 0}
   currentJetpack: {fileID: 0}
   currentBullets: 25
-  initialCoins: 0
+  currentCoins: 0
   maxBullets: 50
 --- !u!1 &1732572658098076277
 GameObject:
