@@ -5,18 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
+   
     public void OpenShop()
     {
         FindObjectOfType<AudioManager>().Play("ButtonClick");
@@ -27,6 +16,12 @@ public class MainMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene("GameScene");
+    }
+
+    public void OpenConfig()
+    {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
+        SceneManager.LoadScene("Config");
     }
     
 }

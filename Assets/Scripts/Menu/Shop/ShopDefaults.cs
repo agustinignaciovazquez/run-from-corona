@@ -11,7 +11,7 @@ public class ShopDefaults : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("Coins", 0);
+        PlayerPrefs.SetInt("Coins", 100);
         PlayerPrefs.SetInt("Gems", 0);
         UpdateCurrency();
         /*PlayerPrefs.SetInt("Coins", 0);

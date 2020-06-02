@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         Time.timeScale = 1f ;
         GameIsPaused = false;
     }
@@ -49,15 +50,18 @@ public class PauseMenu : MonoBehaviour
     
     public void Restart()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         Time.timeScale = 1f ;
         SceneManager.LoadScene("GameScene");
     }
 
     public void QuitToMenu()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
-    
+
+   
     
 }

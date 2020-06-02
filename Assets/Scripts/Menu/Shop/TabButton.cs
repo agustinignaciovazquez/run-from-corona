@@ -28,11 +28,14 @@ public class TabButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         tabGroup.OnTabSelected(this);
+        
     }
 
     public void OnPointerEnter(PointerEventData eventData)
-    {
+    { 
+        FindObjectOfType<AudioManager>().Play("SwitchShop");
        tabGroup.OnTabEnter(this);
     }
 

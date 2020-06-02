@@ -19,6 +19,7 @@ public class ShopMenu : MonoBehaviour
     
     public void Back()
     {
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene("Menu");
     }
 

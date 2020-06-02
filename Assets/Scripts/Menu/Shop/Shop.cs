@@ -34,6 +34,7 @@ public class Shop : MonoBehaviour
            
             itemObject.transform.GetChild(0).GetComponent<Text>().text = si.itemName;
             itemObject.transform.GetChild(1).GetComponent<Image>().sprite = si.sprite;
+            
             if (!isItemSold(si))
             {
                 itemObject.transform.GetChild(2).GetComponent<Button>().transform.GetChild(0).GetComponent<Text>().text = si.cost.ToString();
@@ -42,6 +43,7 @@ public class Shop : MonoBehaviour
             }
             else
             {
+                
                 itemObject.transform.GetChild(2).gameObject.SetActive(false);
                 itemObject.transform.GetChild(3).gameObject.SetActive(true);
                 itemObject.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => OnButtonClickEquip(si, itemObject));
@@ -59,17 +61,18 @@ public class Shop : MonoBehaviour
 
     private void OnButtonClickBuy(ShopItem item, GameObject itemObject)
     {
-        Debug.Log(item.itemName);
         bool couldPurchase = BuyItem(item);
         if (couldPurchase)
         {
             StartCoroutine(displayCouldPurchaseAlert());
             itemObject.transform.GetChild(2).gameObject.SetActive(false);
             itemObject.transform.GetChild(3).gameObject.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("Cashing");
         }
         else
         {
             StartCoroutine(displayCouldNotPurchaseAlert());
+            FindObjectOfType<AudioManager>().Play("FailBuy");
         }
     }
     
@@ -93,6 +96,7 @@ public class Shop : MonoBehaviour
             PlayerItemsState.Instance.currentJetpack = item;
         }
         
+        FindObjectOfType<AudioManager>().Play(item.itemName);
         PopulateShop();
 
         
