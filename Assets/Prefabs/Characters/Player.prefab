@@ -152,7 +152,6 @@ MonoBehaviour:
   roof:
     serializedVersion: 2
     m_Bits: 512
-  fireRate: 0.3
   moveSpeed: 3
   scrollingSpeed: 4
   rotationSpeed: 2
@@ -212,6 +211,7 @@ GameObject:
   - component: {fileID: 1732572658098076280}
   - component: {fileID: 1732572658098076276}
   - component: {fileID: 1004859633440926549}
+  - component: {fileID: 3074784500742698352}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Player
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d86dcc56c6e79244d8d63ba0313e1075, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
+  fireRate: 0.3
 --- !u!212 &1004859633440926549
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -296,3 +296,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3074784500742698352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732572658098076277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2e3a51e2b9b45fd9d881cdfdf8e70e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteSheetName: WaterWeapon

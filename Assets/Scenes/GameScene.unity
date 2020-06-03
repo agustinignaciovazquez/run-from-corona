@@ -1299,14 +1299,14 @@ MonoBehaviour:
   - spawnObject: {fileID: 3323922870078609429, guid: 73f36cc8b6c6c1d49ac1a4c4d7662133,
       type: 3}
     spawnProbability: 0.15
-    stepX: 25
+    stepX: 10
     stepY: 0
     rangeN:
       minNum: 1
-      maxNum: 2
+      maxNum: 3
     rangeX:
       minNum: 0
-      maxNum: 75
+      maxNum: 5
     rangeY:
       minNum: -5
       maxNum: 5
@@ -1319,14 +1319,14 @@ MonoBehaviour:
   - spawnObject: {fileID: 3788335378739105106, guid: cb023cb9cdfcb2d46adb9be6497a8702,
       type: 3}
     spawnProbability: 0.15
-    stepX: 25
+    stepX: 10
     stepY: 0
     rangeN:
       minNum: 1
-      maxNum: 2
+      maxNum: 5
     rangeX:
       minNum: 0
-      maxNum: 75
+      maxNum: 5
     rangeY:
       minNum: -5
       maxNum: 5
@@ -1339,14 +1339,14 @@ MonoBehaviour:
   - spawnObject: {fileID: 3345001852889575039, guid: ae67d40e6b0df3446b1dff6a0c1dd67e,
       type: 3}
     spawnProbability: 0.15
-    stepX: 25
+    stepX: 10
     stepY: 0
     rangeN:
       minNum: 1
       maxNum: 2
     rangeX:
       minNum: 0
-      maxNum: 75
+      maxNum: 3
     rangeY:
       minNum: -5
       maxNum: 5
@@ -1359,14 +1359,14 @@ MonoBehaviour:
   - spawnObject: {fileID: 5617055414102719011, guid: 2cd4527000b130a45bed5ae5537fdb7f,
       type: 3}
     spawnProbability: 0.15
-    stepX: 25
+    stepX: 10
     stepY: 0
     rangeN:
       minNum: 1
       maxNum: 2
     rangeX:
       minNum: 0
-      maxNum: 75
+      maxNum: 3
     rangeY:
       minNum: -5
       maxNum: 5
@@ -1378,15 +1378,15 @@ MonoBehaviour:
       maxNum: 1.29
   - spawnObject: {fileID: 4135407039766892246, guid: 6370efbff40d83e40b7b163ddbcf94af,
       type: 3}
-    spawnProbability: 0.15
-    stepX: 25
+    spawnProbability: 0.25
+    stepX: 10
     stepY: 0
     rangeN:
       minNum: 1
       maxNum: 2
     rangeX:
       minNum: 0
-      maxNum: 75
+      maxNum: 3
     rangeY:
       minNum: -5
       maxNum: 5
@@ -1810,6 +1810,10 @@ MonoBehaviour:
   - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
     distanceToShow: 75
   - backgroundImage: {fileID: 21300000, guid: 3f17b292e05cc4cfd89d8ee69fda83e4, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 7142655d9dcb14c7b9f5bfd4afe957a3, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
     distanceToShow: 75
 --- !u!212 &797363596
 SpriteRenderer:
@@ -3500,7 +3504,7 @@ MonoBehaviour:
   itemsToSpawn:
   - spawnObject: {fileID: 6212343786186564815, guid: d1185fc78df9b48d99ed932b1b09eb3b,
       type: 3}
-    spawnProbability: 0.5
+    spawnProbability: 0.35
     stepX: 1
     stepY: 0
     rangeN:
@@ -3520,7 +3524,7 @@ MonoBehaviour:
       maxNum: 0
   - spawnObject: {fileID: 3979244554782393485, guid: 41500c466148c48feaa78bc043192b37,
       type: 3}
-    spawnProbability: 0.5
+    spawnProbability: 0.25
     stepX: 1
     stepY: 0
     rangeN:
@@ -3970,8 +3974,8 @@ GameObject:
   - component: {fileID: 2101879986}
   - component: {fileID: 2101879990}
   - component: {fileID: 2101879987}
-  - component: {fileID: 2101879989}
   - component: {fileID: 2101879988}
+  - component: {fileID: 2101879989}
   m_Layer: 0
   m_Name: Background_Duplicate
   m_TagString: Background
@@ -4059,6 +4063,10 @@ MonoBehaviour:
   - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
     distanceToShow: 75
   - backgroundImage: {fileID: 21300000, guid: 3f17b292e05cc4cfd89d8ee69fda83e4, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 7142655d9dcb14c7b9f5bfd4afe957a3, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
     distanceToShow: 75
 --- !u!212 &2101879990
 SpriteRenderer:
@@ -4360,6 +4368,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074784500742698352, guid: 0476426d12a39f84b88ecd31ac7b89b3,
+        type: 3}
+      propertyPath: SpriteSheetName
+      value: RifleWeapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0476426d12a39f84b88ecd31ac7b89b3, type: 3}

@@ -1,151 +1,79 @@
 fileFormatVersion: 2
-guid: 1511e65ca26f605489999c87756a485d
+guid: 92da05f6c51832c4fa011a5800ce8f24
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2489464299558644
-    second: RifleMove_0
+      213: 6906074047648523962
+    second: running0
   - first:
-      213: 3660362551804940034
-    second: RifleMove_1
+      213: -3654283377238432694
+    second: running1
   - first:
-      213: 4386739690455494860
-    second: RifleMove_2
+      213: -1016988921031011006
+    second: running2
   - first:
-      213: -9097222177971105528
-    second: RifleMove_3
+      213: 7578578372734386022
+    second: running3
   - first:
-      213: -2492579418631540862
-    second: RifleMove_4
+      213: 7108193756074215245
+    second: running4
   - first:
-      213: -9194982255232103729
-    second: RifleMove_5
+      213: 677584514224185780
+    second: running5
   - first:
-      213: 5446135346576723663
-    second: RifleMove_6
+      213: 5557157049689303415
+    second: running6
   - first:
-      213: 8781796625922155497
-    second: RifleMove_7
+      213: 4879412518532794274
+    second: running7
   - first:
-      213: -3050019887429707741
-    second: RifleMove_8
+      213: 2314576123059600581
+    second: start_flying0
   - first:
-      213: 3847556796936640936
-    second: RifleMove_9
+      213: -2796229454360817745
+    second: start_flying1
   - first:
-      213: -7668778001399053529
-    second: RifleMove_10
+      213: 1782426297033209168
+    second: start_flying2
   - first:
-      213: 5157185579538075423
-    second: RifleMove_11
+      213: 3305687199767817160
+    second: start_flying3
   - first:
-      213: -2129014321722476678
-    second: RifleMove_12
+      213: -4395094668575925452
+    second: flying0
   - first:
-      213: 7632329652708753461
-    second: RifleMove_13
+      213: -3765940173393718154
+    second: flying1
   - first:
-      213: 6772334485654494032
-    second: RifleMove_14
+      213: -5419139046625370817
+    second: flying2
   - first:
-      213: -4822668426237505729
-    second: RifleMove_15
+      213: -4647164915230821145
+    second: start_falling0
   - first:
-      213: -1409948325975437138
-    second: RifleMove_16
+      213: -7405798600086481848
+    second: start_falling1
   - first:
-      213: -4363028183713284936
-    second: RifleMove_17
+      213: 6376827653097525036
+    second: start_falling2
   - first:
-      213: 6439826917376270616
-    second: RifleMove_18
+      213: -4647515534751888458
+    second: start_falling3
   - first:
-      213: -7097804047869638098
-    second: RifleMove_19
+      213: 4375917314854530813
+    second: falling0
   - first:
-      213: -6546423888402308929
-    second: RifleMove_20
+      213: 2074055772003225409
+    second: falling1
   - first:
-      213: -8342690218287229626
-    second: RifleMove_21
+      213: 7011953650869878352
+    second: falling2
   - first:
-      213: -6922576344792154934
-    second: RifleMove_22
+      213: 591150244098717735
+    second: falling3
   - first:
-      213: 2848771447428047907
-    second: RifleMove_23
-  - first:
-      213: 3105353345305003127
-    second: RifleMove_0
-  - first:
-      213: 7093321708714142692
-    second: RifleMove_1
-  - first:
-      213: -7301259242413918542
-    second: RifleMove_2
-  - first:
-      213: -7348176968174994530
-    second: RifleMove_3
-  - first:
-      213: 4037081464522073158
-    second: RifleMove_4
-  - first:
-      213: 4432616281265955767
-    second: RifleMove_5
-  - first:
-      213: 6788914304399321981
-    second: RifleMove_6
-  - first:
-      213: -4757328421636790311
-    second: RifleMove_7
-  - first:
-      213: 6090032980975756011
-    second: RifleMove_8
-  - first:
-      213: -2312108384580682353
-    second: RifleMove_9
-  - first:
-      213: -2422760767560409400
-    second: RifleMove_10
-  - first:
-      213: -6597980517252459036
-    second: RifleMove_11
-  - first:
-      213: -3584098826419400123
-    second: RifleMove_12
-  - first:
-      213: -3693812876294684247
-    second: RifleMove_13
-  - first:
-      213: -6856685812374904590
-    second: RifleMove_14
-  - first:
-      213: 5497774453996598899
-    second: RifleMove_15
-  - first:
-      213: -9104009425286911561
-    second: RifleMove_16
-  - first:
-      213: 8491435061128133961
-    second: RifleMove_17
-  - first:
-      213: -8307681421081270617
-    second: RifleMove_18
-  - first:
-      213: 3204587198728849902
-    second: RifleMove_19
-  - first:
-      213: -8236092095499155361
-    second: RifleMove_20
-  - first:
-      213: 7678375775981106401
-    second: RifleMove_21
-  - first:
-      213: -7406265873666023908
-    second: RifleMove_22
-  - first:
-      213: -4983857227426506083
-    second: RifleMove_23
+      213: -8800332745442329672
+    second: falling4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -189,7 +117,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 78
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -239,11 +167,35 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RifleMove_0
+      name: running0
       rect:
         serializedVersion: 2
         x: 0
@@ -251,62 +203,62 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 774c9f82a6e681b20800000000000000
-      internalID: 3105353345305003127
+      spriteID: ab662a2a1cd47df50800000000000000
+      internalID: 6906074047648523962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_1
+      name: running1
       rect:
         serializedVersion: 2
-        x: 225
+        x: 223
         y: 480
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4eb2975138a807260800000000000000
-      internalID: 7093321708714142692
+      spriteID: a44a61f21a0694dc0800000000000000
+      internalID: -3654283377238432694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_2
+      name: running2
       rect:
         serializedVersion: 2
-        x: 450
+        x: 448
         y: 480
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b671ea1767bcaa90800000000000000
-      internalID: -7301259242413918542
+      spriteID: 245507de6fde2e1f0800000000000000
+      internalID: -1016988921031011006
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_3
+      name: running3
       rect:
         serializedVersion: 2
         x: 675
@@ -314,20 +266,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9bf831daf7060a90800000000000000
-      internalID: -7348176968174994530
+      spriteID: 66f7a4180e48c2960800000000000000
+      internalID: 7578578372734386022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_4
+      name: running4
       rect:
         serializedVersion: 2
         x: 900
@@ -335,20 +287,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 644e62ed338960830800000000000000
-      internalID: 4037081464522073158
+      spriteID: d4704717f8065a260800000000000000
+      internalID: 7108193756074215245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_5
+      name: running5
       rect:
         serializedVersion: 2
         x: 1125
@@ -356,20 +308,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b36876d501d38d30800000000000000
-      internalID: 4432616281265955767
+      spriteID: 4b163a39683476900800000000000000
+      internalID: 677584514224185780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_6
+      name: running6
       rect:
         serializedVersion: 2
         x: 1350
@@ -377,20 +329,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7b2a443791173e50800000000000000
-      internalID: 6788914304399321981
+      spriteID: 779e9c3c4ecfe1d40800000000000000
+      internalID: 5557157049689303415
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_7
+      name: running7
       rect:
         serializedVersion: 2
         x: 1575
@@ -398,20 +350,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d7287481039afdb0800000000000000
-      internalID: -4757328421636790311
+      spriteID: 2a7cdb755d727b340800000000000000
+      internalID: 4879412518532794274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_8
+      name: start_flying0
       rect:
         serializedVersion: 2
         x: 0
@@ -419,20 +371,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: be22975dab4248450800000000000000
-      internalID: 6090032980975756011
+      spriteID: 5cc719488b60f1020800000000000000
+      internalID: 2314576123059600581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_9
+      name: start_flying1
       rect:
         serializedVersion: 2
         x: 225
@@ -440,20 +392,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8dbdde9cadb9efd0800000000000000
-      internalID: -2312108384580682353
+      spriteID: fafc656502cc139d0800000000000000
+      internalID: -2796229454360817745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_10
+      name: start_flying2
       rect:
         serializedVersion: 2
         x: 450
@@ -461,20 +413,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ce1fc11bef906ed0800000000000000
-      internalID: -2422760767560409400
+      spriteID: 055baf006437cb810800000000000000
+      internalID: 1782426297033209168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_11
+      name: start_flying3
       rect:
         serializedVersion: 2
         x: 675
@@ -482,41 +434,41 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e5183a5da34f64a0800000000000000
-      internalID: -6597980517252459036
+      spriteID: 8cb67b07ef820ed20800000000000000
+      internalID: 3305687199767817160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_12
+      name: flying0
       rect:
         serializedVersion: 2
-        x: 900
+        x: 898
         y: 260
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54290635b19b24ec0800000000000000
-      internalID: -3584098826419400123
+      spriteID: 43b91556fac7103c0800000000000000
+      internalID: -4395094668575925452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_13
+      name: flying1
       rect:
         serializedVersion: 2
         x: 1125
@@ -524,20 +476,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a101b972c0fcbcc0800000000000000
-      internalID: -3693812876294684247
+      spriteID: 6749e777d51bcbbc0800000000000000
+      internalID: -3765940173393718154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_14
+      name: flying2
       rect:
         serializedVersion: 2
         x: 1350
@@ -545,20 +497,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f0eee8f49828d0a0800000000000000
-      internalID: -6856685812374904590
+      spriteID: f3d1279bfb95bc4b0800000000000000
+      internalID: -5419139046625370817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_15
+      name: start_falling0
       rect:
         serializedVersion: 2
         x: 1575
@@ -566,20 +518,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3763fa9ccb40c4c40800000000000000
-      internalID: 5497774453996598899
+      spriteID: 7e4320f9124f18fb0800000000000000
+      internalID: -4647164915230821145
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_16
+      name: start_falling1
       rect:
         serializedVersion: 2
         x: 0
@@ -587,20 +539,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b927fda9af08a180800000000000000
-      internalID: -9104009425286911561
+      spriteID: 84492cb2961593990800000000000000
+      internalID: -7405798600086481848
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_17
+      name: start_falling2
       rect:
         serializedVersion: 2
         x: 225
@@ -608,20 +560,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94df6d3d233a7d570800000000000000
-      internalID: 8491435061128133961
+      spriteID: c2f04c0f6fa0f7850800000000000000
+      internalID: 6376827653097525036
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_18
+      name: start_falling3
       rect:
         serializedVersion: 2
         x: 450
@@ -629,20 +581,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a6a65573cf25bc80800000000000000
-      internalID: -8307681421081270617
+      spriteID: 6bb0107ae35b08fb0800000000000000
+      internalID: -4647515534751888458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_19
+      name: falling0
       rect:
         serializedVersion: 2
         x: 675
@@ -650,20 +602,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee94fff141bf87c20800000000000000
-      internalID: 3204587198728849902
+      spriteID: dfea26efc916abc30800000000000000
+      internalID: 4375917314854530813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_20
+      name: falling1
       rect:
         serializedVersion: 2
         x: 900
@@ -671,20 +623,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f58ce5630e583bd80800000000000000
-      internalID: -8236092095499155361
+      spriteID: 14fc99e5cb688cc10800000000000000
+      internalID: 2074055772003225409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_21
+      name: falling2
       rect:
         serializedVersion: 2
         x: 1125
@@ -692,20 +644,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e4715326121f8a60800000000000000
-      internalID: 7678375775981106401
+      spriteID: 05e3a9dc1b67f4160800000000000000
+      internalID: 7011953650869878352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_22
+      name: falling3
       rect:
         serializedVersion: 2
         x: 1350
@@ -713,20 +665,20 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1ed9009d68a73990800000000000000
-      internalID: -7406265873666023908
+      spriteID: 728b364d300343800800000000000000
+      internalID: 591150244098717735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RifleMove_23
+      name: falling4
       rect:
         serializedVersion: 2
         x: 1575
@@ -734,14 +686,14 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9adafbd148c5dab0800000000000000
-      internalID: -4983857227426506083
+      spriteID: 8bbfba28effeed580800000000000000
+      internalID: -8800332745442329672
       vertices: []
       indices: 
       edges: []

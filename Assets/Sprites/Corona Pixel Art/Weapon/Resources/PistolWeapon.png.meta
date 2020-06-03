@@ -4,148 +4,148 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 8598627062771017242
-    second: PistolMove_0
+    second: running0
   - first:
       213: -5508726760265910125
-    second: PistolMove_1
+    second: running1
   - first:
       213: -6039648697949184506
-    second: PistolMove_2
+    second: running2
   - first:
       213: 7905381668702115232
-    second: PistolMove_3
+    second: running3
   - first:
       213: -9095465871664380508
-    second: PistolMove_4
+    second: running4
   - first:
       213: -5080551731338654022
-    second: PistolMove_5
+    second: running5
   - first:
       213: -1388165340824544695
-    second: PistolMove_6
+    second: running6
   - first:
       213: 4594496365789693885
-    second: PistolMove_7
+    second: running7
   - first:
       213: -1882536954969872043
-    second: PistolMove_8
+    second: start_flying0
   - first:
       213: 4920521730386456015
-    second: PistolMove_9
+    second: start_flying1
   - first:
       213: 2738518789448939573
-    second: PistolMove_10
+    second: start_flying2
   - first:
       213: -6997787044331374400
-    second: PistolMove_11
+    second: start_flying3
   - first:
       213: -5368393357784193003
-    second: PistolMove_12
+    second: flying0
   - first:
       213: -5916551678209325072
-    second: PistolMove_13
+    second: flying1
   - first:
       213: 1340178960961859094
-    second: PistolMove_14
+    second: flying2
   - first:
       213: -4200164993482885535
-    second: PistolMove_15
+    second: start_falling0
   - first:
       213: -5906684192730683282
-    second: PistolMove_16
+    second: start_falling1
   - first:
       213: 5564739279884036652
-    second: PistolMove_17
+    second: start_falling2
   - first:
       213: -2003940023865095662
-    second: PistolMove_18
+    second: start_falling3
   - first:
       213: 4971571497770940343
-    second: PistolMove_19
+    second: falling0
   - first:
       213: -7685148125179409850
-    second: PistolMove_20
+    second: falling1
   - first:
       213: -3885674141361763544
-    second: PistolMove_21
+    second: falling2
   - first:
       213: -6274846183945358639
-    second: PistolMove_22
+    second: falling3
   - first:
       213: -3188311369146271033
-    second: PistolMove_23
+    second: falling4
   - first:
       213: -2467415886278528735
-    second: PistolMove_0
+    second: running0
   - first:
       213: 117738154197219070
-    second: PistolMove_1
+    second: running1
   - first:
       213: -2080296291095992350
-    second: PistolMove_2
+    second: running2
   - first:
       213: -7298288522498601228
-    second: PistolMove_3
+    second: running3
   - first:
       213: 8156438047741014779
-    second: PistolMove_4
+    second: running4
   - first:
       213: 1296483529264272789
-    second: PistolMove_5
+    second: running5
   - first:
       213: 1341624227535573264
-    second: PistolMove_6
+    second: running6
   - first:
       213: -7122406354237671560
-    second: PistolMove_7
+    second: running7
   - first:
       213: 1732269778768442022
-    second: PistolMove_8
+    second: start_flying0
   - first:
       213: -8414485924167681693
-    second: PistolMove_9
+    second: start_flying1
   - first:
       213: -5478348447484253958
-    second: PistolMove_10
+    second: start_flying2
   - first:
       213: 108828629524413346
-    second: PistolMove_11
+    second: start_flying3
   - first:
       213: 8493069245363603170
-    second: PistolMove_12
+    second: flying0
   - first:
       213: 7911411789432192157
-    second: PistolMove_13
+    second: flying1
   - first:
       213: 8636868601776141123
-    second: PistolMove_14
+    second: flying2
   - first:
       213: 5570236976742247962
-    second: PistolMove_15
+    second: start_falling0
   - first:
       213: 8683881924792254723
-    second: PistolMove_16
+    second: start_falling1
   - first:
       213: 6999019233261573412
-    second: PistolMove_17
+    second: start_falling2
   - first:
       213: -2272666096418177661
-    second: PistolMove_18
+    second: start_falling3
   - first:
       213: -1190360876869427190
-    second: PistolMove_19
+    second: falling0
   - first:
       213: -2240077152155732405
-    second: PistolMove_20
+    second: falling1
   - first:
       213: 7515259972063832139
-    second: PistolMove_21
+    second: falling2
   - first:
       213: -6089559338969536477
-    second: PistolMove_22
+    second: falling3
   - first:
       213: -2988617736287876727
-    second: PistolMove_23
+    second: falling4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -189,7 +189,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 78
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -239,11 +239,35 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PistolMove_0
+      name: running0
       rect:
         serializedVersion: 2
         x: 0
@@ -251,7 +275,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -264,7 +288,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_1
+      name: running1
       rect:
         serializedVersion: 2
         x: 225
@@ -272,7 +296,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -285,7 +309,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_2
+      name: running2
       rect:
         serializedVersion: 2
         x: 450
@@ -293,7 +317,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -306,7 +330,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_3
+      name: running3
       rect:
         serializedVersion: 2
         x: 675
@@ -314,7 +338,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -327,15 +351,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_4
+      name: running4
       rect:
         serializedVersion: 2
-        x: 900
+        x: 898
         y: 480
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -348,7 +372,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_5
+      name: running5
       rect:
         serializedVersion: 2
         x: 1125
@@ -356,7 +380,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -369,7 +393,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_6
+      name: running6
       rect:
         serializedVersion: 2
         x: 1350
@@ -377,7 +401,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -390,7 +414,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_7
+      name: running7
       rect:
         serializedVersion: 2
         x: 1575
@@ -398,7 +422,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -411,7 +435,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_8
+      name: start_flying0
       rect:
         serializedVersion: 2
         x: 0
@@ -419,7 +443,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -432,15 +456,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_9
+      name: start_flying1
       rect:
         serializedVersion: 2
         x: 225
-        y: 260
+        y: 258
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -453,7 +477,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_10
+      name: start_flying2
       rect:
         serializedVersion: 2
         x: 450
@@ -461,7 +485,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -474,7 +498,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_11
+      name: start_flying3
       rect:
         serializedVersion: 2
         x: 675
@@ -482,7 +506,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -495,7 +519,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_12
+      name: flying0
       rect:
         serializedVersion: 2
         x: 900
@@ -503,7 +527,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -516,7 +540,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_13
+      name: flying1
       rect:
         serializedVersion: 2
         x: 1125
@@ -524,7 +548,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -537,7 +561,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_14
+      name: flying2
       rect:
         serializedVersion: 2
         x: 1350
@@ -545,7 +569,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -558,7 +582,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_15
+      name: start_falling0
       rect:
         serializedVersion: 2
         x: 1575
@@ -566,7 +590,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -579,7 +603,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_16
+      name: start_falling1
       rect:
         serializedVersion: 2
         x: 0
@@ -587,7 +611,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -600,7 +624,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_17
+      name: start_falling2
       rect:
         serializedVersion: 2
         x: 225
@@ -608,7 +632,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -621,7 +645,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_18
+      name: start_falling3
       rect:
         serializedVersion: 2
         x: 450
@@ -629,7 +653,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -642,7 +666,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_19
+      name: falling0
       rect:
         serializedVersion: 2
         x: 675
@@ -650,7 +674,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -663,7 +687,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_20
+      name: falling1
       rect:
         serializedVersion: 2
         x: 900
@@ -671,7 +695,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -684,7 +708,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_21
+      name: falling2
       rect:
         serializedVersion: 2
         x: 1125
@@ -692,7 +716,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -705,7 +729,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_22
+      name: falling3
       rect:
         serializedVersion: 2
         x: 1350
@@ -713,7 +737,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -726,7 +750,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PistolMove_23
+      name: falling4
       rect:
         serializedVersion: 2
         x: 1575
@@ -734,7 +758,7 @@ TextureImporter:
         width: 225
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
