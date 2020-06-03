@@ -13,11 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask roof;
     
-    //Weapon variables
-    [SerializeField] private float fireRate = 0.3F;
-    
     //UI Singletons
-    private BulletTextSingleton bulletsText;
     private CoinsTextSingleton coinsText;
     
     //Game variables
@@ -65,9 +61,8 @@ public class PlayerController : MonoBehaviour
         energyBar.SetMaxEnergy(maxEnergy);
         
         playerItemsState = PlayerItemsState.Instance;
-        bulletsText = BulletTextSingleton.SharedInstance;
+     
         coinsText = CoinsTextSingleton.SharedInstance;
-        bulletsText.SetBullets(playerItemsState.CurrentBullets);
         coinsText.SetCoins(playerItemsState.CurrentCoins);
     }  
     
@@ -154,20 +149,6 @@ public class PlayerController : MonoBehaviour
         currentEnergy -= energyToLose;
         energyBar.SetEnergy(currentEnergy);
     }
-    public void AddAmmo(int amount)
-    {
-        bulletsText = BulletTextSingleton.SharedInstance;
-        playerItemsState = PlayerItemsState.Instance;
-        if (playerItemsState.CurrentBullets < playerItemsState.MaxBullets)
-        {
-            playerItemsState.CurrentBullets += amount;
-            if (playerItemsState.CurrentBullets > playerItemsState.MaxBullets)
-            {
-                playerItemsState.CurrentBullets = playerItemsState.MaxBullets;
-            }
-        }
-        bulletsText.SetBullets(playerItemsState.CurrentBullets);
-    }
 
     public void AddCoin(int amount)
     {
@@ -177,18 +158,7 @@ public class PlayerController : MonoBehaviour
         coinsText.SetCoins(playerItemsState.CurrentCoins);
     }
     
-    public void ReduceAmmo(int amount)
-    {
-        playerItemsState.CurrentBullets = playerItemsState.CurrentBullets - amount;
-        bulletsText.SetBullets(playerItemsState.CurrentBullets);
-    }
     public LayerMask Ground => ground;
 
     public LayerMask Roof => roof;
-
-    public float FireRate => fireRate;
-
-    public int MaxBullets => playerItemsState.MaxBullets;
-
-    public int CurrentBullets => playerItemsState.CurrentBullets;
 }

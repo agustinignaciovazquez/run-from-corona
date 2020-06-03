@@ -8,7 +8,7 @@ public class BulletPickupItem : AbstractPickupItem
 
     public override void OnPickup()
     {
-        PlayerController.AddAmmo(pickupQuantity);
+        PlayerController.GetComponentInChildren<WeaponController>().AddAmmo(pickupQuantity);
     }
 
     public override void OnPickupAnimation()
