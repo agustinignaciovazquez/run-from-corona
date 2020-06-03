@@ -19,20 +19,20 @@ public class DifferentLevelsBackground : ScrollingBackground
     [SerializeField] private List<ScenarioBackground> backgrounds;
     private int indexCurrentBackground;
     private float distanceToNextBackground;
-    private float totalDistance;
+    //private float totalDistance;
     private SpriteRenderer spriteRenderer;
     private bool shouldTransition;
     protected override void Awake()
     {
         base.Awake();
-        totalDistance = GetTotalDistance();
+        //totalDistance = GetTotalDistance();
         spriteRenderer = GetComponent<SpriteRenderer>();
         indexCurrentBackground = 0;
         shouldTransition = false;
         distanceToNextBackground = backgrounds[indexCurrentBackground].DistanceToShow;
     }
 
-    private float GetTotalDistance()
+   /* private float GetTotalDistance()
     {
         float distance = 0;
         
@@ -42,13 +42,14 @@ public class DifferentLevelsBackground : ScrollingBackground
         }
         
         return distance;
-    }
+    }*/
+   
     protected override void RepositionBackground(Transform backgroundTransform)
     {
         base.RepositionBackground(backgroundTransform);
         float distance = distanceReference.transform.position.x * -1f;
-        print(distance);
-        print(distanceToNextBackground);
+        //Update player distance
+        PlayerController.DistanceTraveled = distance;
         if (distance > distanceToNextBackground)
         {
             ChangeBackground();

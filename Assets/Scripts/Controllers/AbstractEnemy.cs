@@ -10,8 +10,8 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
     private PlayerController PlayerController;
     private float ScrollVelocity;
     private ObjectPoolSpawner objectPoolSpawner;
+    private GameObject player;
     
-    [SerializeField] private GameObject player;
     [SerializeField] private float infectProbability = 0.99f;
     [SerializeField] private float factorProportionalSpeed = 0.9f;
     
@@ -25,6 +25,7 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         //Initializate variables
         Random = RandomSingleton.GetSharedInstance;
         Rb = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
         PlayerController = player.GetComponent<PlayerController>();
         objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
     }

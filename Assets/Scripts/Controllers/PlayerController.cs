@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask roof;
-    
+    [SerializeField] private EnergyBar energyBar;
+
     //UI Singletons
     private CoinsTextSingleton coinsText;
     
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float currentEnergy;
     [SerializeField] private float energyRegen = 0.3f;
     [SerializeField] private float energySpend = 0.3f;
-    [SerializeField] private EnergyBar energyBar;
+    
     
     //FSM
     private enum State
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     private int directionTrigger = 0;
     private bool flyTrigger = false;
-
+    private float distanceTraveled = 0;
     private static readonly int StateAnimId = Animator.StringToHash("State");
     
     //private static readonly int Walking = Animator.StringToHash("Walking");
@@ -127,8 +128,20 @@ public class PlayerController : MonoBehaviour
 
     public float GetScrollingSpeed()
     {
-        return scrollingSpeed;
+        //TODO FIX THIS
+        if(distanceTraveled < 1000f)
+            return scrollingSpeed;
+        if(distanceTraveled < 8000f)
+            return scrollingSpeed * distanceTraveled / 1000f;
+        return (float) Math.Log(distanceTraveled) * scrollingSpeed;
     }
+
+    public float DistanceTraveled
+    {
+        get => distanceTraveled;
+        set => distanceTraveled = value;
+    }
+
     public float GetInfectionDefense()
     {
         return infectionDefense;

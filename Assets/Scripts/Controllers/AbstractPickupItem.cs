@@ -9,8 +9,7 @@ public abstract class AbstractPickupItem : MonoBehaviour, ObjectPoolInterface
     private float scrollVelocity;
     private ObjectPoolSpawner objectPoolSpawner;
     private PlayerController playerController;
-    
-    [SerializeField] private GameObject player;
+    private GameObject player;
     
     [SerializeField] private float factorProportionalSpeed = 1.0f;
     
@@ -20,6 +19,7 @@ public abstract class AbstractPickupItem : MonoBehaviour, ObjectPoolInterface
         //Initializate variables
         random = RandomSingleton.GetSharedInstance;
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
         playerController = player.GetComponent<PlayerController>();
         objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
     }
