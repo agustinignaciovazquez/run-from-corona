@@ -12,12 +12,12 @@ public class Mute : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("MuteSound") == 1)
         {
-            Debug.Log("ACA " + PlayerPrefs.GetInt("MuteSound"));
+     //       Debug.Log("ACA " + PlayerPrefs.GetInt("MuteSound"));
             AudioListener.pause = true;
         }
         else
         {
-            Debug.Log("ACA " + PlayerPrefs.GetInt("MuteSound"));
+//            Debug.Log("ACA " + PlayerPrefs.GetInt("MuteSound"));
         }
        
     }
