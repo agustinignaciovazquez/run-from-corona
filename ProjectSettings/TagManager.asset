@@ -18,6 +18,7 @@ TagManager:
   - People
   - ShopItem
   - CoinPickup
+  - Background
   layers:
   - Default
   - TransparentFX

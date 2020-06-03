@@ -19,7 +19,7 @@ public class OutboundControllerAll : MonoBehaviour
     {
         //Outbounds
         //Delete other object unless is player
-        if(!other.CompareTag("Player"))
+        if(!(other.CompareTag("Player") || other.CompareTag("Background")))
             other.gameObject.SetActive(false);
 
     }

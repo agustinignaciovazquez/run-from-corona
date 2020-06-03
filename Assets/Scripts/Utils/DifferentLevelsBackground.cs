@@ -21,12 +21,14 @@ public class DifferentLevelsBackground : ScrollingBackground
     private float distanceToNextBackground;
     private float totalDistance;
     private SpriteRenderer spriteRenderer;
+    private bool shouldTransition;
     protected override void Awake()
     {
         base.Awake();
         totalDistance = GetTotalDistance();
         spriteRenderer = GetComponent<SpriteRenderer>();
         indexCurrentBackground = 0;
+        shouldTransition = false;
         distanceToNextBackground = backgrounds[indexCurrentBackground].DistanceToShow;
     }
 
@@ -59,6 +61,21 @@ public class DifferentLevelsBackground : ScrollingBackground
         ScenarioBackground nextBackground = backgrounds[nextIndex];
         spriteRenderer.sprite = nextBackground.BackgroundImage;
         indexCurrentBackground = nextIndex;
+        shouldTransition = true;
         distanceToNextBackground += nextBackground.DistanceToShow;
+    }
+    protected void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player") && shouldTransition)
+        {
+            DoTransition();
+            shouldTransition = false;
+        }
+    }
+
+    private void DoTransition()
+    {
+        //TODO Hacer transicion aca
+        print("Transicion aca");
     }
 }
