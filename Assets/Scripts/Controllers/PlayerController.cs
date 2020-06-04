@@ -170,7 +170,13 @@ public class PlayerController : MonoBehaviour
         playerItemsState.CurrentCoins += amount;
         coinsText.SetCoins(playerItemsState.CurrentCoins);
     }
-    
+
+    public float ScrollingSpeed
+    {
+        get => scrollingSpeed;
+        set => scrollingSpeed = value;
+    }
+
     public LayerMask Ground => ground;
 
     public LayerMask Roof => roof;
