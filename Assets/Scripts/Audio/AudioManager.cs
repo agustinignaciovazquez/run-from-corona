@@ -50,4 +50,29 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
     
+    public void Mute(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+
+        s.source.mute = true;
+    }
+    
+    public void Unmute(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+
+        s.source.mute = false;
+    }
+
+    
 }

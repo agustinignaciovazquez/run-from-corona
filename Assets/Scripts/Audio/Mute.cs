@@ -12,39 +12,54 @@ public class Mute : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("MuteSound") == 1)
         {
-     //       Debug.Log("ACA " + PlayerPrefs.GetInt("MuteSound"));
             AudioListener.pause = true;
         }
-        else
+
+        if (PlayerPrefs.GetInt("MuteMusic") == 1)
         {
-//            Debug.Log("ACA " + PlayerPrefs.GetInt("MuteSound"));
+            FindObjectOfType<AudioManager>().Mute("Theme");
         }
-       
+
     }
     
     public void ToggleSound()
     {
         AudioListener.pause = !AudioListener.pause;
-        ToggleIndicator(muteButton);
+        ToggleIndicator();
     }
 
     
     public void MuteMusic()
     {
-        PlayerPrefs.SetInt("MuteMusic", 0);
+        if (PlayerPrefs.GetInt("MuteMusic") == 0)
+        {
+            FindObjectOfType<AudioManager>().Mute("Theme");
+            PlayerPrefs.SetInt("MuteMusic", 1);
+            muteMusicButton.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Unmute("Theme");
+            PlayerPrefs.SetInt("MuteMusic", 0);
+            muteMusicButton.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        
+        
     }
     
-    public void ToggleIndicator(Button button)
+    public void ToggleIndicator()
     {
         if (!AudioListener.pause){
-            button.transform.GetChild(0).gameObject.SetActive(false);
+            muteButton.transform.GetChild(0).gameObject.SetActive(false);
             PlayerPrefs.SetInt("MuteSound",0);
         }
         else{
-            button.transform.GetChild(0).gameObject.SetActive(true);
+            muteButton.transform.GetChild(0).gameObject.SetActive(true);
             PlayerPrefs.SetInt("MuteSound",1);
         }
         
     }
+
+   
     
 }

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633b1d70a63e04b7c9dd9472a4e2ad42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1732572657749238518, guid: 0476426d12a39f84b88ecd31ac7b89b3, type: 3}
   factorProportionalSpeed: 1
   pickupQuantity: 1
 --- !u!1001 &8173863074057435129
@@ -25,7 +24,7 @@ PrefabInstance:
     - target: {fileID: 5068371464476324724, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
       propertyPath: m_Name
-      value: CoinPickup
+      value: CoinPickupItem
       objectReference: {fileID: 0}
     - target: {fileID: 5068371464476324724, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
@@ -35,12 +34,12 @@ PrefabInstance:
     - target: {fileID: 5068371464476324730, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: 5068371464476324730, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.1704
       objectReference: {fileID: 0}
     - target: {fileID: 5068371464476324730, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
@@ -87,11 +86,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5068371464476324730, guid: 8b414a665cea6df43b58a806352cdf37,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1066129
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068371464476324730, guid: 8b414a665cea6df43b58a806352cdf37,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1066129
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068371464476324730, guid: 8b414a665cea6df43b58a806352cdf37,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.1066129
+      objectReference: {fileID: 0}
     - target: {fileID: 5068371464476324731, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9fa4c36845b65844fb205703725a3922,
+      objectReference: {fileID: 21300000, guid: 8fa919c57e43ec244b928f202220f054,
         type: 3}
     - target: {fileID: 5976862383002511465, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
@@ -101,12 +115,12 @@ PrefabInstance:
     - target: {fileID: 5976862383002511465, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.37
+      value: 11.01
       objectReference: {fileID: 0}
     - target: {fileID: 5976862383002511465, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.94
+      value: 8.26
       objectReference: {fileID: 0}
     - target: {fileID: 5976862383002511465, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}

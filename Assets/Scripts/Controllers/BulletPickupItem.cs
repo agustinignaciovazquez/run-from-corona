@@ -8,6 +8,7 @@ public class BulletPickupItem : AbstractPickupItem
 
     public override void OnPickup()
     {
+        FindObjectOfType<AudioManager>().Play("Reload");
         PlayerController.GetComponentInChildren<WeaponController>().AddAmmo(pickupQuantity);
     }
 

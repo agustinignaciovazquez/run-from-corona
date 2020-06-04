@@ -8,6 +8,7 @@ public class CoinPickupItem : AbstractPickupItem
 
     public override void OnPickup()
     {
+        FindObjectOfType<AudioManager>().Play("Coin");
         PlayerController.AddCoin(pickupQuantity);
     }
 
