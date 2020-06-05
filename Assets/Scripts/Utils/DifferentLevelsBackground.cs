@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class DifferentLevelsBackground : ScrollingBackground
@@ -20,14 +18,16 @@ public class DifferentLevelsBackground : ScrollingBackground
     [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private GameObject distanceReference;
     [SerializeField] private List<ScenarioBackground> backgrounds;
+
     private int indexCurrentBackground;
     private float distanceToNextBackground;
-    //private float totalDistance;
     private SpriteRenderer spriteRenderer;
     private bool shouldTransition;
     private bool fadeIn;
+
     [SerializeField] private GameObject teleportEffect;
     [SerializeField] private GameObject stageText;
+
     protected override void Awake()
     {
         base.Awake();
@@ -67,11 +67,17 @@ public class DifferentLevelsBackground : ScrollingBackground
     private void ChangeBackground()
     {
         int nextIndex = (indexCurrentBackground + 1) % backgrounds.Count;
+        if (nextIndex != PlayerController.BackgroundIndex)
+        {
+            PlayerController.BackgroundIndex = nextIndex;
+            shouldTransition = true;
+            fadeIn = true;
+        }
+      
         ScenarioBackground nextBackground = backgrounds[nextIndex];
         spriteRenderer.sprite = nextBackground.BackgroundImage;
         indexCurrentBackground = nextIndex;
-        shouldTransition = true;
-        fadeIn = true;
+        
         distanceToNextBackground += nextBackground.DistanceToShow;
     }
     protected void OnTriggerEnter2D(Collider2D other)
@@ -84,7 +90,6 @@ public class DifferentLevelsBackground : ScrollingBackground
 
     private void DoTransition()
     {
-        Debug.Log("SCENE TRANSITION");
         if (fadeIn)
         {
             PlayerController.ScrollingSpeed *= 3;
