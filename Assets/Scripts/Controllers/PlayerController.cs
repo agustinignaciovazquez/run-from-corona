@@ -12,25 +12,14 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask roof;
-    [SerializeField] private EnergyBar energyBar;
-
+    [SerializeField] private JetpackController jetpackController;
+    
     //UI Singletons
     private CoinsTextSingleton coinsText;
     
-    //Game variables
-    [SerializeField] private float moveSpeed = 3f;
+    //Player variables
     [SerializeField] private float scrollingSpeed = 4f;
-    [SerializeField] private float rotationSpeed = 2f;
-    [SerializeField] private float jetpackForce = 40f;
-    [SerializeField] private float normalizeRotationSpeed = 3f;
     [SerializeField] private float infectionDefense = 0.01f;
-    
-    //Jetpack Energy Vars
-    [SerializeField] private float maxEnergy = 100f;
-    [SerializeField] private float currentEnergy;
-    [SerializeField] private float energyRegen = 0.3f;
-    [SerializeField] private float energySpend = 0.3f;
-    
     
     //FSM
     private enum State
@@ -42,8 +31,10 @@ public class PlayerController : MonoBehaviour
     private State state = State.Running;
 
     private int directionTrigger = 0;
+    private int backgroundIndex;
     private bool flyTrigger = false;
     private float distanceTraveled = 0;
+   
     private static readonly int StateAnimId = Animator.StringToHash("State");
     
     //private static readonly int Walking = Animator.StringToHash("Walking");
@@ -57,12 +48,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
-
-        currentEnergy = maxEnergy;
-        energyBar.SetMaxEnergy(maxEnergy);
         
         playerItemsState = PlayerItemsState.Instance;
-     
+   
         coinsText = CoinsTextSingleton.SharedInstance;
         coinsText.SetCoins(playerItemsState.CurrentCoins);
     }  
@@ -72,47 +60,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         directionTrigger = (int)Input.GetAxis("Horizontal");
-        flyTrigger = Input.GetButton("Jump") && currentEnergy >= 0.3f;
+        flyTrigger = Input.GetButton("Jump") && jetpackController.CurrentEnergy >= 0.3f;
         SetPlayerState();
     }
-
-    void FixedUpdate()
-    {
-        SetPlayerMovement();
-    }
-
-    private void SetPlayerMovement()
-    {
-        if (flyTrigger)
-        {
-            ReduceEnergy(energySpend);
-            //If player not touching ground we can rotate according to movement
-            if (!coll.IsTouchingLayers(ground))
-            {
-                RotateFlyingPlayer();
-            }
-            //Jetpack Force according to rotation and others
-            rb.AddForce( transform.rotation * Vector2.up * jetpackForce);
-        }
-        else
-        {
-            RegenerateEnergy(energyRegen); 
-        }
-        
-        //Normalize the rotation
-        transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.identity, Time.deltaTime * normalizeRotationSpeed);
-    }
-    private void RotateFlyingPlayer()
-    {
-        //Player not touching the ground, we can rotate 
-            Vector3 playerRotation = new Vector3(0,0,-directionTrigger * rotationSpeed);
-            transform.Rotate(playerRotation);
-            //Player not touching ground, we can move to the sides
-            //Set player Velocity
-            rb.velocity = new Vector2( directionTrigger * moveSpeed, rb.velocity.y);
-        
-    }
-    
     private void SetPlayerState()
     {
         if (coll.IsTouchingLayers(ground))
@@ -146,23 +96,7 @@ public class PlayerController : MonoBehaviour
     {
         return infectionDefense;
     }
-
-    void RegenerateEnergy(float energyToRegen)
-    {
-        if (currentEnergy < maxEnergy)
-        {
-            currentEnergy += energyToRegen;
-            energyBar.SetEnergy(currentEnergy);
-        }
-        
-    }
-
-    void ReduceEnergy(float energyToLose)
-    {
-        currentEnergy -= energyToLose;
-        energyBar.SetEnergy(currentEnergy);
-    }
-
+    
     public void AddCoin(int amount)
     {
         coinsText = CoinsTextSingleton.SharedInstance;
@@ -176,6 +110,17 @@ public class PlayerController : MonoBehaviour
         get => scrollingSpeed;
         set => scrollingSpeed = value;
     }
+    public int BackgroundIndex
+    {
+        get => backgroundIndex;
+        set => backgroundIndex = value;
+    }
+
+    public int DirectionTrigger => directionTrigger;
+
+    public bool FlyTrigger => flyTrigger;
+
+    public static int StateAnimId1 => StateAnimId;
 
     public LayerMask Ground => ground;
 
