@@ -1,5 +1,5 @@
-﻿using UnityEngine.Audio;
-using System;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -8,6 +8,10 @@ public class AudioManager : MonoBehaviour
 
     
     public static AudioManager instance;
+
+    private static bool keepFadeIn;
+    private static bool keepFadeOut;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -36,7 +40,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Play("Theme");
+        Play("Airport");
     }
 
     public void Play(string name)
@@ -72,6 +76,43 @@ public class AudioManager : MonoBehaviour
         }
 
         s.source.mute = false;
+    }
+
+    public IEnumerator FadeIn(string name, float speed, float maxVolume)
+    {
+        keepFadeIn = true;
+        keepFadeOut = false;
+        
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.Play();
+        s.volume = 0;
+        float audioVolume = s.volume;
+        while (s.volume < maxVolume && keepFadeIn)
+        {
+            Debug.Log("VOLUME= " + audioVolume);
+            audioVolume += speed;
+            s.volume = audioVolume;
+            yield return null;
+        }
+        
+    }
+    
+   
+    public IEnumerator FadeOut(string name, float speed)
+    {
+        keepFadeIn = false;
+        keepFadeOut = true;
+        
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        float audioVolume = s.volume;
+        while (s.volume >= speed && keepFadeOut)
+        {
+            audioVolume -= speed;
+            s.volume = audioVolume;
+            yield return null;
+        }
+        s.source.Stop();
+
     }
 
     

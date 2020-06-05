@@ -2527,11 +2527,21 @@ MonoBehaviour:
   backgrounds:
   - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
     distanceToShow: 75
-  - backgroundImage: {fileID: 21300000, guid: 3f17b292e05cc4cfd89d8ee69fda83e4, type: 3}
-    distanceToShow: 75
-  - backgroundImage: {fileID: 21300000, guid: 7142655d9dcb14c7b9f5bfd4afe957a3, type: 3}
-    distanceToShow: 75
   - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 45c017c7e21fd48439354a2ace66be1d, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: b24a79397ad25df419b5316a0d2e4b56, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 119024040bcc46a42b331014d04c1ec5, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: d5a2cb3bba6c5284ca902779b8873197, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: e0bddf50bd6fcc74785b815d7ecd5dab, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 9c10d371c22a02f4fb72745476b2204c, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: f558537aa599c6d49ab534a6547aabd9, type: 3}
     distanceToShow: 75
   teleportEffect: {fileID: 349510876}
   stageText: {fileID: 1733151731}
@@ -5646,11 +5656,21 @@ MonoBehaviour:
   backgrounds:
   - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
     distanceToShow: 75
-  - backgroundImage: {fileID: 21300000, guid: 3f17b292e05cc4cfd89d8ee69fda83e4, type: 3}
-    distanceToShow: 75
-  - backgroundImage: {fileID: 21300000, guid: 7142655d9dcb14c7b9f5bfd4afe957a3, type: 3}
-    distanceToShow: 75
   - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 45c017c7e21fd48439354a2ace66be1d, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: b24a79397ad25df419b5316a0d2e4b56, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 119024040bcc46a42b331014d04c1ec5, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: d5a2cb3bba6c5284ca902779b8873197, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: e0bddf50bd6fcc74785b815d7ecd5dab, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 9c10d371c22a02f4fb72745476b2204c, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: f558537aa599c6d49ab534a6547aabd9, type: 3}
     distanceToShow: 75
   teleportEffect: {fileID: 349510876}
   stageText: {fileID: 1733151731}

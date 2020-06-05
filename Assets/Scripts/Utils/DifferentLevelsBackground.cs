@@ -95,6 +95,9 @@ public class DifferentLevelsBackground : ScrollingBackground
             PlayerController.ScrollingSpeed *= 3;
             sceneTransition.FadeOut();
             fadeIn = false;
+            string songName = backgrounds[indexCurrentBackground - 1].BackgroundImage.name;
+            Debug.Log(songName);
+            StartCoroutine(FindObjectOfType<AudioManager>().FadeOut(songName,0.1f));
             teleportEffect.SetActive(true);
             stageText.SetActive(true);
             StageTextSingleton stageTextSingleton = StageTextSingleton.SharedInstance;
@@ -102,6 +105,9 @@ public class DifferentLevelsBackground : ScrollingBackground
         }
         else
         {
+            string songName = backgrounds[indexCurrentBackground].BackgroundImage.name;
+            Debug.Log(songName);
+            StartCoroutine(FindObjectOfType<AudioManager>().FadeIn(songName,0.01f,0.15f));
             shouldTransition = false;
             sceneTransition.FadeIn();
             teleportEffect.SetActive(false);
