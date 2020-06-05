@@ -81,8 +81,9 @@ public class Spawner : MonoBehaviour
     void Update()
     {
         float distance = distanceReference.transform.position.x * -1f;
+        distance = (distance < 0)? 0 : distance;
         GameObject self = this.gameObject;
-        if(distance > nextSpawn)
+        if(distance >= nextSpawn)
         {
             SpawnItem item = SelectRandomItem(self, itemsToSpawn);
             if(item != null)

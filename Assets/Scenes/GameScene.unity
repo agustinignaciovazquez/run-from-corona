@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40999821}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.266667, y: 0, z: 0}
+  m_LocalPosition: {x: -15.264597, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -476,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91974946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.266667, y: 0, z: 0}
+  m_LocalPosition: {x: -10.264597, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -1740,7 +1740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592303574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.266666, y: 0, z: 0}
+  m_LocalPosition: {x: 10.264597, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -1989,20 +1989,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35de70dff54e24e46aca3172dd3d7928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 25
+  spawnDistance: 10
   distanceReference: {fileID: 698374720}
   itemsToSpawn:
   - spawnObject: {fileID: 987322702366524526, guid: e0f5afaa0d1fceb468e699fc9ce3d9ed,
       type: 3}
     spawnProbability: 0.15
-    stepX: 25
+    stepX: 5
     stepY: 0
     rangeN:
       minNum: 1
       maxNum: 2
     rangeX:
       minNum: 0
-      maxNum: 15
+      maxNum: 5
     rangeY:
       minNum: -4
       maxNum: 3
@@ -2015,7 +2015,7 @@ MonoBehaviour:
   - spawnObject: {fileID: 3323922870078609429, guid: 73f36cc8b6c6c1d49ac1a4c4d7662133,
       type: 3}
     spawnProbability: 0.15
-    stepX: 10
+    stepX: 5
     stepY: 0
     rangeN:
       minNum: 1
@@ -2035,7 +2035,7 @@ MonoBehaviour:
   - spawnObject: {fileID: 3788335378739105106, guid: cb023cb9cdfcb2d46adb9be6497a8702,
       type: 3}
     spawnProbability: 0.15
-    stepX: 10
+    stepX: 5
     stepY: 0
     rangeN:
       minNum: 1
@@ -2055,7 +2055,7 @@ MonoBehaviour:
   - spawnObject: {fileID: 3345001852889575039, guid: ae67d40e6b0df3446b1dff6a0c1dd67e,
       type: 3}
     spawnProbability: 0.15
-    stepX: 10
+    stepX: 5
     stepY: 0
     rangeN:
       minNum: 1
@@ -2075,7 +2075,7 @@ MonoBehaviour:
   - spawnObject: {fileID: 5617055414102719011, guid: 2cd4527000b130a45bed5ae5537fdb7f,
       type: 3}
     spawnProbability: 0.15
-    stepX: 10
+    stepX: 5
     stepY: 0
     rangeN:
       minNum: 1
@@ -2095,10 +2095,10 @@ MonoBehaviour:
   - spawnObject: {fileID: 4135407039766892246, guid: 6370efbff40d83e40b7b163ddbcf94af,
       type: 3}
     spawnProbability: 0.25
-    stepX: 10
+    stepX: 5
     stepY: 0
     rangeN:
-      minNum: 1
+      minNum: 0
       maxNum: 2
     rangeX:
       minNum: 0
@@ -2120,7 +2120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659182453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.7333326, y: -0.5, z: 0}
+  m_LocalPosition: {x: 23, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2138,8 +2138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e19dc1ace1fe4cf4a29f6f93e980565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchorType: 3
-  anchorOffset: {x: 5, y: 0, z: 0}
+  anchorType: 4
+  anchorOffset: {x: 10, y: 0, z: 0}
 --- !u!1 &698374720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,9 +2527,15 @@ MonoBehaviour:
   backgrounds:
   - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
     distanceToShow: 75
+<<<<<<< HEAD
   - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
     distanceToShow: 75
   - backgroundImage: {fileID: 21300000, guid: 45c017c7e21fd48439354a2ace66be1d, type: 3}
+=======
+  - backgroundImage: {fileID: 21300000, guid: 45c017c7e21fd48439354a2ace66be1d, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 9c10d371c22a02f4fb72745476b2204c, type: 3}
+>>>>>>> 91d67ae5f80cf2da209170a719e26d4ea298b47e
     distanceToShow: 75
   - backgroundImage: {fileID: 21300000, guid: b24a79397ad25df419b5316a0d2e4b56, type: 3}
     distanceToShow: 75
@@ -2542,6 +2548,10 @@ MonoBehaviour:
   - backgroundImage: {fileID: 21300000, guid: 9c10d371c22a02f4fb72745476b2204c, type: 3}
     distanceToShow: 75
   - backgroundImage: {fileID: 21300000, guid: f558537aa599c6d49ab534a6547aabd9, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 7142655d9dcb14c7b9f5bfd4afe957a3, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 3f17b292e05cc4cfd89d8ee69fda83e4, type: 3}
     distanceToShow: 75
   teleportEffect: {fileID: 349510876}
   stageText: {fileID: 1733151731}
@@ -3118,7 +3128,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 968392517}
+  - component: {fileID: 968392519}
   - component: {fileID: 968392518}
+  - component: {fileID: 968392520}
   m_Layer: 0
   m_Name: Jetpack
   m_TagString: Untagged
@@ -3162,6 +3174,69 @@ MonoBehaviour:
   jetpackForce: 40
   normalizeRotationSpeed: 3
   moveSpeed: 3
+--- !u!212 &968392519
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968392516}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1807681023
+  m_SortingLayer: 2
+  m_SortingOrder: 7
+  m_Sprite: {fileID: 703302884500171307, guid: 85ae31162a2d53d428b14403ec7eb1d0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.8846154, y: 2.8205128}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &968392520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968392516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2e3a51e2b9b45fd9d881cdfdf8e70e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteSheetName: DiamondJetpack
 --- !u!1 &986417192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3189,7 +3264,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986417192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.266666, y: 0, z: 0}
+  m_LocalPosition: {x: 11.264597, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -3833,7 +3908,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -4827,7 +4902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35de70dff54e24e46aca3172dd3d7928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 25
+  spawnDistance: 10
   distanceReference: {fileID: 698374720}
   itemsToSpawn:
   - spawnObject: {fileID: 6212343786186564815, guid: d1185fc78df9b48d99ed932b1b09eb3b,
@@ -4878,7 +4953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623559072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.7333326, y: -0.5, z: 0}
+  m_LocalPosition: {x: 23, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4896,8 +4971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e19dc1ace1fe4cf4a29f6f93e980565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anchorType: 3
-  anchorOffset: {x: 5, y: 0, z: 0}
+  anchorType: 4
+  anchorOffset: {x: 10, y: 0, z: 0}
 --- !u!1 &1668957647
 GameObject:
   m_ObjectHideFlags: 0
@@ -5567,8 +5642,8 @@ GameObject:
   - component: {fileID: 2101879990}
   - component: {fileID: 2101879987}
   - component: {fileID: 2101879988}
-  - component: {fileID: 2101879989}
   - component: {fileID: 2101879991}
+  - component: {fileID: 2101879989}
   m_Layer: 0
   m_Name: Background_Duplicate
   m_TagString: Background
@@ -5656,9 +5731,15 @@ MonoBehaviour:
   backgrounds:
   - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
     distanceToShow: 75
+<<<<<<< HEAD
   - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
     distanceToShow: 75
   - backgroundImage: {fileID: 21300000, guid: 45c017c7e21fd48439354a2ace66be1d, type: 3}
+=======
+  - backgroundImage: {fileID: 21300000, guid: 45c017c7e21fd48439354a2ace66be1d, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 9c10d371c22a02f4fb72745476b2204c, type: 3}
+>>>>>>> 91d67ae5f80cf2da209170a719e26d4ea298b47e
     distanceToShow: 75
   - backgroundImage: {fileID: 21300000, guid: b24a79397ad25df419b5316a0d2e4b56, type: 3}
     distanceToShow: 75
@@ -5671,6 +5752,10 @@ MonoBehaviour:
   - backgroundImage: {fileID: 21300000, guid: 9c10d371c22a02f4fb72745476b2204c, type: 3}
     distanceToShow: 75
   - backgroundImage: {fileID: 21300000, guid: f558537aa599c6d49ab534a6547aabd9, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 7142655d9dcb14c7b9f5bfd4afe957a3, type: 3}
+    distanceToShow: 75
+  - backgroundImage: {fileID: 21300000, guid: 3f17b292e05cc4cfd89d8ee69fda83e4, type: 3}
     distanceToShow: 75
   teleportEffect: {fileID: 349510876}
   stageText: {fileID: 1733151731}
@@ -5964,7 +6049,7 @@ PrefabInstance:
     - target: {fileID: 1732572657749238525, guid: 0476426d12a39f84b88ecd31ac7b89b3,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1732572658098076276, guid: 0476426d12a39f84b88ecd31ac7b89b3,
         type: 3}

@@ -5,17 +5,7 @@ using UnityEngine;
 
 public class VirusEnemy : AbstractEnemy
 {
-    protected override void Awake()
-    {
-        base.Awake();
-    }
-
-    protected override void Update()
-    {
-        base.Update();
-    }
-    
-   protected override void OnTriggerEnter2D(Collider2D other)
+    protected override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
         //People Collision
@@ -24,6 +14,8 @@ public class VirusEnemy : AbstractEnemy
             //TODO contagiar personas
             print("Toque a persona");
         }
+        if(other.gameObject.CompareTag("Covid"))
+            other.gameObject.SetActive(false);
     }
 
     public override void OnObjectSpawn()
