@@ -17,8 +17,6 @@ public class DifferentLevelsBackground : ScrollingBackground
 
         public float DistanceToShow => distanceToShow / 2; //Maths so distance to show really works as expected xd
     }
-
-        
     [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private GameObject distanceReference;
     [SerializeField] private List<ScenarioBackground> backgrounds;
@@ -28,7 +26,8 @@ public class DifferentLevelsBackground : ScrollingBackground
     private SpriteRenderer spriteRenderer;
     private bool shouldTransition;
     private bool fadeIn;
-    [SerializeField] private GameObject teleportEffect; 
+    [SerializeField] private GameObject teleportEffect;
+    [SerializeField] private GameObject stageText;
     protected override void Awake()
     {
         base.Awake();
@@ -38,6 +37,7 @@ public class DifferentLevelsBackground : ScrollingBackground
         shouldTransition = false;
         fadeIn = false;
         distanceToNextBackground = backgrounds[indexCurrentBackground].DistanceToShow;
+        
     }
 
    /* private float GetTotalDistance()
@@ -88,9 +88,12 @@ public class DifferentLevelsBackground : ScrollingBackground
         if (fadeIn)
         {
             PlayerController.ScrollingSpeed *= 3;
-            teleportEffect.SetActive(true);
             sceneTransition.FadeOut();
             fadeIn = false;
+            teleportEffect.SetActive(true);
+            stageText.SetActive(true);
+            StageTextSingleton stageTextSingleton = StageTextSingleton.SharedInstance;
+            stageTextSingleton.AddStage();
         }
         else
         {
@@ -98,6 +101,7 @@ public class DifferentLevelsBackground : ScrollingBackground
             sceneTransition.FadeIn();
             teleportEffect.SetActive(false);
             PlayerController.ScrollingSpeed /= 3;
+            stageText.SetActive(false);
         }
         //sceneTransition.FadeOut();
     }
