@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     
     //Player variables
     [SerializeField] private float scrollingSpeed = 4f;
+    [SerializeField] private float scrollingBackgroundSpeed = 4f;
     [SerializeField] private float infectionDefense = 0.01f;
     
     //FSM
@@ -79,10 +80,10 @@ public class PlayerController : MonoBehaviour
     public float GetBackgroundScrollSpeed()
     {
         if(distanceTraveled < 1000f)
-            return scrollingSpeed;
+            return scrollingBackgroundSpeed;
         if(distanceTraveled < 8000f)
-            return scrollingSpeed * distanceTraveled / 1000f;
-        return scrollingSpeed * 8f;
+            return scrollingBackgroundSpeed * distanceTraveled / 1000f;
+        return scrollingBackgroundSpeed * 8f;
     }
     
     public float GetScrollingSpeed()
@@ -119,6 +120,12 @@ public class PlayerController : MonoBehaviour
     public float ScrollingSpeed
     {
         get => scrollingSpeed;
+    }
+    
+    public float ScrollingBackgroundSpeed
+    {
+        get => scrollingBackgroundSpeed;
+        set => scrollingBackgroundSpeed = value;
     }
     public int BackgroundIndex
     {

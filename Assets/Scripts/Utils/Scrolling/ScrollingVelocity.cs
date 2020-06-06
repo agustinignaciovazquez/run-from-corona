@@ -8,7 +8,7 @@ public class ScrollingVelocity : MonoBehaviour
     [SerializeField] private float velocityToPlayerRate = 1f;
     
     private Rigidbody2D rb;
-    protected float scrollVelocity;
+    private float scrollVelocity;
 
     // Start is called before the first frame update
     protected virtual void Awake()
