@@ -33,13 +33,13 @@ public class Mute : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("MuteMusic") == 0)
         {
-            FindObjectOfType<AudioManager>().Mute("Theme");
+            FindObjectOfType<AudioManager>().MuteAudioMixerGroupMusic();
             PlayerPrefs.SetInt("MuteMusic", 1);
             muteMusicButton.transform.GetChild(0).gameObject.SetActive(true);
         }
         else
         {
-            FindObjectOfType<AudioManager>().Unmute("Theme");
+            FindObjectOfType<AudioManager>().UnmuteAudioMixerGroupMusic();
             PlayerPrefs.SetInt("MuteMusic", 0);
             muteMusicButton.transform.GetChild(0).gameObject.SetActive(false);
         }

@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
-
     
     public static AudioManager instance;
-
+    
+    public AudioMixer AudioMixer;
     private static bool keepFadeIn;
     private static bool keepFadeOut;
     
@@ -35,6 +36,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.outputAudioMixerGroup = s.AudioMixerGroup;
         }
     }
 
@@ -78,6 +80,18 @@ public class AudioManager : MonoBehaviour
         s.source.mute = false;
     }
 
+    public void MuteAudioMixerGroupMusic()
+    {
+        AudioMixer.SetFloat("MusicVolume", -80f);
+    }
+    
+    public void UnmuteAudioMixerGroupMusic()
+    {
+        AudioMixer.SetFloat("MusicVolume", 0f);
+    }
+
+    
+    
     public IEnumerator FadeIn(string name, float speed, float maxVolume)
     {
         keepFadeIn = true;
