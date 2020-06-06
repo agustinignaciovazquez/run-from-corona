@@ -110,6 +110,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8214384, guid: 42c454f3e16ef2e489f63509b4660bd3, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5688074749371544403, guid: b0e8957ec937e894cb958fcdad442ee2,
+        type: 2}
+    - target: {fileID: 8214384, guid: 42c454f3e16ef2e489f63509b4660bd3, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 19826506, guid: 42c454f3e16ef2e489f63509b4660bd3, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
       value: 0.0001
