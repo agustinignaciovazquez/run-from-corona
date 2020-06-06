@@ -76,14 +76,25 @@ public class PlayerController : MonoBehaviour
         anim.SetInteger(StateAnimId, (int)state);
     }
 
-    public float GetScrollingSpeed()
+    public float GetBackgroundScrollSpeed()
     {
-        //TODO FIX THIS
         if(distanceTraveled < 1000f)
             return scrollingSpeed;
         if(distanceTraveled < 8000f)
             return scrollingSpeed * distanceTraveled / 1000f;
-        return (float) Math.Log(distanceTraveled) * scrollingSpeed;
+        return scrollingSpeed * 8f;
+    }
+    
+    public float GetScrollingSpeed()
+    {
+      
+          if(distanceTraveled <= 25f)
+               return scrollingSpeed;
+           
+           if(distanceTraveled < 8000f)
+               return scrollingSpeed * ((float) Math.Log(distanceTraveled / 25f) + 1);
+           
+           return scrollingSpeed * ((float) Math.Log(8000f / 100f) + 1);
     }
 
     public float DistanceTraveled
@@ -108,7 +119,6 @@ public class PlayerController : MonoBehaviour
     public float ScrollingSpeed
     {
         get => scrollingSpeed;
-        set => scrollingSpeed = value;
     }
     public int BackgroundIndex
     {

@@ -127,7 +127,7 @@ public class ObjectPoolSpawner : MonoBehaviour
         public GameObject SpawnObject()
         {
             GameObject objectToSpawn = objectPool.Peek();
-            if (objectToSpawn.activeSelf)
+            if (objectToSpawn != null && objectToSpawn.activeSelf)
             {
                 if (!this.shouldExpand)
                 {

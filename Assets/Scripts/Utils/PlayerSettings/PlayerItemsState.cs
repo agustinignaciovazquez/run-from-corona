@@ -19,7 +19,7 @@ public class PlayerItemsState : MonoBehaviour {
         if (Instance == null){
 
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             
         } else {
             Destroy(this);

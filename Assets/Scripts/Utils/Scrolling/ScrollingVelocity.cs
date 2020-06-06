@@ -8,7 +8,7 @@ public class ScrollingVelocity : MonoBehaviour
     [SerializeField] private float velocityToPlayerRate = 1f;
     
     private Rigidbody2D rb;
-    private float scrollVelocity;
+    protected float scrollVelocity;
 
     // Start is called before the first frame update
     protected virtual void Awake()
@@ -23,7 +23,7 @@ public class ScrollingVelocity : MonoBehaviour
     }
     protected void SetBackgroundVelocity()
     {
-        scrollVelocity = playerController.GetScrollingSpeed() * velocityToPlayerRate;
+        scrollVelocity = playerController.GetBackgroundScrollSpeed() * velocityToPlayerRate;
         rb.velocity = new Vector2(-scrollVelocity, 0f);
     }
 
@@ -32,6 +32,5 @@ public class ScrollingVelocity : MonoBehaviour
     public float VelocityToPlayerRate => velocityToPlayerRate;
 
     public Rigidbody2D Rb => rb;
-
-    public float ScrollVelocity => scrollVelocity;
+    
 }

@@ -90,12 +90,16 @@ public class DifferentLevelsBackground : ScrollingBackground
 
     private void DoTransition()
     {
+        var prevBackground = indexCurrentBackground - 1;
+        if (prevBackground < 0)
+            prevBackground = backgrounds.Count - 1;
+        
         if (fadeIn)
         {
-            PlayerController.ScrollingSpeed *= 3;
+            this.scrollVelocity *= 3;
             sceneTransition.FadeOut();
             fadeIn = false;
-            string songName = backgrounds[indexCurrentBackground - 1].BackgroundImage.name;
+            string songName = backgrounds[prevBackground].BackgroundImage.name;
             Debug.Log(songName);
             StartCoroutine(FindObjectOfType<AudioManager>().FadeOut(songName,0.1f));
             teleportEffect.SetActive(true);
@@ -111,7 +115,7 @@ public class DifferentLevelsBackground : ScrollingBackground
             shouldTransition = false;
             sceneTransition.FadeIn();
             teleportEffect.SetActive(false);
-            PlayerController.ScrollingSpeed /= 3;
+            this.scrollVelocity /= 3;
             stageText.SetActive(false);
         }
         //sceneTransition.FadeOut();
