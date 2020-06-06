@@ -21,11 +21,12 @@ public class OutboundControllerAll : MonoBehaviour
         //Delete other object unless is player
        // Transform parentNext = other.transform.parent;
         Transform parent = other.transform.parent;
-        //TODO HACER PARA EL PADRE DE LOS PADRES
-        //while (parentNext != null)
-       // {
-       //     parentNext = parent.parent;
-       // }
+        Transform parentNext = parent;
+        while (parent != null && parentNext != null)
+        {
+            parent = parentNext;
+            parentNext = parent.parent;
+        };
 
         if(!(other.CompareTag("Player") || other.CompareTag("Background")))
             if(parent == null)
