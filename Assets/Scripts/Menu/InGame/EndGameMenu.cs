@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GoogleMobileAds;
+using GoogleMobileAds.Api;
 
 public class EndGameMenu : MonoBehaviour
 {
+    
     public void Restart()
     {
         FindObjectOfType<AudioManager>().Play("ButtonClick");
@@ -18,5 +21,6 @@ public class EndGameMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
+    
     
 }
