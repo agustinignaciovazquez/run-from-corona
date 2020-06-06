@@ -9,12 +9,14 @@ public class JetpackController : MonoBehaviour
     //Jetpack Energy Vars
     [SerializeField] private float maxEnergy = 100f;
     [SerializeField] private float currentEnergy;
-    [SerializeField] private float energyRegen = 0.3f;
+    [SerializeField] private float energyRegen = 0.5f;
     [SerializeField] private float energySpend = 0.3f;
     [SerializeField] private float rotationSpeed = 2f;
     [SerializeField] private float jetpackForce = 40f;
     [SerializeField] private float normalizeRotationSpeed = 3f;
     [SerializeField] private float moveSpeed = 3f;
+
+    [SerializeField] private AudioSource audioSource;
     
     private PlayerController playerController;
     private Rigidbody2D rb;
@@ -50,10 +52,20 @@ public class JetpackController : MonoBehaviour
             }
             //Jetpack Force according to rotation and others
             rb.AddForce( playerTransform.rotation * Vector2.up * jetpackForce);
+            
+            //TODO Play different sounds based on playerPrefs
+            if(!audioSource.isPlaying) {
+                audioSource.Play();
+            }
+            
+            
         }
         else
         {
-            RegenerateEnergy(energyRegen); 
+            RegenerateEnergy(energyRegen);
+            if(audioSource.isPlaying) {
+                audioSource.Stop();
+            }
         }
         
         //Normalize the rotation

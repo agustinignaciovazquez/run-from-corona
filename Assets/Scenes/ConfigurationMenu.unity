@@ -418,6 +418,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioMixer: {fileID: 24100000, guid: b0e8957ec937e894cb958fcdad442ee2, type: 2}
+  sliders:
+  - {fileID: 1089930943}
+  - {fileID: 1058812614}
+  - {fileID: 1291100378}
 --- !u!114 &165264348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,7 +1226,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1633256377}
   m_HandleRect: {fileID: 484531605}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
@@ -1395,7 +1399,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 276733286}
   m_HandleRect: {fileID: 1823793146}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
@@ -1961,7 +1965,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 404556873}
   m_HandleRect: {fileID: 1169406100}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
