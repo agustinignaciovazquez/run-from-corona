@@ -44,13 +44,13 @@ public class Shop : MonoBehaviour
             ShopItem si = shopItem.ElementAt(i);
             GameObject itemObject = Instantiate(shopItemPrefab, shopContainer);
            
-            itemObject.transform.GetChild(0).GetComponent<Text>().text = si.itemName;
-            itemObject.transform.GetChild(1).GetComponent<Image>().sprite = si.sprite;
+            itemObject.transform.GetChild(0).GetComponent<Text>().text = si.ItemName;
+            itemObject.transform.GetChild(1).GetComponent<Image>().sprite = si.Sprite;
             
             if (!isItemSold(si))
             {
-                itemObject.transform.GetChild(2).GetComponent<Button>().transform.GetChild(0).GetComponent<Text>().text = si.cost.ToString();
-                itemObject.transform.GetChild(2).GetComponent<Button>().transform.GetChild(1).GetComponent<Image>().sprite = si.currencySprite;
+                itemObject.transform.GetChild(2).GetComponent<Button>().transform.GetChild(0).GetComponent<Text>().text = si.Cost.ToString();
+                itemObject.transform.GetChild(2).GetComponent<Button>().transform.GetChild(1).GetComponent<Image>().sprite = si.CurrencySprite;
                 itemObject.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(() => OnButtonClickBuy(si, itemObject));
             }
             else
@@ -61,9 +61,9 @@ public class Shop : MonoBehaviour
                 itemObject.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(() => OnButtonClickEquip(si, itemObject));
             }
 
-            if (si.itemName != PlayerPrefs.GetString("Weapon") &&
-                si.itemName != PlayerPrefs.GetString("Skin") &&
-                si.itemName != PlayerPrefs.GetString("Jetpack")) continue;
+            if (si.ItemName != PlayerPrefs.GetString("Weapon") &&
+                si.ItemName != PlayerPrefs.GetString("Skin") &&
+                si.ItemName != PlayerPrefs.GetString("Jetpack")) continue;
             itemObject.transform.GetChild(3).gameObject.SetActive(false);
             itemObject.transform.GetChild(4).gameObject.SetActive(true);
 
@@ -97,19 +97,19 @@ public class Shop : MonoBehaviour
         }
         
         if (shopType == 0) {
-            PlayerPrefs.SetString("Weapon", item.itemName);
-            PlayerItemsState.Instance.CurrentWeapon = (WeaponShopItem) item;
+            PlayerPrefs.SetString("Weapon", item.ItemName);
+            //PlayerItemsState.Instance.CurrentWeapon = (WeaponShopItem) item;
            
         }else if (shopType == 1){
-            PlayerPrefs.SetString("Skin", item.itemName);
-            PlayerItemsState.Instance.CurrentSkin = (SkinShopItem) item;
+            PlayerPrefs.SetString("Skin", item.ItemName);
+            //PlayerItemsState.Instance.CurrentSkin = (SkinShopItem) item;
             
         }else if (shopType == 2){
-            PlayerPrefs.SetString("Jetpack", item.itemName);
-            PlayerItemsState.Instance.CurrentJetpack = (JetpackShopItem) item;
+            PlayerPrefs.SetString("Jetpack", item.ItemName);
+            //PlayerItemsState.Instance.CurrentJetpack = (JetpackShopItem) item;
         }
         
-        FindObjectOfType<AudioManager>().Play(item.itemName);
+        FindObjectOfType<AudioManager>().Play(item.ItemName);
         PopulateShop();
 
         
@@ -118,7 +118,7 @@ public class Shop : MonoBehaviour
 
     private bool isItemSold(ShopItem item)
     {
-        return (PlayerPrefs.GetInt(item.itemName)!=0);
+        return (PlayerPrefs.GetInt(item.ItemName)!=0);
     }
 
     private bool BuyItem(ShopItem item)
@@ -129,18 +129,18 @@ public class Shop : MonoBehaviour
 
         if (!isSold)
         {
-            if (item.currency == ShopItem.Currency.Coins && coins >= item.cost)
+            if (item.Currency == ShopItem.CurrencyEnum.Coins && coins >= item.Cost)
             {
-                int newCoins = coins - item.cost;
+                int newCoins = coins - item.Cost;
                 PlayerPrefs.SetInt("Coins", newCoins);
-                PlayerPrefs.SetInt(item.itemName, 1);
+                PlayerPrefs.SetInt(item.ItemName, 1);
                 return true;
             }
-            if (item.currency == ShopItem.Currency.Gems && gems >= item.cost)
+            if (item.Currency == ShopItem.CurrencyEnum.Gems && gems >= item.Cost)
             {
-                int newGems = gems - item.cost;
+                int newGems = gems - item.Cost;
                 PlayerPrefs.SetInt("Gems", newGems);
-                PlayerPrefs.SetInt(item.itemName, 1);
+                PlayerPrefs.SetInt(item.ItemName, 1);
                 return true;
             }
             

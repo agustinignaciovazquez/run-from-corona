@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c3ab5a477cd78e4c93cd152bff94a29, type: 3}
-  m_Name: Rifle
+  m_Name: Water
   m_EditorClassIdentifier: 
-  itemName: Rifle
-  spriteName: RifleWeapon
-  sprite: {fileID: 21300000, guid: 15accbbf973c53e42abb2bb75e48d8cc, type: 3}
-  cost: 1000
+  itemName: Water
+  spriteName: WaterWeapon
+  sprite: {fileID: 0}
+  cost: 0
   currency: 0
-  currencySprite: {fileID: 21300000, guid: 9fa4c36845b65844fb205703725a3922, type: 3}
-  damage: 50
-  bulletSpriteTag: RifleBullet
+  currencySprite: {fileID: 0}
+  damage: 0
+  bulletSpriteTag: 
   startBullets: 25
   maxBullets: 50

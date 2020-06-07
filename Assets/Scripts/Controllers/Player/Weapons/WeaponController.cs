@@ -52,12 +52,12 @@ public class WeaponController : MonoBehaviour{
     {
         bulletsText = BulletTextSingleton.SharedInstance;
         playerItemsState = PlayerItemsState.Instance;
-        if (playerItemsState.CurrentBullets < playerItemsState.MaxBullets)
+        if (playerItemsState.CurrentBullets < playerItemsState.CurrentWeapon.MaxBullets)
         {
             playerItemsState.CurrentBullets += amount;
-            if (playerItemsState.CurrentBullets > playerItemsState.MaxBullets)
+            if (playerItemsState.CurrentBullets > playerItemsState.CurrentWeapon.MaxBullets)
             {
-                playerItemsState.CurrentBullets = playerItemsState.MaxBullets;
+                playerItemsState.CurrentBullets = playerItemsState.CurrentWeapon.MaxBullets;
             }
         }
         bulletsText.SetBullets(playerItemsState.CurrentBullets);

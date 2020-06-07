@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   itemName: Pistol
-  spriteName: Pistol
+  spriteName: PistolWeapon
   sprite: {fileID: 21300000, guid: 2522c1b6f029e9f49bed97329fe54e55, type: 3}
   cost: 100
   currency: 0
   currencySprite: {fileID: 21300000, guid: 9fa4c36845b65844fb205703725a3922, type: 3}
   damage: 10
   bulletSpriteTag: PistolBullet
+  startBullets: 25
+  maxBullets: 50

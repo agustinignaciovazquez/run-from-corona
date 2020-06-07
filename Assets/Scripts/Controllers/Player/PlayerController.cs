@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         coll = GetComponent<Collider2D>();
         
         playerItemsState = PlayerItemsState.Instance;
-        playerItemsState.ReloadDefaults();
+        playerItemsState.ReloadSettings();
         
         coinsText = CoinsTextSingleton.SharedInstance;
         coinsText.SetCoins(playerItemsState.CurrentCoins);
@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour
 
     public bool FlyTrigger => flyTrigger;
 
-    public static int StateAnimId1 => StateAnimId;
+    public PlayerItemsState PlayerItemsState => playerItemsState;
 
     public LayerMask Ground => ground;
 

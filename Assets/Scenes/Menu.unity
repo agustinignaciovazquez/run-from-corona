@@ -1802,8 +1802,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1341239114}
-  - component: {fileID: 1341239113}
   - component: {fileID: 1341239115}
+  - component: {fileID: 1341239113}
   m_Layer: 0
   m_Name: PlayerPrefs
   m_TagString: Untagged

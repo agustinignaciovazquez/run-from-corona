@@ -1,13 +1,25 @@
 ﻿
 using UnityEngine;
 
-public class ShopItem : ScriptableObject
+public abstract class ShopItem : ScriptableObject
 {
-   public enum Currency {Coins, Gems};
-   public string itemName;
-   public string spriteName;
-   public Sprite sprite;
-   public int cost;
-   public Currency currency;
-   public Sprite currencySprite;
+   public enum CurrencyEnum {Coins, Gems};
+   [SerializeField] private string itemName;
+   [SerializeField] private string spriteName;
+   [SerializeField] private Sprite sprite;
+   [SerializeField] private int cost;
+   [SerializeField] private CurrencyEnum currency;
+   [SerializeField] private Sprite currencySprite;
+
+   public string ItemName => itemName;
+
+   public string SpriteName => spriteName;
+
+   public Sprite Sprite => sprite;
+
+   public int Cost => cost;
+
+   public CurrencyEnum Currency => currency;
+
+   public Sprite CurrencySprite => currencySprite;
 }

@@ -18,10 +18,10 @@ public class SpriteSwap : MonoBehaviour
     private Dictionary<string, Sprite> spriteSheet;
 
     // The Unity sprite renderer so that we don't have to get it multiple times
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
 
     // Use this for initialization
-    private void Start()
+    protected virtual void Start()
     {
         // Get and cache the sprite renderer for this game object
         this.spriteRenderer = GetComponent<SpriteRenderer>();
@@ -45,7 +45,7 @@ public class SpriteSwap : MonoBehaviour
     }
 
     // Loads the sprites from a sprite sheet
-    private void LoadSpriteSheet()
+    protected void LoadSpriteSheet()
     {
         // Load the sprites from a sprite sheet file (png). 
         // Note: The file specified must exist in a folder named Resources

@@ -6,19 +6,10 @@ public class JetpackController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private EnergyBar energyBar;
-    //Jetpack Energy Vars
-    [SerializeField] private float maxEnergy = 100f;
-    [SerializeField] private float currentEnergy;
-    [SerializeField] private float energyRegen = 0.5f;
-    [SerializeField] private float energySpend = 0.3f;
-    [SerializeField] private float rotationSpeed = 2f;
-    [SerializeField] private float jetpackForce = 40f;
-    [SerializeField] private float normalizeRotationSpeed = 3f;
-    [SerializeField] private float moveSpeed = 3f;
-
     [SerializeField] private AudioSource audioSource;
     
     private PlayerController playerController;
+    private PlayerItemsState playerItemsState;
     private Rigidbody2D rb;
     private Collider2D coll;
     private Transform playerTransform;
@@ -26,11 +17,13 @@ public class JetpackController : MonoBehaviour
     void Start()
     {
         playerController = player.GetComponent<PlayerController>();
+        playerItemsState = playerController.PlayerItemsState;
+        
         rb = player.GetComponent<Rigidbody2D>();
         coll = player.GetComponent<Collider2D>();
         
-        //currentEnergy = maxEnergy;
-        energyBar.SetMaxEnergy(maxEnergy);
+        //playerItemsState.CurrentEnergy = playerItemsState.CurrentJetpack.MaxEnergy;
+        energyBar.SetMaxEnergy(playerItemsState.CurrentJetpack.MaxEnergy);
     }
 
     // Update is called once per frame
@@ -44,14 +37,14 @@ public class JetpackController : MonoBehaviour
         playerTransform = player.transform;
         if (playerController.FlyTrigger)
         {
-            ReduceEnergy(energySpend);
+            ReduceEnergy(playerItemsState.CurrentJetpack.EnergySpend);
             //If player not touching ground we can rotate according to movement
             if (!coll.IsTouchingLayers(playerController.Ground))
             {
                 RotateFlyingPlayer();
             }
             //Jetpack Force according to rotation and others
-            rb.AddForce( playerTransform.rotation * Vector2.up * jetpackForce);
+            rb.AddForce( playerTransform.rotation * Vector2.up * playerItemsState.CurrentJetpack.JetpackForce);
             
             //TODO Play different sounds based on playerPrefs
             if(!audioSource.isPlaying) {
@@ -62,41 +55,41 @@ public class JetpackController : MonoBehaviour
         }
         else
         {
-            RegenerateEnergy(energyRegen);
+            RegenerateEnergy(playerItemsState.CurrentJetpack.EnergyRegen);
             if(audioSource.isPlaying) {
                 audioSource.Stop();
             }
         }
         
         //Normalize the rotation
-        playerTransform.rotation = Quaternion.Lerp(playerTransform.rotation,Quaternion.identity, Time.deltaTime * normalizeRotationSpeed);
+        playerTransform.rotation = Quaternion.Lerp(playerTransform.rotation,Quaternion.identity, Time.deltaTime * playerItemsState.CurrentJetpack.NormalizeRotationSpeed);
     }
     
     void RegenerateEnergy(float energyToRegen)
     {
-        if (currentEnergy < maxEnergy)
+        if (playerItemsState.CurrentEnergy < playerItemsState.CurrentJetpack.MaxEnergy)
         {
-            currentEnergy += energyToRegen;
-            energyBar.SetEnergy(currentEnergy);
+            playerItemsState.CurrentEnergy += energyToRegen;
+            energyBar.SetEnergy(playerItemsState.CurrentEnergy);
         }
         
     }
 
     void ReduceEnergy(float energyToLose)
     {
-        currentEnergy -= energyToLose;
-        energyBar.SetEnergy(currentEnergy);
+        playerItemsState.CurrentEnergy -= energyToLose;
+        energyBar.SetEnergy(playerItemsState.CurrentEnergy);
     }
     private void RotateFlyingPlayer()
     {
         playerTransform = player.transform;
         //Player not touching the ground, we can rotate 
-        Vector3 playerRotation = new Vector3(0,0,-playerController.DirectionTrigger * rotationSpeed);
+        Vector3 playerRotation = new Vector3(0,0,-playerController.DirectionTrigger * playerItemsState.CurrentJetpack.RotationSpeed);
         playerTransform.Rotate(playerRotation);
         //Player not touching ground, we can move to the sides
         //Set player Velocity
-        rb.velocity = new Vector2( playerController.DirectionTrigger * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2( playerController.DirectionTrigger * playerItemsState.CurrentJetpack.MoveSpeed, rb.velocity.y);
     }
     
-    public float CurrentEnergy => currentEnergy;
+    public float CurrentEnergy => playerItemsState.CurrentEnergy;
 }

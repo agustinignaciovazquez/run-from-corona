@@ -1,67 +1,110 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
         
 public class PlayerItemsState : MonoBehaviour {
 
     public static PlayerItemsState Instance { get; private set; }
 
+    private List<WeaponShopItem> weaponShopItems;
+    private List<JetpackShopItem> jetpackShopItems;
+    private List<SkinShopItem> skinShopItems;
+    
+    private ShopItemsList shopItemsList;
+    
     private WeaponShopItem currentWeapon;
-    private ShopItem currentSkin;
-    private ShopItem currentJetpack;
+    private SkinShopItem currentSkin;
+    private JetpackShopItem currentJetpack;
     
-    private int currentBullets = 25;
     private int currentCoins = 0;
-    private int maxBullets = 50;
+    private int currentBullets = 0;
+    private float currentEnergy = 0;
     
-    private void Awake(){
-
+    private void Start(){
         if (Instance == null){
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
+            SetDefaultsSettings();
+            ReloadSettings();
         } else {
             Destroy(this);
         }
     }
 
-    public void ReloadDefaults()
+    private void SetDefaultsSettings()
     {
-        currentCoins = 0;
+        if(!PlayerPrefs.HasKey("Weapon"))
+            PlayerPrefs.SetString("Weapon", "Water");
+        if(!PlayerPrefs.HasKey("Skin"))
+            PlayerPrefs.SetString("Skin", "Juan");
+        if(!PlayerPrefs.HasKey("Jetpack"))
+            PlayerPrefs.SetString("Jetpack", "Jetpack");
+        if(!PlayerPrefs.HasKey("Coins"))
+            PlayerPrefs.SetInt("Coins", 0);
+        if(!PlayerPrefs.HasKey("Gems"))
+            PlayerPrefs.SetInt("Gems", 0);
     }
-    //Rest of your class code
+    public void ReloadSettings()
+    {
+        shopItemsList = ShopItemsList.Instance;
+        
+        weaponShopItems = shopItemsList.Weapons;
+        jetpackShopItems = shopItemsList.Jetpacks;
+        skinShopItems = shopItemsList.Skins;
+        
+        Debug.Log(PlayerPrefs.GetString("Weapon"));
+        Debug.Log(PlayerPrefs.GetString("Jetpack"));
+        Debug.Log(PlayerPrefs.GetString("Skin"));
+        
+        currentWeapon = (WeaponShopItem) GetCurrentItem(PlayerPrefs.GetString("Weapon"), weaponShopItems);
+        currentJetpack = (JetpackShopItem) GetCurrentItem(PlayerPrefs.GetString("Jetpack"), jetpackShopItems);
+        currentSkin = (SkinShopItem) GetCurrentItem(PlayerPrefs.GetString("Skin"), skinShopItems);
+        
+        currentCoins = 0;
+        currentBullets = currentWeapon.StartBullets;
+        currentEnergy = currentJetpack.StartEnergy;
+    }
+
+    public ShopItem GetCurrentItem(string itemName, IEnumerable<ShopItem> shopItems)
+    {
+        print(itemName);
+        ShopItem si = shopItems.First( s => itemName.Equals(s.ItemName)); 
+        if(si == null)
+            throw new UnassignedReferenceException();
+        return si;
+    }
+    
+    public int CurrentCoins
+    {
+        get => currentCoins;
+        set => currentCoins = value;
+    }
+    
     public int CurrentBullets
     {
         get => currentBullets;
         set => currentBullets = value;
     }
 
-    public int MaxBullets
+    public float CurrentEnergy
     {
-        get => maxBullets;
-        set => maxBullets = value;
-    }
-
-    public int CurrentCoins
-    {
-        get => currentCoins;
-        set => currentCoins = value;
+        get => currentEnergy;
+        set => currentEnergy = value;
     }
 
     public WeaponShopItem CurrentWeapon
     {
         get => currentWeapon;
-        set => currentWeapon = value;
     }
 
-    public ShopItem CurrentSkin
+    public SkinShopItem CurrentSkin
     {
         get => currentSkin;
-        set => currentSkin = value;
     }
 
-    public ShopItem CurrentJetpack
+    public JetpackShopItem CurrentJetpack
     {
         get => currentJetpack;
-        set => currentJetpack = value;
     }
 }
