@@ -19,6 +19,7 @@ TagManager:
   - ShopItem
   - CoinPickup
   - Background
+  - SmokeEffect
   layers:
   - Default
   - TransparentFX

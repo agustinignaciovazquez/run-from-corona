@@ -11,7 +11,6 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
     private float ScrollVelocity;
     private ObjectPoolSpawner objectPoolSpawner;
     private GameObject player;
-    
     [SerializeField] private float infectProbability = 0.99f;
     [SerializeField] private float factorProportionalSpeed = 0.9f;
     
@@ -29,7 +28,7 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         PlayerController = player.GetComponent<PlayerController>();
         objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
     }
-    
+
     // Update is called once per frame
     protected virtual void Update()
     {
@@ -51,7 +50,7 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
             var infectionPlayerProbability = InfectPlayerProbability();
             if(Random.RollDice(infectionPlayerProbability))
             {
-                print("MUERTO");
+                PlayerController.Die();
             }
             else
             {

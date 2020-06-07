@@ -7,6 +7,7 @@ public class DistanceTextSingleton : MonoBehaviour
 {
     [SerializeField] private Text distanceText;
     [SerializeField] private GameObject distanceReference;
+    [SerializeField] private Text distanceTextEnd;
     public static DistanceTextSingleton SharedInstance { get; private set; }
     private void Awake(){
 
@@ -32,4 +33,9 @@ public class DistanceTextSingleton : MonoBehaviour
         distanceText.text = amount + "m";
     }
 
+    public void SetDistanceEnd()
+    {
+        distanceTextEnd.text = distanceText.text;
+    }
+    
 }

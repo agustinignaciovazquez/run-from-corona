@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CoinsTextSingleton : MonoBehaviour
 {
     [SerializeField] private Text coinsText;
+    [SerializeField] private Text coinsTextEnd;
     public static CoinsTextSingleton SharedInstance { get; private set; }
     private void Awake(){
 
@@ -22,5 +23,10 @@ public class CoinsTextSingleton : MonoBehaviour
     public void SetCoins(int amount)
     {
         coinsText.text = "x" + amount;
+    }
+
+    public void SetCoinsEnd()
+    {
+        coinsTextEnd.text = coinsText.text;
     }
 }

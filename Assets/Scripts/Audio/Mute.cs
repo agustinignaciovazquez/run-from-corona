@@ -8,6 +8,7 @@ public class Mute : MonoBehaviour
     [SerializeField] private Button muteButton;
     [SerializeField] private Button muteMusicButton;
 
+    private bool firstTime = true;
     private void Awake()
     {
         if (PlayerPrefs.GetInt("MuteSound") == 1)
@@ -17,7 +18,7 @@ public class Mute : MonoBehaviour
 
         if (PlayerPrefs.GetInt("MuteMusic") == 1)
         {
-            FindObjectOfType<AudioManager>().Mute("Theme");
+            FindObjectOfType<AudioManager>().MuteAudioMixerGroupMusic();
         }
 
     }
@@ -31,6 +32,7 @@ public class Mute : MonoBehaviour
     
     public void MuteMusic()
     {
+        
         if (PlayerPrefs.GetInt("MuteMusic") == 0)
         {
             FindObjectOfType<AudioManager>().MuteAudioMixerGroupMusic();
@@ -39,6 +41,11 @@ public class Mute : MonoBehaviour
         }
         else
         {
+            if (firstTime)
+            {   
+                FindObjectOfType<AudioManager>().Play("Airport");
+                firstTime = false;
+            }
             FindObjectOfType<AudioManager>().UnmuteAudioMixerGroupMusic();
             PlayerPrefs.SetInt("MuteMusic", 0);
             muteMusicButton.transform.GetChild(0).gameObject.SetActive(false);

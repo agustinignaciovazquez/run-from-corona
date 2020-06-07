@@ -7,6 +7,12 @@ using GoogleMobileAds.Api;
 
 public class EndGameMenu : MonoBehaviour
 {
+    private PlayerController PlayerController;
+
+    void Awake()
+    {
+        PlayerController = GameObject.Find("Player").GetComponent<PlayerController>();
+    }
     
     public void Restart()
     {
@@ -21,6 +27,10 @@ public class EndGameMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
-    
+
+    public void Continue()
+    {
+        PlayerController.Resurrect();
+    }
     
 }

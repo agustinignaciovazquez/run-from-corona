@@ -42,7 +42,11 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Play("Airport");
+        if (PlayerPrefs.GetInt("MuteMusic") == 0)
+        {
+            Play("Airport");
+        }
+        
     }
 
     public void Play(string name)
