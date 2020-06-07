@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopDefaults : MonoBehaviour
+public class ShopCurrencies : MonoBehaviour
 {
     [SerializeField] private GameObject currentCoins;
     [SerializeField] private GameObject currentGems;
@@ -11,18 +11,13 @@ public class ShopDefaults : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("Coins", 100);
-        PlayerPrefs.SetInt("Gems", 0);
-        UpdateCurrency();
-        /*PlayerPrefs.SetInt("Coins", 0);
-        PlayerPrefs.SetInt("Gems", 0);
-        PlayerPrefs.SetString("Weapon", "Pistol");
-        PlayerPrefs.SetString("Skin", "Toby");
-        PlayerPrefs.SetString("Jetpack", "Apple");
-        PlayerPrefs.SetInt("Pistol", 1);
-        PlayerPrefs.SetInt("Toby", 1);
-        PlayerPrefs.SetInt("Apple", 1);*/
         
+        /*DEBUG COINS
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("Gems", 100);
+        PlayerPrefs.SetInt("Coins", 50000);
+        */
+        UpdateCurrency();
     }
 
     // Update is called once per frame

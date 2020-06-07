@@ -34,16 +34,26 @@ public class PlayerItemsState : MonoBehaviour {
 
     private void SetDefaultsSettings()
     {
-        if(!PlayerPrefs.HasKey("Weapon"))
+        //Set default items
+        PlayerPrefs.SetInt("Juan", 1);
+        PlayerPrefs.SetInt("Water", 1);
+        PlayerPrefs.SetInt("Jetpack", 1);
+        
+        if (HasPreference("Weapon"))
             PlayerPrefs.SetString("Weapon", "Water");
-        if(!PlayerPrefs.HasKey("Skin"))
+        if (HasPreference("Skin"))
             PlayerPrefs.SetString("Skin", "Juan");
-        if(!PlayerPrefs.HasKey("Jetpack"))
+        if (HasPreference("Jetpack"))
             PlayerPrefs.SetString("Jetpack", "Jetpack");
         if(!PlayerPrefs.HasKey("Coins"))
             PlayerPrefs.SetInt("Coins", 0);
         if(!PlayerPrefs.HasKey("Gems"))
             PlayerPrefs.SetInt("Gems", 0);
+    }
+
+    private bool HasPreference(string pref)
+    {
+        return (!PlayerPrefs.HasKey(pref) || PlayerPrefs.GetString(pref) == "");
     }
     public void ReloadSettings()
     {
@@ -52,11 +62,7 @@ public class PlayerItemsState : MonoBehaviour {
         weaponShopItems = shopItemsList.Weapons;
         jetpackShopItems = shopItemsList.Jetpacks;
         skinShopItems = shopItemsList.Skins;
-        
-        Debug.Log(PlayerPrefs.GetString("Weapon"));
-        Debug.Log(PlayerPrefs.GetString("Jetpack"));
-        Debug.Log(PlayerPrefs.GetString("Skin"));
-        
+
         currentWeapon = (WeaponShopItem) GetCurrentItem(PlayerPrefs.GetString("Weapon"), weaponShopItems);
         currentJetpack = (JetpackShopItem) GetCurrentItem(PlayerPrefs.GetString("Jetpack"), jetpackShopItems);
         currentSkin = (SkinShopItem) GetCurrentItem(PlayerPrefs.GetString("Skin"), skinShopItems);

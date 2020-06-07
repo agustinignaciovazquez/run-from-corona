@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1732572657749238523}
   - component: {fileID: 1732572657749238520}
   - component: {fileID: 1732572657749238521}
+  - component: {fileID: 7277568580961432771}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -174,6 +175,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7277568580961432771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732572657749238518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc72d15765ca44968330ef8198e7db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteType: 2
 --- !u!1 &1732572658098076277
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +199,7 @@ GameObject:
   - component: {fileID: 1732572658098076280}
   - component: {fileID: 1732572658098076276}
   - component: {fileID: 1004859633440926549}
-  - component: {fileID: 3074784500742698352}
+  - component: {fileID: 2553169375384065528}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Player
@@ -270,7 +284,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3074784500742698352
+--- !u!114 &2553169375384065528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,7 +293,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1732572658098076277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa2e3a51e2b9b45fd9d881cdfdf8e70e, type: 3}
+  m_Script: {fileID: 11500000, guid: abc72d15765ca44968330ef8198e7db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpriteSheetName: WaterWeapon
+  spriteType: 0

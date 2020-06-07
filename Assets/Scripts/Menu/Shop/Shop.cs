@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
-    private IEnumerable<ShopItem> shopItem;
     private ShopItemsList shopItemsList;
+    private PlayerItemsState playerItemsState;
     
     [Header("References")]
     [SerializeField] private Transform shopContainer;
@@ -22,28 +22,31 @@ public class Shop : MonoBehaviour
     private void Start()
     {
         shopItemsList = ShopItemsList.Instance;
+        playerItemsState = PlayerItemsState.Instance;
         PopulateShop();
     }
 
-    private void PopulateShopItems()
+    private IEnumerable<ShopItem> PopulateShopItems()
     {
         if (shopType == 0)
-            shopItem = shopItemsList.Weapons;
+            return shopItemsList.Weapons;
         else if (shopType == 1)
-            shopItem = shopItemsList.Skins;
-        else
-            shopItem = shopItemsList.Jetpacks;
-        
+            return shopItemsList.Skins;
+        else if (shopType == 2)
+            return shopItemsList.Jetpacks;
+        return null;
     }
     
     private void PopulateShop()
     {
-        PopulateShopItems();
+        IEnumerable<ShopItem> shopItem = PopulateShopItems();
         for (int i = 0; i < shopItem.Count(); i++)
         {
+         
             ShopItem si = shopItem.ElementAt(i);
             GameObject itemObject = Instantiate(shopItemPrefab, shopContainer);
-           
+            
+            print(si.ItemName);
             itemObject.transform.GetChild(0).GetComponent<Text>().text = si.ItemName;
             itemObject.transform.GetChild(1).GetComponent<Image>().sprite = si.Sprite;
             
@@ -80,22 +83,18 @@ public class Shop : MonoBehaviour
             itemObject.transform.GetChild(2).gameObject.SetActive(false);
             itemObject.transform.GetChild(3).gameObject.SetActive(true);
             FindObjectOfType<AudioManager>().Play("Cashing");
+            ReloadItems();
         }
         else
         {
             StartCoroutine(displayCouldNotPurchaseAlert());
             FindObjectOfType<AudioManager>().Play("FailBuy");
         }
+       
     }
     
     private void OnButtonClickEquip(ShopItem item, GameObject itemObject)
     {
-        GameObject[] gOs = GameObject.FindGameObjectsWithTag("ShopItem");
-        for (int i = 0; i < gOs.Length; i++)
-        {
-            Destroy(gOs[i]);
-        }
-        
         if (shopType == 0) {
             PlayerPrefs.SetString("Weapon", item.ItemName);
             //PlayerItemsState.Instance.CurrentWeapon = (WeaponShopItem) item;
@@ -110,12 +109,19 @@ public class Shop : MonoBehaviour
         }
         
         FindObjectOfType<AudioManager>().Play(item.ItemName);
-        PopulateShop();
-
-        
+        ReloadItems();
     }
-    
 
+    private void ReloadItems()
+    {
+        GameObject[] gOs = GameObject.FindGameObjectsWithTag("ShopItem");
+        for (int i = 0; i < gOs.Length; i++)
+        {
+            Destroy(gOs[i]);
+        }
+        PopulateShop();
+        playerItemsState.ReloadSettings();
+    }
     private bool isItemSold(ShopItem item)
     {
         return (PlayerPrefs.GetInt(item.ItemName)!=0);
@@ -153,8 +159,7 @@ public class Shop : MonoBehaviour
         couldPurchaseAlert.SetActive(true);
         
         yield return new WaitForSeconds(0.4f);
-
-
+        
         couldPurchaseAlert.SetActive(false);
     }
 

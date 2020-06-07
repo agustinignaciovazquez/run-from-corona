@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Diamond
   m_EditorClassIdentifier: 
   itemName: Diamond
-  spriteName: Diamond
+  spriteName: DiamondJetpack
   sprite: {fileID: 21300000, guid: 10c163197f73dfb4b97769ecc0dac1d5, type: 3}
   cost: 100
   currency: 0
   currencySprite: {fileID: 21300000, guid: 9fa4c36845b65844fb205703725a3922, type: 3}
+  startEnergy: 25
+  maxEnergy: 100
+  energyRegen: 0.5
+  energySpend: 0.3
+  rotationSpeed: 2
+  jetpackForce: 40
+  normalizeRotationSpeed: 3
+  moveSpeed: 3

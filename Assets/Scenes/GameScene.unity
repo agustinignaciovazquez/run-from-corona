@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40999821}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.625, y: 0, z: 0}
+  m_LocalPosition: {x: -23.264597, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -476,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91974946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.625, y: 0, z: 0}
+  m_LocalPosition: {x: -10.264597, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -1978,7 +1978,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592303574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.625, y: 0, z: 0}
+  m_LocalPosition: {x: 10.264597, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -3672,8 +3672,8 @@ GameObject:
   - component: {fileID: 968392517}
   - component: {fileID: 968392519}
   - component: {fileID: 968392518}
-  - component: {fileID: 968392520}
   - component: {fileID: 968392521}
+  - component: {fileID: 968392520}
   m_Layer: 0
   m_Name: Jetpack
   m_TagString: Untagged
@@ -3709,14 +3709,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 374889527}
   energyBar: {fileID: 967614508}
-  maxEnergy: 100
-  currentEnergy: 100
-  energyRegen: 0.5
-  energySpend: 0.3
-  rotationSpeed: 3
-  jetpackForce: 40
-  normalizeRotationSpeed: 3
-  moveSpeed: 3
   audioSource: {fileID: 968392521}
 --- !u!212 &968392519
 SpriteRenderer:
@@ -3777,10 +3769,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 968392516}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa2e3a51e2b9b45fd9d881cdfdf8e70e, type: 3}
+  m_Script: {fileID: 11500000, guid: abc72d15765ca44968330ef8198e7db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpriteSheetName: DiamondJetpack
+  spriteType: 1
 --- !u!82 &968392521
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3905,7 +3897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986417192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.625, y: 0, z: 0}
+  m_LocalPosition: {x: 11.264597, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}

@@ -1850,6 +1850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
+  - {fileID: 11400000, guid: 22b35cce37ab14658b1649142d7c3dea, type: 2}
   - {fileID: 11400000, guid: bbb1cf6b79fa5cb4282381a838d657c8, type: 2}
   - {fileID: 11400000, guid: db36f7b0c4e7bcb4999e340f5ecc8806, type: 2}
   - {fileID: 11400000, guid: 6e6ea8b5c4be6dc4d90fdbeb021f450f, type: 2}
