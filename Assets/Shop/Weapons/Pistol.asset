@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a95e7f009ba722e45bf634d52f865258, type: 3}
+  m_Script: {fileID: 11500000, guid: 4c3ab5a477cd78e4c93cd152bff94a29, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
   itemName: Pistol
+  spriteName: Pistol
   sprite: {fileID: 21300000, guid: 2522c1b6f029e9f49bed97329fe54e55, type: 3}
   cost: 100
   currency: 0
-  currencySprite: {fileID: 0}
+  currencySprite: {fileID: 21300000, guid: 9fa4c36845b65844fb205703725a3922, type: 3}
+  damage: 10
+  bulletSpriteTag: PistolBullet

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
-    [Header("List of items sold")] 
-    [SerializeField] private ShopItem[] shopItem;
-
-
+    private IEnumerable<ShopItem> shopItem;
+    private ShopItemsList shopItemsList;
+    
     [Header("References")]
     [SerializeField] private Transform shopContainer;
     [SerializeField] private GameObject shopItemPrefab;
@@ -21,15 +21,27 @@ public class Shop : MonoBehaviour
     
     private void Start()
     {
-        
+        shopItemsList = ShopItemsList.Instance;
         PopulateShop();
     }
 
+    private void PopulateShopItems()
+    {
+        if (shopType == 0)
+            shopItem = shopItemsList.Weapons;
+        else if (shopType == 1)
+            shopItem = shopItemsList.Skins;
+        else
+            shopItem = shopItemsList.Jetpacks;
+        
+    }
+    
     private void PopulateShop()
     {
-        for (int i = 0; i < shopItem.Length; i++)
+        PopulateShopItems();
+        for (int i = 0; i < shopItem.Count(); i++)
         {
-            ShopItem si = shopItem[i];
+            ShopItem si = shopItem.ElementAt(i);
             GameObject itemObject = Instantiate(shopItemPrefab, shopContainer);
            
             itemObject.transform.GetChild(0).GetComponent<Text>().text = si.itemName;
@@ -86,14 +98,15 @@ public class Shop : MonoBehaviour
         
         if (shopType == 0) {
             PlayerPrefs.SetString("Weapon", item.itemName);
-            PlayerItemsState.Instance.currentWeapon = item;
+            PlayerItemsState.Instance.CurrentWeapon = (WeaponShopItem) item;
            
         }else if (shopType == 1){
             PlayerPrefs.SetString("Skin", item.itemName);
-            PlayerItemsState.Instance.currentSkin = item;
+            PlayerItemsState.Instance.CurrentSkin = (SkinShopItem) item;
+            
         }else if (shopType == 2){
             PlayerPrefs.SetString("Jetpack", item.itemName);
-            PlayerItemsState.Instance.currentJetpack = item;
+            PlayerItemsState.Instance.CurrentJetpack = (JetpackShopItem) item;
         }
         
         FindObjectOfType<AudioManager>().Play(item.itemName);
@@ -116,14 +129,14 @@ public class Shop : MonoBehaviour
 
         if (!isSold)
         {
-            if (item.currency == 0 && coins >= item.cost)
+            if (item.currency == ShopItem.Currency.Coins && coins >= item.cost)
             {
                 int newCoins = coins - item.cost;
                 PlayerPrefs.SetInt("Coins", newCoins);
                 PlayerPrefs.SetInt(item.itemName, 1);
                 return true;
             }
-            if (item.currency == 1 && gems >= item.cost)
+            if (item.currency == ShopItem.Currency.Gems && gems >= item.cost)
             {
                 int newGems = gems - item.cost;
                 PlayerPrefs.SetInt("Gems", newGems);

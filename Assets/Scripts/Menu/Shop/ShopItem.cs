@@ -1,12 +1,13 @@
 ﻿
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Shop/Shop Item")]
 public class ShopItem : ScriptableObject
 {
+   public enum Currency {Coins, Gems};
    public string itemName;
+   public string spriteName;
    public Sprite sprite;
    public int cost;
-   public int currency;
+   public Currency currency;
    public Sprite currencySprite;
 }

@@ -51,7 +51,8 @@ public class PlayerController : MonoBehaviour
         coll = GetComponent<Collider2D>();
         
         playerItemsState = PlayerItemsState.Instance;
-   
+        playerItemsState.ReloadDefaults();
+        
         coinsText = CoinsTextSingleton.SharedInstance;
         coinsText.SetCoins(playerItemsState.CurrentCoins);
     }  
