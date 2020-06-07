@@ -10,9 +10,9 @@ public class COVIDEnemy : AbstractEnemy
         base.Awake();
     }
 
-    protected override void Update()
+    protected override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
     }
     
    protected override void OnTriggerEnter2D(Collider2D other)

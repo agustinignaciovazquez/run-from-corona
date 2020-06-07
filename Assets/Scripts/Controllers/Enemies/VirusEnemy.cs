@@ -12,9 +12,8 @@ public class VirusEnemy : AbstractEnemy
         if (other.gameObject.CompareTag("People"))
         {
             //TODO contagiar personas
-            print("Toque a persona");
         }
-        if(other.gameObject.CompareTag("Covid"))
+        if(other.gameObject.CompareTag("Covid") || other.gameObject.CompareTag("CoinPickup") || other.gameObject.CompareTag("BulletPickup")) 
             other.gameObject.SetActive(false);
     }
 

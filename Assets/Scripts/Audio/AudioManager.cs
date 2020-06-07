@@ -107,7 +107,7 @@ public class AudioManager : MonoBehaviour
         float audioVolume = s.volume;
         while (s.volume < maxVolume && keepFadeIn)
         {
-            Debug.Log("VOLUME= " + audioVolume);
+            //Debug.Log("VOLUME= " + audioVolume);
             audioVolume += speed;
             s.volume = audioVolume;
             yield return null;

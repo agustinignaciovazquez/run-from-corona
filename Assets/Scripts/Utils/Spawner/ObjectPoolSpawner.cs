@@ -75,8 +75,6 @@ public class ObjectPoolSpawner : MonoBehaviour
             return null;
         }
         
-        objectToSpawn.SetActive(true);
-        
         objectToSpawn.transform.position = position;
         if(rotation.HasValue)
             objectToSpawn.transform.rotation = rotation.Value;
@@ -85,6 +83,7 @@ public class ObjectPoolSpawner : MonoBehaviour
 
         ObjectPoolInterface objectPoolInterface = objectToSpawn.GetComponent<ObjectPoolInterface>();
         
+        objectToSpawn.SetActive(true);
         if(objectPoolInterface != null)
             objectPoolInterface.OnObjectSpawn();
         
@@ -150,7 +149,7 @@ public class ObjectPoolSpawner : MonoBehaviour
             else
             {
                 objectToSpawn = objectPool.Dequeue();
-                print(objectToSpawn);
+                //print(objectToSpawn);
             }
             
             objectPool.Enqueue(objectToSpawn);

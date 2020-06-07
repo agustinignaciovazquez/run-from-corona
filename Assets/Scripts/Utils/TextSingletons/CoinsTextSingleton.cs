@@ -13,7 +13,7 @@ public class CoinsTextSingleton : MonoBehaviour
         if (SharedInstance == null){
 
             SharedInstance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             
         } else {
             Destroy(this);

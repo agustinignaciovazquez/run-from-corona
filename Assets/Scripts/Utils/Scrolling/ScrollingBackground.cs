@@ -8,6 +8,7 @@ public class ScrollingBackground : ScrollingVelocity
 {
     protected float backgroundSize;
     
+    
     // Start is called before the first frame update
     protected override void Awake()
     {
@@ -21,6 +22,7 @@ public class ScrollingBackground : ScrollingVelocity
         base.Update();
         Transform backgroundTransform = transform;
         Vector3 backGroundPosition = backgroundTransform.position;
+        
         if (backGroundPosition.x + backgroundSize < 0)
         {
             RepositionBackground(backgroundTransform);

@@ -16,7 +16,7 @@ public class DifferentLevelsBackground : ScrollingBackground
         public float DistanceToShow => distanceToShow / 2; //Maths so distance to show really works as expected xd
     }
     [SerializeField] private SceneTransition sceneTransition;
-    [SerializeField] private GameObject distanceReference;
+    
     [SerializeField] private List<ScenarioBackground> backgrounds;
 
     private int indexCurrentBackground;
@@ -64,10 +64,8 @@ public class DifferentLevelsBackground : ScrollingBackground
     protected override void RepositionBackground(Transform backgroundTransform)
     {
         base.RepositionBackground(backgroundTransform);
-        float distance = distanceReference.transform.position.x * -1f;
-        //Update player distance
-        PlayerController.DistanceTraveled = distance;
-        if (distance > distanceToNextBackground)
+       
+        if (PlayerController.DistanceTraveled > distanceToNextBackground)
         {
             ChangeBackground();
         }

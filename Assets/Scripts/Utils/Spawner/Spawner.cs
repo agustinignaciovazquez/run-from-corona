@@ -119,7 +119,6 @@ public class Spawner : MonoBehaviour
     static void SpawnPattern(GameObject self, SpawnItem spawnItem)
     {
         Transform transform1 = self.transform;
-        Vector2 position = transform1.position;
         int n = (int) _random.RandomBetween(spawnItem.RangeN().MinNum, spawnItem.RangeN().MaxNum);
         float stepX = 0;
         float stepY = 0;
@@ -127,7 +126,7 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < n; i++)
         {
             //Random positioner
-            Vector2 p = GetRandomPositionVector(spawnItem, position, stepX, paddingY + stepY);
+            Vector2 p = GetRandomPositionVector(spawnItem, transform1.position, stepX, paddingY + stepY);
             
             //Random scale
             Vector2 scale = _random.GetRandomVector(spawnItem.RangeScale.MinNum, spawnItem.RangeScale.MaxNum);

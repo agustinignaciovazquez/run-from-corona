@@ -28,9 +28,8 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         PlayerController = player.GetComponent<PlayerController>();
         objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
     }
-
-    // Update is called once per frame
-    protected virtual void Update()
+    
+    protected virtual void FixedUpdate()
     {
         //Update velocity acording to player every frame
         SetBackgroundVelocity();
@@ -38,7 +37,7 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
     void SetBackgroundVelocity()
     {
         ScrollVelocity = PlayerController.GetScrollingSpeed();
-        //print("VELOCITA "+ScrollVelocity);
+        print("VELOCITA "+ScrollVelocity);
         Rb.velocity = new Vector2(-ScrollVelocity * factorProportionalSpeed, Rb.velocity.y);
     }
     
@@ -88,7 +87,7 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
 
     public virtual void OnObjectSpawn()
     {
-        SetBackgroundVelocity();
+        //SetBackgroundVelocity();
     }
 
     public abstract void OnEnemyDeathAnimation();

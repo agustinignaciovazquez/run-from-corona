@@ -98,26 +98,23 @@ public class PlayerController : MonoBehaviour
         
         if(distanceTraveled < 1000f)
             return scrollingBackgroundSpeed;
-        if(distanceTraveled < 8000f)
+        if(distanceTraveled < 5000f)
             return scrollingBackgroundSpeed * distanceTraveled / 1000f;
-        return scrollingBackgroundSpeed * 8f;
+        return scrollingBackgroundSpeed * 5f;
     }
     
     public float GetScrollingSpeed()
     {
         if (playerIsDead)
-        {
             return 0;
-        }
-
         
         if(distanceTraveled <= 25f) 
             return scrollingSpeed;
            
-        if(distanceTraveled < 8000f) 
-            return scrollingSpeed * ((float) Math.Log(distanceTraveled / 25f) + 1);
+        if(distanceTraveled < 5000f) 
+            return scrollingSpeed * (((float) Math.Log(distanceTraveled / 25f) + 2) /2);
            
-        return scrollingSpeed * ((float) Math.Log(8000f / 100f) + 1);
+        return scrollingSpeed * (((float) Math.Log(5000f / 25f) + 2) / 2);
     }
 
     public float DistanceTraveled

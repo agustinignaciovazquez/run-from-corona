@@ -62,9 +62,9 @@ public class PlayerItemsState : MonoBehaviour {
         weaponShopItems = shopItemsList.Weapons;
         jetpackShopItems = shopItemsList.Jetpacks;
         skinShopItems = shopItemsList.Skins;
-        print(PlayerPrefs.GetString("Weapon"));
+        /*print(PlayerPrefs.GetString("Weapon"));
         print(PlayerPrefs.GetString("Jetpack"));
-        print(PlayerPrefs.GetString("Skin"));
+        print(PlayerPrefs.GetString("Skin"));*/
         currentWeapon = (WeaponShopItem) GetCurrentItem(PlayerPrefs.GetString("Weapon"), weaponShopItems);
         currentJetpack = (JetpackShopItem) GetCurrentItem(PlayerPrefs.GetString("Jetpack"), jetpackShopItems);
         currentSkin = (SkinShopItem) GetCurrentItem(PlayerPrefs.GetString("Skin"), skinShopItems);
