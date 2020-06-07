@@ -44,7 +44,7 @@ public class PlayerItemsState : MonoBehaviour {
         if (HasPreference("Skin"))
             PlayerPrefs.SetString("Skin", "Juan");
         if (HasPreference("Jetpack"))
-            PlayerPrefs.SetString("Jetpack", "Jetpack");
+            PlayerPrefs.SetString("Jetpack", "JetpackStandard");
         if(!PlayerPrefs.HasKey("Coins"))
             PlayerPrefs.SetInt("Coins", 0);
         if(!PlayerPrefs.HasKey("Gems"))
@@ -62,7 +62,9 @@ public class PlayerItemsState : MonoBehaviour {
         weaponShopItems = shopItemsList.Weapons;
         jetpackShopItems = shopItemsList.Jetpacks;
         skinShopItems = shopItemsList.Skins;
-
+        print(PlayerPrefs.GetString("Weapon"));
+        print(PlayerPrefs.GetString("Jetpack"));
+        print(PlayerPrefs.GetString("Skin"));
         currentWeapon = (WeaponShopItem) GetCurrentItem(PlayerPrefs.GetString("Weapon"), weaponShopItems);
         currentJetpack = (JetpackShopItem) GetCurrentItem(PlayerPrefs.GetString("Jetpack"), jetpackShopItems);
         currentSkin = (SkinShopItem) GetCurrentItem(PlayerPrefs.GetString("Skin"), skinShopItems);
