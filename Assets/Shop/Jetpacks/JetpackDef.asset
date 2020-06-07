@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe40d5ae240387f4ba2b40e8ed6219ac, type: 3}
   m_Name: JetpackDef
   m_EditorClassIdentifier: 
-  itemName: Jetpack
+  itemName: JetpackStandard
   spriteName: Jetpack
   sprite: {fileID: 21300000, guid: ca26143ab57adec4385456f316cb1b78, type: 3}
   cost: 0

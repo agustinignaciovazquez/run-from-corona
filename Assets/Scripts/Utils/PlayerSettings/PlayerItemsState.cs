@@ -37,7 +37,7 @@ public class PlayerItemsState : MonoBehaviour {
         //Set default items
         PlayerPrefs.SetInt("Juan", 1);
         PlayerPrefs.SetInt("Water", 1);
-        PlayerPrefs.SetInt("Jetpack", 1);
+        PlayerPrefs.SetInt("JetpackStandard", 1);
         
         if (HasPreference("Weapon"))
             PlayerPrefs.SetString("Weapon", "Water");
