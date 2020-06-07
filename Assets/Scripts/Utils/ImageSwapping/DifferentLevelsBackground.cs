@@ -27,7 +27,7 @@ public class DifferentLevelsBackground : ScrollingBackground
 
     [SerializeField] private GameObject teleportEffect;
     [SerializeField] private GameObject stageText;
-
+    
     protected override void Awake()
     {
         base.Awake();
@@ -38,6 +38,15 @@ public class DifferentLevelsBackground : ScrollingBackground
         fadeIn = false;
         distanceToNextBackground = backgrounds[indexCurrentBackground].DistanceToShow;
         
+        
+        
+      
+    }
+
+    public void Start()
+    {
+       
+
     }
 
    /* private float GetTotalDistance()
