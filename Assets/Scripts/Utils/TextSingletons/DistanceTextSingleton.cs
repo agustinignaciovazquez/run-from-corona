@@ -31,11 +31,7 @@ public class DistanceTextSingleton : MonoBehaviour
     public void SetDistance(int amount)
     {
         distanceText.text = amount + "m";
-    }
-
-    public void SetDistanceEnd()
-    {
         distanceTextEnd.text = distanceText.text;
     }
-    
+
 }

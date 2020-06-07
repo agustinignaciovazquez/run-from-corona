@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -21,8 +22,6 @@ public class ObjectPoolSpawner : MonoBehaviour
         public bool ShouldExpand => shouldExpand;
     }
     
-    
-   
     private Dictionary<string, ObjectPoolQueue> pooledObjects;
     private static ObjectPoolSpawner _sharedInstance;
     
@@ -51,7 +50,17 @@ public class ObjectPoolSpawner : MonoBehaviour
         pooledObjects.Add(tag, objectPoolQueue);
         return objectPoolQueue;
     }
-    
+
+    public void ResetPool()
+    {
+        foreach (string key in pooledObjects.Keys.ToList())
+        {
+            foreach (GameObject go in pooledObjects[key].ObjectPool)
+            {
+                go.SetActive(false);
+            }
+        }
+    }
     public GameObject SpawnObject(string tag, Vector2 position, Quaternion? rotation, Vector3? scale) {
         if (!pooledObjects.ContainsKey(tag))
         {
@@ -73,9 +82,7 @@ public class ObjectPoolSpawner : MonoBehaviour
             objectToSpawn.transform.rotation = rotation.Value;
         if (scale.HasValue)
             objectToSpawn.transform.localScale = scale.Value;
-            
 
-        
         ObjectPoolInterface objectPoolInterface = objectToSpawn.GetComponent<ObjectPoolInterface>();
         
         if(objectPoolInterface != null)
@@ -149,7 +156,7 @@ public class ObjectPoolSpawner : MonoBehaviour
             objectPool.Enqueue(objectToSpawn);
             return objectToSpawn;
         }
-        
+        public Queue<GameObject> ObjectPool => objectPool;
         public int AmountToPool => amountToPool;
         public bool ShouldExpand => shouldExpand;
     }

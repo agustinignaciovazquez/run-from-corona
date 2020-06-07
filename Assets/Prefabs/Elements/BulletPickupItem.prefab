@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38e2d547a670b654dbf0dfa25e8148e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1732572657749238518, guid: 0476426d12a39f84b88ecd31ac7b89b3, type: 3}
   factorProportionalSpeed: 1
   pickupQuantity: 5
 --- !u!1001 &1180177556307384251
@@ -22,10 +21,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5068371463770436500, guid: 8b414a665cea6df43b58a806352cdf37,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1807681023
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068371463770436500, guid: 8b414a665cea6df43b58a806352cdf37,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068371463770436500, guid: 8b414a665cea6df43b58a806352cdf37,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5068371464476324724, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
       propertyPath: m_Name
-      value: BulletPickup Variant
+      value: BulletPickupItem
       objectReference: {fileID: 0}
     - target: {fileID: 5068371464476324724, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
@@ -93,6 +107,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5ae22f74e7abe2048bb7fdc4ebb13fa2,
         type: 3}
+    - target: {fileID: 5068371464600600392, guid: 8b414a665cea6df43b58a806352cdf37,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1807681023
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068371464600600392, guid: 8b414a665cea6df43b58a806352cdf37,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5068371464600600392, guid: 8b414a665cea6df43b58a806352cdf37,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5976862383002511465, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

@@ -8,26 +8,29 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private Collider2D coll;
+    private SpriteRenderer spriteRenderer;
     private PlayerItemsState playerItemsState;
+    private ObjectPoolSpawner objectPoolSpawner;
     
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask roof;
+    [SerializeField] private WeaponController weaponController;
     [SerializeField] private JetpackController jetpackController;
-
     [SerializeField] private GameObject smokeEffect;
     [SerializeField] private GameObject lightningEffect;
+    
     //UI Singletons
     private CoinsTextSingleton coinsText;
-    private DistanceTextSingleton distanceText;
     
     //Player variables
     [SerializeField] private float scrollingSpeed = 4f;
     [SerializeField] private float scrollingBackgroundSpeed = 4f;
     [SerializeField] private float infectionDefense = 0.01f;
-
     [SerializeField] private GameObject endGameMenu;
     
     private bool playerIsDead;
+
+    private bool inmunity;
     //FSM
     private enum State
     {
@@ -42,8 +45,6 @@ public class PlayerController : MonoBehaviour
     private bool flyTrigger = false;
     private float distanceTraveled = 0;
     
-    
-   
     private static readonly int StateAnimId = Animator.StringToHash("State");
     
     //private static readonly int Walking = Animator.StringToHash("Walking");
@@ -57,7 +58,9 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
+
         playerItemsState = PlayerItemsState.Instance;
         playerItemsState.ReloadSettings();
         
@@ -165,16 +168,7 @@ public class PlayerController : MonoBehaviour
         smokeEffect.transform.position = position;
         smokeEffect.SetActive(true);
         playerIsDead = true;
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        gameObject.transform.Find("Weapon").gameObject.SetActive(false);
-        gameObject.transform.Find("Jetpack").gameObject.SetActive(false);
-        
-        
-        //This should go on EndGameMenu maybe
-        coinsText.SetCoinsEnd();
-        
-        distanceText = DistanceTextSingleton.SharedInstance;
-        distanceText.SetDistanceEnd();
+        SetVisibility(false);
         
         yield return new WaitForSeconds(1f);
         smokeEffect.SetActive(false);
@@ -182,26 +176,38 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Resurrect()
-    { 
+    {
         StartCoroutine(WaiterResurrect());
-       
     }
 
     IEnumerator WaiterResurrect()
     {
+        objectPoolSpawner.ResetPool();
         endGameMenu.SetActive(false);
         Vector2 position = transform.position;
         lightningEffect.transform.position = new Vector3(position.x, position.y - 1);
         lightningEffect.SetActive(true);
         playerIsDead = false;
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        gameObject.transform.Find("Weapon").gameObject.SetActive(true);
-        gameObject.transform.Find("Jetpack").gameObject.SetActive(true);
+        inmunity = false;
+        SetVisibility(true);
         
         yield return new WaitForSeconds(1f);
         lightningEffect.SetActive(false);
     }
 
+    public bool Inmunity
+    {
+        get => inmunity;
+        set => inmunity = value;
+    }
+    
+    public void SetVisibility(bool visible)
+    {
+        spriteRenderer.enabled = visible;
+        weaponController.gameObject.SetActive(visible);
+        jetpackController.gameObject.SetActive(visible);
+    }
+    
     public int DirectionTrigger => directionTrigger;
 
     public bool FlyTrigger => flyTrigger;

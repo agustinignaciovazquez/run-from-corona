@@ -96,28 +96,46 @@ public class DifferentLevelsBackground : ScrollingBackground
         
         if (fadeIn)
         {
-            PlayerController.ScrollingBackgroundSpeed *= 3;
-            sceneTransition.FadeOut();
-            fadeIn = false;
-            string songName = backgrounds[prevBackground].BackgroundImage.name;
-            Debug.Log(songName);
-            StartCoroutine(FindObjectOfType<AudioManager>().FadeOut(songName,0.1f));
-            teleportEffect.SetActive(true);
-            stageText.SetActive(true);
-            StageTextSingleton stageTextSingleton = StageTextSingleton.SharedInstance;
-            stageTextSingleton.AddStage();
+            DoFadeInTransition(prevBackground);
         }
         else
         {
-            string songName = backgrounds[indexCurrentBackground].BackgroundImage.name;
-            Debug.Log(songName);
-            StartCoroutine(FindObjectOfType<AudioManager>().FadeIn(songName,0.01f,0.15f));
-            shouldTransition = false;
-            sceneTransition.FadeIn();
-            teleportEffect.SetActive(false);
-            PlayerController.ScrollingBackgroundSpeed /= 3;
-            stageText.SetActive(false);
+           DoFadeOutTransition();
         }
-        //sceneTransition.FadeOut();
+    }
+
+    private void DoFadeInTransition(int prevBackground)
+    {
+        PlayerController.Inmunity = true;
+        PlayerController.ScrollingBackgroundSpeed *= 3;
+        
+        sceneTransition.FadeOut();
+        fadeIn = false;
+        
+        string songName = backgrounds[prevBackground].BackgroundImage.name;
+        Debug.Log(songName);
+        StartCoroutine(FindObjectOfType<AudioManager>().FadeOut(songName,0.1f));
+        
+        teleportEffect.SetActive(true);
+        stageText.SetActive(true);
+        
+        StageTextSingleton stageTextSingleton = StageTextSingleton.SharedInstance;
+        stageTextSingleton.AddStage();
+    }
+
+    private void DoFadeOutTransition()
+    {
+        string songName = backgrounds[indexCurrentBackground].BackgroundImage.name;
+        Debug.Log(songName);
+        StartCoroutine(FindObjectOfType<AudioManager>().FadeIn(songName,0.01f,0.15f));
+        
+        shouldTransition = false;
+        sceneTransition.FadeIn();
+        
+        teleportEffect.SetActive(false);
+        PlayerController.ScrollingBackgroundSpeed /= 3;
+        
+        stageText.SetActive(false);
+        PlayerController.Inmunity = false;
     }
 }

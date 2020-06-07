@@ -48,7 +48,7 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         if (other.gameObject.CompareTag(player.tag))
         {
             var infectionPlayerProbability = InfectPlayerProbability();
-            if(Random.RollDice(infectionPlayerProbability))
+            if(PlayerController.Inmunity == false && Random.RollDice(infectionPlayerProbability))
             {
                 PlayerController.Die();
             }

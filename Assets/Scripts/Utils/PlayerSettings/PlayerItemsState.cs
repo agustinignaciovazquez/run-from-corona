@@ -74,7 +74,6 @@ public class PlayerItemsState : MonoBehaviour {
 
     public ShopItem GetCurrentItem(string itemName, IEnumerable<ShopItem> shopItems)
     {
-        print(itemName);
         ShopItem si = shopItems.First( s => itemName.Equals(s.ItemName)); 
         if(si == null)
             throw new UnassignedReferenceException();

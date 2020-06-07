@@ -23,10 +23,6 @@ public class CoinsTextSingleton : MonoBehaviour
     public void SetCoins(int amount)
     {
         coinsText.text = "x" + amount;
-    }
-
-    public void SetCoinsEnd()
-    {
         coinsTextEnd.text = coinsText.text;
     }
 }

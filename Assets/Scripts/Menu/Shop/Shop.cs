@@ -46,7 +46,6 @@ public class Shop : MonoBehaviour
             ShopItem si = shopItem.ElementAt(i);
             GameObject itemObject = Instantiate(shopItemPrefab, shopContainer);
             
-            print(si.ItemName);
             itemObject.transform.GetChild(0).GetComponent<Text>().text = si.ItemName;
             itemObject.transform.GetChild(1).GetComponent<Image>().sprite = si.Sprite;
             

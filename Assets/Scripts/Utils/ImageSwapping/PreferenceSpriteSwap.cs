@@ -48,7 +48,6 @@ public class PreferenceSpriteSwap : MonoBehaviour
 
         // Swap out the sprite to be rendered by its name
         // Important: The name of the sprite must be the same!
-        print("SWaP "+SpriteSheetName);
         this.spriteRenderer.sprite = this.spriteSheet[this.spriteRenderer.sprite.name];
     }
 
