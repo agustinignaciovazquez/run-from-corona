@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private JetpackController jetpackController;
     [SerializeField] private GameObject smokeEffect;
     [SerializeField] private GameObject lightningEffect;
+    [SerializeField] private GameObject endGameMenu;
     
     //UI Singletons
     private CoinsTextSingleton coinsText;
@@ -25,8 +26,6 @@ public class PlayerController : MonoBehaviour
     //Player variables
     [SerializeField] private float scrollingSpeed = 4f;
     [SerializeField] private float scrollingBackgroundSpeed = 4f;
-    [SerializeField] private float infectionDefense = 0.01f;
-    [SerializeField] private GameObject endGameMenu;
     
     private bool playerIsDead;
 
@@ -52,9 +51,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(infectionDefense < 0 || infectionDefense > 1)
-            throw new ArgumentException();
-        
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
@@ -125,6 +121,10 @@ public class PlayerController : MonoBehaviour
 
     public float GetInfectionDefense()
     {
+        float infectionDefense = playerItemsState.CurrentSkin.InfectionDefense;
+        
+        if(infectionDefense < 0 || infectionDefense > 1)
+            throw new ArgumentException();
         return infectionDefense;
     }
     
@@ -214,4 +214,6 @@ public class PlayerController : MonoBehaviour
     public LayerMask Ground => ground;
 
     public LayerMask Roof => roof;
+    
+    
 }

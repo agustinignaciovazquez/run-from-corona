@@ -25,4 +25,4 @@ MonoBehaviour:
   rotationSpeed: 2
   jetpackForce: 40
   normalizeRotationSpeed: 3
-  moveSpeed: 3
+  moveSpeed: 4

@@ -19,6 +19,8 @@ MonoBehaviour:
   currency: 1
   currencySprite: {fileID: 21300000, guid: 050f4c62c52644c498abfec22890e5c3, type: 3}
   damage: 30
-  bulletSpriteTag: Bullet
-  startBullets: 25
+  bulletSpriteTag: BulletLaser
+  bulletSpeed: 20
+  startBullets: 15
   maxBullets: 50
+  fireRate: 0.2

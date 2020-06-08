@@ -4,13 +4,11 @@ using UnityEditor;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour{
-    //Weapon variables
-    [SerializeField] private float fireRate = 0.3F;
-    
     //UI Singletons
     private BulletTextSingleton bulletsText;
     private ObjectPoolSpawner objectPoolSpawner;
     private PlayerItemsState playerItemsState;
+    private WeaponShopItem weaponShopItem;
     private bool fireTrigger = false;
     private float nextFire = 0.0F;
 
@@ -19,6 +17,7 @@ public class WeaponController : MonoBehaviour{
         objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
         bulletsText = BulletTextSingleton.SharedInstance;
         playerItemsState = PlayerItemsState.Instance;
+        weaponShopItem = playerItemsState.CurrentWeapon;
         bulletsText.SetBullets(playerItemsState.CurrentBullets);
     }
 
@@ -38,8 +37,8 @@ public class WeaponController : MonoBehaviour{
         
         if(CanShoot(currentBullets)) {
             var transform1 = this.transform;
-            nextFire = Time.time + fireRate;
-            objectPoolSpawner.SpawnObject("Bullet", transform1.position);
+            nextFire = Time.time + weaponShopItem.FireRate;
+            objectPoolSpawner.SpawnObject(weaponShopItem.BulletSpriteTag, transform1.position);
             ReduceAmmo(1);
         }
     }
@@ -52,12 +51,12 @@ public class WeaponController : MonoBehaviour{
     {
         bulletsText = BulletTextSingleton.SharedInstance;
         playerItemsState = PlayerItemsState.Instance;
-        if (playerItemsState.CurrentBullets < playerItemsState.CurrentWeapon.MaxBullets)
+        if (playerItemsState.CurrentBullets < weaponShopItem.MaxBullets)
         {
             playerItemsState.CurrentBullets += amount;
-            if (playerItemsState.CurrentBullets > playerItemsState.CurrentWeapon.MaxBullets)
+            if (playerItemsState.CurrentBullets > weaponShopItem.MaxBullets)
             {
-                playerItemsState.CurrentBullets = playerItemsState.CurrentWeapon.MaxBullets;
+                playerItemsState.CurrentBullets = weaponShopItem.MaxBullets;
             }
         }
         bulletsText.SetBullets(playerItemsState.CurrentBullets);

@@ -18,3 +18,4 @@ MonoBehaviour:
   cost: 0
   currency: 0
   currencySprite: {fileID: 21300000, guid: 9fa4c36845b65844fb205703725a3922, type: 3}
+  infectionDefense: 0

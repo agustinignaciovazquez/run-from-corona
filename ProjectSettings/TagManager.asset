@@ -20,6 +20,10 @@ TagManager:
   - CoinPickup
   - Background
   - SmokeEffect
+  - BulletSmallFire
+  - PickupBullet
+  - BulletFireball
+  - BulletLaser
   layers:
   - Default
   - TransparentFX

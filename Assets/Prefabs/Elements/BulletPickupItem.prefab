@@ -44,7 +44,7 @@ PrefabInstance:
     - target: {fileID: 5068371464476324724, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}
       propertyPath: m_TagString
-      value: BulletPickup
+      value: PickupBullet
       objectReference: {fileID: 0}
     - target: {fileID: 5068371464476324730, guid: 8b414a665cea6df43b58a806352cdf37,
         type: 3}

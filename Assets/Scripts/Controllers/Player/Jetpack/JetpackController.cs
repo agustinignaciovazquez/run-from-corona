@@ -13,6 +13,8 @@ public class JetpackController : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D coll;
     private Transform playerTransform;
+    private float enemyBackgroundSpeedFactor;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class JetpackController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        enemyBackgroundSpeedFactor = playerController.GetScrollingSpeed() / playerController.ScrollingSpeed;
         SetPlayerMovement();
     }
     
@@ -44,14 +47,12 @@ public class JetpackController : MonoBehaviour
                 RotateFlyingPlayer();
             }
             //Jetpack Force according to rotation and others
-            rb.AddForce( playerTransform.rotation * Vector2.up * playerItemsState.CurrentJetpack.JetpackForce);
+            rb.AddForce( playerTransform.rotation * Vector2.up * (playerItemsState.CurrentJetpack.JetpackForce));
             
             //TODO Play different sounds based on playerPrefs
             if(!audioSource.isPlaying) {
                 audioSource.Play();
             }
-            
-            
         }
         else
         {

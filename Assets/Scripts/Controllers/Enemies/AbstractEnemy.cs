@@ -12,7 +12,7 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
     private ObjectPoolSpawner objectPoolSpawner;
     private GameObject player;
     [SerializeField] private float infectProbability = 0.99f;
-    [SerializeField] private float factorProportionalSpeed = 0.9f;
+    [SerializeField] private float factorProportionalSpeed = 1f;
     
     // Start is called before the first frame update
     protected virtual void Awake()
@@ -58,15 +58,13 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         }
         
         //Desinfect Bullet Collision
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.tag.StartsWith("Bullet"))
         {
             //Delete bullet
             other.gameObject.SetActive(false);
             
             //Animate explosion
             OnEnemyDeathAnimation();
-            
-            print("DESINFECTED");
             
             //Auto delete ourselves
             this.gameObject.SetActive(false);

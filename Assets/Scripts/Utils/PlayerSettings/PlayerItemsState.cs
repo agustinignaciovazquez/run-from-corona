@@ -20,7 +20,7 @@ public class PlayerItemsState : MonoBehaviour {
     private int currentCoins = 0;
     private int currentBullets = 0;
     private float currentEnergy = 0;
-    
+
     private void Start(){
         if (Instance == null){
             Instance = this;
@@ -36,6 +36,7 @@ public class PlayerItemsState : MonoBehaviour {
     {
         //Set default items
         PlayerPrefs.SetInt("Juan", 1);
+        PlayerPrefs.SetInt("SpatialWeap", 1);
         PlayerPrefs.SetInt("Water", 1);
         PlayerPrefs.SetInt("JetpackStandard", 1);
         
@@ -62,9 +63,7 @@ public class PlayerItemsState : MonoBehaviour {
         weaponShopItems = shopItemsList.Weapons;
         jetpackShopItems = shopItemsList.Jetpacks;
         skinShopItems = shopItemsList.Skins;
-        /*print(PlayerPrefs.GetString("Weapon"));
-        print(PlayerPrefs.GetString("Jetpack"));
-        print(PlayerPrefs.GetString("Skin"));*/
+
         currentWeapon = (WeaponShopItem) GetCurrentItem(PlayerPrefs.GetString("Weapon"), weaponShopItems);
         currentJetpack = (JetpackShopItem) GetCurrentItem(PlayerPrefs.GetString("Jetpack"), jetpackShopItems);
         currentSkin = (SkinShopItem) GetCurrentItem(PlayerPrefs.GetString("Skin"), skinShopItems);

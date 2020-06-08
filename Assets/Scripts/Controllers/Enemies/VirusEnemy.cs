@@ -13,7 +13,7 @@ public class VirusEnemy : AbstractEnemy
         {
             //TODO contagiar personas
         }
-        if(other.gameObject.CompareTag("Covid") || other.gameObject.CompareTag("CoinPickup") || other.gameObject.CompareTag("BulletPickup")) 
+        if(other.gameObject.CompareTag("Covid") || other.gameObject.CompareTag("CoinPickup") || other.gameObject.CompareTag("PickupBullet")) 
             other.gameObject.SetActive(false);
     }
 
