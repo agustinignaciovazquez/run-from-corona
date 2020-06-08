@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject smokeEffect;
     [SerializeField] private GameObject lightningEffect;
     [SerializeField] private GameObject endGameMenu;
-    
+
     //UI Singletons
     private CoinsTextSingleton coinsText;
     
@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
         
         coinsText = CoinsTextSingleton.SharedInstance;
         coinsText.SetCoins(playerItemsState.CurrentCoins);
+        
     }  
     
 
@@ -165,6 +166,7 @@ public class PlayerController : MonoBehaviour
         Vector2 position = transform.position;
         smokeEffect.transform.position = position;
         smokeEffect.SetActive(true);
+        FindObjectOfType<AudioManager>().Play(playerItemsState.CurrentSkin.AudioName);
         playerIsDead = true;
         SetVisibility(false);
         

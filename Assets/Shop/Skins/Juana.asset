@@ -18,3 +18,5 @@ MonoBehaviour:
   cost: 50
   currency: 1
   currencySprite: {fileID: 21300000, guid: 050f4c62c52644c498abfec22890e5c3, type: 3}
+  infectionDefense: 0.01
+  audioName: OuchJuana

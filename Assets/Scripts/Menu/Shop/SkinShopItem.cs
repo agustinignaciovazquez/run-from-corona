@@ -5,6 +5,8 @@ using UnityEngine;
 public class SkinShopItem : ShopItem
 {
     [SerializeField] private float infectionDefense = 0.01f;
-
+    [SerializeField] private string audioName;
+    
     public float InfectionDefense => infectionDefense;
+    public string AudioName => audioName;
 }
