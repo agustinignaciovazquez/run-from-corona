@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        SaveCoins();
         StartCoroutine(WaiterDie());
     }
     
@@ -172,6 +173,12 @@ public class PlayerController : MonoBehaviour
         endGameMenu.SetActive(true);        
     }
 
+    private void SaveCoins()
+    {
+        int newCoins = PlayerPrefs.GetInt("Coins") + playerItemsState.CurrentCoins;
+        PlayerPrefs.SetInt("Coins", newCoins);
+        playerItemsState.CurrentCoins = 0;
+    }
     public void Resurrect()
     {
         StartCoroutine(WaiterResurrect());
