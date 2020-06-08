@@ -146,6 +146,6 @@ public class Spawner : MonoBehaviour
     {
         float x = (float) _random.RandomBetween(spawnItem.RangeX.MinNum, spawnItem.RangeX.MaxNum);
         float y = (float) _random.RandomBetween(spawnItem.RangeY.MinNum, spawnItem.RangeY.MaxNum);
-        return new Vector2(position.x + x + stepX + playerController.ScrollingSpeed , position.y + y + stepY); 
+        return new Vector2(position.x + x + stepX + 2 * playerController.ScrollingSpeed , position.y + y + stepY); 
     }
 }

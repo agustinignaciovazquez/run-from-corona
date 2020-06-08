@@ -2948,30 +2948,30 @@ MonoBehaviour:
     objectToPool: {fileID: 6386271089862346935, guid: 299343e8ebeb1684086d1425a7eee807,
       type: 3}
     shouldExpand: 0
-  - amountToPool: 10
+  - amountToPool: 15
     objectToPool: {fileID: 987322702366524526, guid: e0f5afaa0d1fceb468e699fc9ce3d9ed,
       type: 3}
     shouldExpand: 0
-  - amountToPool: 10
+  - amountToPool: 15
     objectToPool: {fileID: 3323922870078609429, guid: 73f36cc8b6c6c1d49ac1a4c4d7662133,
       type: 3}
     shouldExpand: 0
-  - amountToPool: 10
+  - amountToPool: 15
     objectToPool: {fileID: 3788335378739105106, guid: cb023cb9cdfcb2d46adb9be6497a8702,
       type: 3}
     shouldExpand: 0
-  - amountToPool: 10
+  - amountToPool: 15
     objectToPool: {fileID: 3345001852889575039, guid: ae67d40e6b0df3446b1dff6a0c1dd67e,
       type: 3}
     shouldExpand: 0
-  - amountToPool: 25
+  - amountToPool: 10
     objectToPool: {fileID: 136800, guid: 50c0d8c73dfeed248826c384c274984d, type: 3}
     shouldExpand: 0
-  - amountToPool: 25
+  - amountToPool: 50
     objectToPool: {fileID: 6212343786186564815, guid: d1185fc78df9b48d99ed932b1b09eb3b,
       type: 3}
     shouldExpand: 0
-  - amountToPool: 150
+  - amountToPool: 50
     objectToPool: {fileID: 3979244554782393485, guid: 41500c466148c48feaa78bc043192b37,
       type: 3}
     shouldExpand: 0

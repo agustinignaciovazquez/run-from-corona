@@ -37,7 +37,7 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
     void SetBackgroundVelocity()
     {
         ScrollVelocity = PlayerController.GetScrollingSpeed();
-        print("VELOCITA "+ScrollVelocity);
+        //print("VELOCITA "+ScrollVelocity);
         Rb.velocity = new Vector2(-ScrollVelocity * factorProportionalSpeed, Rb.velocity.y);
     }
     
