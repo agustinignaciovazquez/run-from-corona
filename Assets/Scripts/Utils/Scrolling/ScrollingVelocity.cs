@@ -6,7 +6,6 @@ public class ScrollingVelocity : MonoBehaviour
 {
     [SerializeField] private PlayerController playerController;
     [SerializeField] private float velocityToPlayerRate = 1f;
-    [SerializeField] private bool distanceReference = false;
     private Rigidbody2D rb;
     private float scrollVelocity;
 
@@ -19,16 +18,7 @@ public class ScrollingVelocity : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(distanceReference)
-            SetPlayerDistance();
         SetBackgroundVelocity();
-    }
-
-    protected void SetPlayerDistance()
-    {
-        float distance = transform.position.x * -1f;
-        //Update player distance
-        PlayerController.DistanceTraveled = distance;
     }
     
     protected void SetBackgroundVelocity()

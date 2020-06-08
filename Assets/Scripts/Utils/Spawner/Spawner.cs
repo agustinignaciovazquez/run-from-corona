@@ -47,9 +47,10 @@ public class Spawner : MonoBehaviour
         public float MaxNum => maxNum;
     }
     [SerializeField] private float spawnDistance = 25f;
-    [SerializeField] private GameObject distanceReference;
+    [SerializeField] private DistanceReference distanceReference;
     [SerializeField] private List<SpawnItem> itemsToSpawn;
     
+    private PlayerController playerController;
     private float nextSpawn = 0.0F;
     private static RandomSingleton _random;
     private static ObjectPoolSpawner _objectPoolSpawner;
@@ -57,6 +58,7 @@ public class Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerController = distanceReference.PlayerController;
         _objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
         _random = RandomSingleton.GetSharedInstance;
         CheckParametersAndSort();
@@ -80,7 +82,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = distanceReference.transform.position.x * -1f;
+        float distance = distanceReference.Distance;
         distance = (distance < 0)? 0 : distance;
         GameObject self = this.gameObject;
         if(distance >= nextSpawn)
@@ -92,7 +94,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    static SpawnItem SelectRandomItem(GameObject self, List<SpawnItem> itemsToSpawn)
+    SpawnItem SelectRandomItem(GameObject self, List<SpawnItem> itemsToSpawn)
     {
         double rand = _random.NextDouble();
         float percentage = 0f;
@@ -105,7 +107,7 @@ public class Spawner : MonoBehaviour
 
         return null;
     }
-    static void SpawnItems(GameObject self, List<SpawnItem> itemsToSpawn)
+    void SpawnItems(GameObject self, List<SpawnItem> itemsToSpawn)
     {
        
         foreach(SpawnItem item in itemsToSpawn)
@@ -116,7 +118,7 @@ public class Spawner : MonoBehaviour
             }
         }
     }
-    static void SpawnPattern(GameObject self, SpawnItem spawnItem)
+    void SpawnPattern(GameObject self, SpawnItem spawnItem)
     {
         Transform transform1 = self.transform;
         int n = (int) _random.RandomBetween(spawnItem.RangeN().MinNum, spawnItem.RangeN().MaxNum);
@@ -140,10 +142,10 @@ public class Spawner : MonoBehaviour
             stepY += spawnItem.StepY;
         }
     }
-    static Vector2 GetRandomPositionVector(SpawnItem spawnItem, Vector2 position, float stepX, float stepY)
+     Vector2 GetRandomPositionVector(SpawnItem spawnItem, Vector2 position, float stepX, float stepY)
     {
         float x = (float) _random.RandomBetween(spawnItem.RangeX.MinNum, spawnItem.RangeX.MaxNum);
         float y = (float) _random.RandomBetween(spawnItem.RangeY.MinNum, spawnItem.RangeY.MaxNum);
-        return new Vector2(position.x + x + stepX , position.y + y + stepY);
+        return new Vector2(position.x + x + stepX + playerController.ScrollingSpeed , position.y + y + stepY); 
     }
 }

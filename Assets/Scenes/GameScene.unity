@@ -2398,7 +2398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 10
-  distanceReference: {fileID: 698374720}
+  distanceReference: {fileID: 698374721}
   itemsToSpawn:
   - spawnObject: {fileID: 987322702366524526, guid: e0f5afaa0d1fceb468e699fc9ce3d9ed,
       type: 3}
@@ -2559,7 +2559,6 @@ GameObject:
   - component: {fileID: 698374722}
   - component: {fileID: 698374723}
   - component: {fileID: 698374721}
-  - component: {fileID: 698374724}
   m_Layer: 0
   m_Name: Distance
   m_TagString: DistanceCalculator
@@ -2576,12 +2575,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 698374720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fac581595294db04f8d0b36f06940154, type: 3}
+  m_Script: {fileID: 11500000, guid: 8573ecdc53e1fed4691aa7398ce7d6ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 374889529}
   velocityToPlayerRate: 1
-  distanceReference: 1
 --- !u!4 &698374722
 Transform:
   m_ObjectHideFlags: 0
@@ -2617,20 +2615,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &698374724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698374720}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e19dc1ace1fe4cf4a29f6f93e980565, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anchorType: 4
-  anchorOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &722653892
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,7 +3038,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 374889529}
   velocityToPlayerRate: 1
-  distanceReference: 0
   sceneTransition: {fileID: 1191961027}
   backgrounds:
   - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
@@ -4692,8 +4675,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1141738667}
   - component: {fileID: 1141738670}
-  - component: {fileID: 1141738669}
   - component: {fileID: 1141738668}
+  - component: {fileID: 1141738669}
   m_Layer: 0
   m_Name: OutboundsTop
   m_TagString: Outbounds
@@ -4738,7 +4721,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1141738666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af459ef3eb1a51f479d089a360515e11, type: 3}
+  m_Script: {fileID: 11500000, guid: 854752d6345531248b08f43ba7ad810c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &1141738670
@@ -5892,7 +5875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDistance: 25
-  distanceReference: {fileID: 698374720}
+  distanceReference: {fileID: 698374721}
   itemsToSpawn:
   - spawnObject: {fileID: 6212343786186564815, guid: d1185fc78df9b48d99ed932b1b09eb3b,
       type: 3}
@@ -6152,8 +6135,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1709970172}
   - component: {fileID: 1709970175}
-  - component: {fileID: 1709970174}
   - component: {fileID: 1709970173}
+  - component: {fileID: 1709970174}
   m_Layer: 0
   m_Name: OutboundsBottom
   m_TagString: Outbounds
@@ -6198,7 +6181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709970171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af459ef3eb1a51f479d089a360515e11, type: 3}
+  m_Script: {fileID: 11500000, guid: 854752d6345531248b08f43ba7ad810c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &1709970175
@@ -6920,7 +6903,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 374889529}
   velocityToPlayerRate: 1
-  distanceReference: 0
   sceneTransition: {fileID: 1191961027}
   backgrounds:
   - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
