@@ -23,5 +23,9 @@ public class MainMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("ButtonClick");
         SceneManager.LoadScene("ConfigurationMenu");
     }
-    
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
