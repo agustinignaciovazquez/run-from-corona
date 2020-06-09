@@ -8,12 +8,13 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     
     public GameObject pauseMenuUI;
-
+    public AudioManager audioManager;
+    
     [SerializeField] private AudioMixer audioMixer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -36,7 +37,7 @@ public class PauseMenu : MonoBehaviour
     {
         audioMixer.SetFloat("Volume", 0f);
         pauseMenuUI.SetActive(false);
-        FindObjectOfType<AudioManager>().Play("ButtonClick");
+        audioManager.Play("ButtonClick");
         Time.timeScale = 1f ;
         GameIsPaused = false;
     }
@@ -55,7 +56,10 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         audioMixer.SetFloat("Volume", 0f);
-        FindObjectOfType<AudioManager>().Play("ButtonClick");
+        audioManager.Play("ButtonClick");
+        //TODO
+        //StartCoroutine(audioManager.FadeOut("x",0.01f,0.15f));
+        //StartCoroutine(audioManager.FadeIn("Airport",0.01f,0.15f));
         Time.timeScale = 1f ;
         SceneManager.LoadScene("GameScene");
     }
@@ -63,7 +67,9 @@ public class PauseMenu : MonoBehaviour
     public void QuitToMenu()
     {
         audioMixer.SetFloat("Volume", 0f);
-        FindObjectOfType<AudioManager>().Play("ButtonClick");
+        //TODO
+        //StartCoroutine(audioManager.FadeOut("x",0.01f,0.15f));
+        audioManager.Play("ButtonClick");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }

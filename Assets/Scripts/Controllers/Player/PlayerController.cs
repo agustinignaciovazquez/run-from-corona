@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float scrollingBackgroundSpeed = 4f;
     
     private bool playerIsDead;
+    
+    private AudioManager audioManager;
 
     private bool inmunity;
     //FSM
@@ -60,6 +62,8 @@ public class PlayerController : MonoBehaviour
         playerItemsState = PlayerItemsState.Instance;
         playerItemsState.ReloadSettings();
         
+        audioManager = FindObjectOfType<AudioManager>();
+
         coinsText = CoinsTextSingleton.SharedInstance;
         coinsText.SetCoins(playerItemsState.CurrentCoins);
         
@@ -166,7 +170,7 @@ public class PlayerController : MonoBehaviour
         Vector2 position = transform.position;
         smokeEffect.transform.position = position;
         smokeEffect.SetActive(true);
-        FindObjectOfType<AudioManager>().Play(playerItemsState.CurrentSkin.AudioName);
+        audioManager.Play(playerItemsState.CurrentSkin.AudioName);
         playerIsDead = true;
         SetVisibility(false);
         
