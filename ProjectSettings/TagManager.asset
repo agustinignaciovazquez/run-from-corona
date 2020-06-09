@@ -24,6 +24,8 @@ TagManager:
   - PickupBullet
   - BulletFireball
   - BulletLaser
+  - BloodExplosion
+  - InfectedMan
   layers:
   - Default
   - TransparentFX

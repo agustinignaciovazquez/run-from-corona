@@ -8,7 +8,8 @@ public class OutboundControllerTopBottom : MonoBehaviour
     {
         //Outbounds
         //Delete other object unless is player
-        if(!(other.CompareTag("Player") || other.CompareTag("Background")))
+        if (!(other.CompareTag("Player") || other.CompareTag("Background") || other.CompareTag("InfectedMan")
+              || other.CompareTag("Green Explosion") || other.CompareTag("BloodExplosion")))
             other.gameObject.SetActive(false);
     }
     

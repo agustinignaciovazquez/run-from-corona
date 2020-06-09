@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScrollingVelocity : MonoBehaviour
 {
-    [SerializeField] private PlayerController playerController;
+    private PlayerController playerController;
     [SerializeField] private float velocityToPlayerRate = 1f;
     private Rigidbody2D rb;
     private float scrollVelocity;
@@ -13,6 +13,7 @@ public class ScrollingVelocity : MonoBehaviour
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
         SetBackgroundVelocity();
     }
 

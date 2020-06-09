@@ -43,11 +43,14 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
     
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.gameObject.CompareTag("Covid") || other.gameObject.CompareTag("CoinPickup") || other.gameObject.CompareTag("PickupBullet")) 
+            other.gameObject.SetActive(false);
+        
         //Player Collision
         if (other.gameObject.CompareTag(player.tag))
         {
             var infectionPlayerProbability = InfectPlayerProbability();
-            gameObject.SetActive(false);
+            
             if(PlayerController.Inmunity == false && Random.RollDice(infectionPlayerProbability))
             {
                 PlayerController.Die();
@@ -56,6 +59,9 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
             {
                 print("SAFASTE");
             }
+            //Auto-Death
+            OnEnemyDeathAnimation();
+            gameObject.SetActive(false);
         }
         
         //Desinfect Bullet Collision

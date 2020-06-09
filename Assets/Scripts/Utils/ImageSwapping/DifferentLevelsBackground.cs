@@ -18,13 +18,14 @@ public class DifferentLevelsBackground : ScrollingBackground
     [SerializeField] private SceneTransition sceneTransition;
     
     [SerializeField] private List<ScenarioBackground> backgrounds;
-
+    
+    private ObjectPoolSpawner objectPoolSpawner;
     private int indexCurrentBackground;
     private float distanceToNextBackground;
     private SpriteRenderer spriteRenderer;
     private bool shouldTransition;
     private bool fadeIn;
-
+    
     [SerializeField] private GameObject teleportEffect;
     [SerializeField] private GameObject stageText;
     
@@ -37,10 +38,7 @@ public class DifferentLevelsBackground : ScrollingBackground
         shouldTransition = false;
         fadeIn = false;
         distanceToNextBackground = backgrounds[indexCurrentBackground].DistanceToShow;
-        
-        
-        
-      
+        objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
     }
 
     public void Start()
@@ -92,6 +90,7 @@ public class DifferentLevelsBackground : ScrollingBackground
         if (other.gameObject.CompareTag("Player") && shouldTransition)
         {
             DoTransition();
+            
         }
     }
 
@@ -132,6 +131,7 @@ public class DifferentLevelsBackground : ScrollingBackground
 
     private void DoFadeOutTransition()
     {
+        objectPoolSpawner.ResetPool();
         string songName = backgrounds[indexCurrentBackground].BackgroundImage.name;
         Debug.Log(songName);
         StartCoroutine(FindObjectOfType<AudioManager>().FadeIn(songName,0.01f,0.15f));
