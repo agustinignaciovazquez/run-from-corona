@@ -36,7 +36,6 @@ public class PlayerItemsState : MonoBehaviour {
     {
         //Set default items
         PlayerPrefs.SetInt("Juan", 1);
-        PlayerPrefs.SetInt("SpatialWeap", 1);
         PlayerPrefs.SetInt("Water", 1);
         PlayerPrefs.SetInt("JetpackStandard", 1);
         
@@ -47,9 +46,9 @@ public class PlayerItemsState : MonoBehaviour {
         if (HasPreference("Jetpack"))
             PlayerPrefs.SetString("Jetpack", "JetpackStandard");
         if(!PlayerPrefs.HasKey("Coins"))
-            PlayerPrefs.SetInt("Coins", 0);
+            PlayerPrefs.SetInt("Coins", 5000);
         if(!PlayerPrefs.HasKey("Gems"))
-            PlayerPrefs.SetInt("Gems", 0);
+            PlayerPrefs.SetInt("Gems", 4000);
     }
 
     private bool HasPreference(string pref)
