@@ -209,6 +209,7 @@ public class PlayerController : MonoBehaviour
     
     public void SetVisibility(bool visible)
     {
+        //coll.isTrigger = visible;
         spriteRenderer.enabled = visible;
         weaponController.gameObject.SetActive(visible);
         jetpackController.gameObject.SetActive(visible);

@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40999821}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.7, y: 0, z: 0}
+  m_LocalPosition: {x: -23.266666, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -476,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91974946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.7000003, y: 0, z: 0}
+  m_LocalPosition: {x: -10.266667, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -1066,7 +1066,7 @@ RectTransform:
   - {fileID: 1298809870}
   - {fileID: 1503764105}
   m_Father: {fileID: 1575735860}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1425,7 +1425,7 @@ RectTransform:
   m_Children:
   - {fileID: 967614506}
   m_Father: {fileID: 1575735860}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1575,7 +1575,7 @@ RectTransform:
   - {fileID: 602568026}
   - {fileID: 49438271}
   m_Father: {fileID: 1575735860}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1804,7 +1804,7 @@ RectTransform:
   - {fileID: 1551568214}
   - {fileID: 1538587730}
   m_Father: {fileID: 1575735860}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2148,7 +2148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592303574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.700001, y: 0, z: 0}
+  m_LocalPosition: {x: 10.266666, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -2528,7 +2528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659182453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.7, y: -0.5, z: 0}
+  m_LocalPosition: {x: 36.266666, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2784,7 +2784,7 @@ RectTransform:
   - {fileID: 590080040}
   - {fileID: 1445775025}
   m_Father: {fileID: 1575735860}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3050,23 +3050,23 @@ MonoBehaviour:
   sceneTransition: {fileID: 1191961027}
   backgrounds:
   - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: 01de3a78aa4fc5a46853e14d8a4194c0, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: b24a79397ad25df419b5316a0d2e4b56, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: 119024040bcc46a42b331014d04c1ec5, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: d5a2cb3bba6c5284ca902779b8873197, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: e0bddf50bd6fcc74785b815d7ecd5dab, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: b8bf86bef572e434a8c981650128e360, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: f558537aa599c6d49ab534a6547aabd9, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   teleportEffect: {fileID: 349510876}
   stageText: {fileID: 1733151731}
 --- !u!212 &797363596
@@ -3132,7 +3132,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -20, y: 0}
+  m_Offset: {x: -30, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
@@ -4183,7 +4183,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986417192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.700001, y: 0, z: 0}
+  m_LocalPosition: {x: 11.266666, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -4667,7 +4667,7 @@ RectTransform:
   - {fileID: 1597239815}
   - {fileID: 991342966}
   m_Father: {fileID: 1575735860}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -5726,13 +5726,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 467499365}
   - {fileID: 297247322}
   - {fileID: 728293941}
   - {fileID: 1115067777}
   - {fileID: 210093340}
-  - {fileID: 346822314}
   - {fileID: 1733151732}
+  - {fileID: 467499365}
+  - {fileID: 346822314}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5934,7 +5934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623559072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.7, y: -0.5, z: 0}
+  m_LocalPosition: {x: 36.266666, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6249,7 +6249,7 @@ RectTransform:
   m_Children:
   - {fileID: 1047189973}
   m_Father: {fileID: 1575735860}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6915,23 +6915,23 @@ MonoBehaviour:
   sceneTransition: {fileID: 1191961027}
   backgrounds:
   - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: 01de3a78aa4fc5a46853e14d8a4194c0, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: b24a79397ad25df419b5316a0d2e4b56, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: 119024040bcc46a42b331014d04c1ec5, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: d5a2cb3bba6c5284ca902779b8873197, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: e0bddf50bd6fcc74785b815d7ecd5dab, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: b8bf86bef572e434a8c981650128e360, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   - backgroundImage: {fileID: 21300000, guid: f558537aa599c6d49ab534a6547aabd9, type: 3}
-    distanceToShow: 75
+    distanceToShow: 100
   teleportEffect: {fileID: 349510876}
   stageText: {fileID: 1733151731}
 --- !u!212 &2101879990
