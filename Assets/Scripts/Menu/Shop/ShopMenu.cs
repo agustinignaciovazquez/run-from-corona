@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ShopMenu : MonoBehaviour
 {
+    private GemAdsHandler gemAdHandler;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gemAdHandler = GetComponent<GemAdsHandler>();
     }
 
     // Update is called once per frame
@@ -23,5 +24,9 @@ public class ShopMenu : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void GetGems()
+    {
+        gemAdHandler.ShowRewardBasedAd();
+    }
     
 }

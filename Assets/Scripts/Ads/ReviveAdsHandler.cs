@@ -1,17 +1,19 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using GoogleMobileAds.Api;
 using UnityEngine;
+using UnityEngine.Audio;
 
-public class NewBehaviourScript : MonoBehaviour
+
+public class ReviveAdsHandler : MonoBehaviour
 {
-    
+        [SerializeField] private AudioMixer audioMixer;
+        private PlayerController playerController;
+        
         private RewardBasedVideoAd rewardBasedVideoAd;
         void Start(){
+            playerController = GameObject.Find("Player").GetComponent<PlayerController>();
             
             rewardBasedVideoAd = RewardBasedVideoAd.Instance;
-            
             
             rewardBasedVideoAd.OnAdLoaded += HandleRewardBasedVideoLoaded;
       
@@ -27,15 +29,15 @@ public class NewBehaviourScript : MonoBehaviour
 
             rewardBasedVideoAd.OnAdLeavingApplication += HandleRewardBasedVideoLeftApplication;
             
-            
+            this.LoadRewardBasedAd();
         }
       
         
         public void LoadRewardBasedAd(){
             #if UNITY_ANDROID
-            string adUnitId = "ca-app-pub-3940256099942544/5224354917";
+            string adUnitId = "ca-app-pub-7549409007580145/8649923395";
             #elif UNITY_IPHONE
-            string adUnitId = "ca-app-pub-3940256099942544/1712485313";
+            string adUnitId = "ca-app-pub-7549409007580145/4852975151";
             #else
             string adUnitId = "unexpected_platform";
             #endif
@@ -71,17 +73,26 @@ public class NewBehaviourScript : MonoBehaviour
 
         public void HandleRewardBasedVideoStarted(object sender, EventArgs args)
         {
-           //Mute Audio
+            //Mute audio
+            audioMixer.SetFloat("Volume", -80f);
         }
 
         public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
         {
             //Back to the end game menu
+            //Unmute audio
+            audioMixer.SetFloat("Volume", 0f);
         }
 
         public void HandleRewardBasedVideoRewarded(object sender, Reward args)
         {
-            //Reward the user. Continue, for example
+            //Unmute audio
+            audioMixer.SetFloat("Volume", 0f);
+            //RewardPlayer
+            string type = args.Type;
+            double amount = args.Amount;
+            print("User rewarded with: " + amount + " " + type);
+            playerController.Resurrect();
         }
 
         public void HandleRewardBasedVideoLeftApplication(object sender, EventArgs args)

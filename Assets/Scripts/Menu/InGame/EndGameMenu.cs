@@ -7,11 +7,13 @@ using GoogleMobileAds.Api;
 
 public class EndGameMenu : MonoBehaviour
 {
-    private PlayerController PlayerController;
+    private PlayerController playerController;
+    private ReviveAdsHandler reviveAdsHandler;
 
     void Awake()
     {
-        PlayerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        reviveAdsHandler = GetComponent<ReviveAdsHandler>();
+        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
     }
     
     public void Restart()
@@ -35,7 +37,7 @@ public class EndGameMenu : MonoBehaviour
 
     public void Continue()
     {
-        PlayerController.Resurrect();
+        reviveAdsHandler.ShowRewardBasedAd();
     }
     
 }
