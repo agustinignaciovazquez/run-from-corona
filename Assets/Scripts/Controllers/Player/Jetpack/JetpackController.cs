@@ -49,7 +49,6 @@ public class JetpackController : MonoBehaviour
             //Jetpack Force according to rotation and others
             rb.AddForce( playerTransform.rotation * Vector2.up * (playerItemsState.CurrentJetpack.JetpackForce));
             
-            //TODO Play different sounds based on playerPrefs
             if(!audioSource.isPlaying) {
                 audioSource.Play();
             }

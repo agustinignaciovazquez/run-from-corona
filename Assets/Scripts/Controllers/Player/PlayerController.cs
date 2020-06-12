@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject lightningEffect;
     [SerializeField] private GameObject endGameMenu;
 
-    [SerializeField] float horizontalSpeed = 0.1f;
+    [SerializeField] float horizontalSpeed = 0.003f;
     
     //UI Singletons
     private CoinsTextSingleton coinsText;
@@ -43,11 +43,11 @@ public class PlayerController : MonoBehaviour
     };
     private State state = State.Running;
 
-    private int directionTrigger = 0;
+    private float directionTrigger = 0;
     private int backgroundIndex;
     private bool flyTrigger = false;
     private float distanceTraveled = 0;
-    
+    private float jetpackJoystickScreen;
     
     private static readonly int StateAnimId = Animator.StringToHash("State");
     
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
         coinsText = CoinsTextSingleton.SharedInstance;
         coinsText.SetCoins(playerItemsState.CurrentCoins);
-        
+        jetpackJoystickScreen = Screen.width / 2f;
     }  
     
 
@@ -81,8 +81,8 @@ public class PlayerController : MonoBehaviour
             foreach(Touch touch in Input.touches)
             {
                 // Joystick Controls
-
-                if(touch.position.x < Screen.width/2)
+                
+                if(touch.position.x < jetpackJoystickScreen)
                 {
                     Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
@@ -94,17 +94,17 @@ public class PlayerController : MonoBehaviour
                                 flyTrigger = true;
                             }
                             break;
-                
+                        
                         case TouchPhase.Moved:
-                            
+                        case TouchPhase.Stationary:
                             // Get movement of the finger since last frame
-                            Vector2 touchDeltaPosition  = touch.deltaPosition;
+                            float touchDeltaPositionx  = touch.position.x - jetpackJoystickScreen/2f;
 
-                            directionTrigger = (int)-touchDeltaPosition.x;
+                            directionTrigger = touchDeltaPositionx * horizontalSpeed;
                             //ACA HAY QUE VER COMO REEMPLAZAR EL DIRECTION TRIGGER
                             //transform.Translate (-touchDeltaPosition.x * horizontalSpeed, 0, 0);
                             break;
-                
+                       
                         case TouchPhase.Ended:
                             flyTrigger = false;
                             break;
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
                 }
                 
                 // Action Controls
-                if(touch.position.x > Screen.width/2)
+                if(touch.position.x > Screen.width/2f)
                 {
                     weaponController.Fire();
                 }
@@ -259,7 +259,7 @@ public class PlayerController : MonoBehaviour
         jetpackController.gameObject.SetActive(visible);
     }
     
-    public int DirectionTrigger => directionTrigger;
+    public float DirectionTrigger => directionTrigger;
 
     public bool FlyTrigger => flyTrigger;
 
