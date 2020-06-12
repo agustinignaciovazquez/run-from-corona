@@ -9,7 +9,7 @@ public class WeaponController : MonoBehaviour{
     private ObjectPoolSpawner objectPoolSpawner;
     private PlayerItemsState playerItemsState;
     private WeaponShopItem weaponShopItem;
-    private bool fireTrigger = false;
+    //private bool fireTrigger = false;
     private float nextFire = 0.0F;
 
     // Start is called before the first frame update
@@ -22,16 +22,16 @@ public class WeaponController : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void FixedUpdate(){
+    /*void FixedUpdate(){
         fireTrigger = Input.GetButton("Fire1");
         if (fireTrigger)
         {
             Fire();
         }
-    }
+    }*/
 
 
-    void Fire()
+    public void Fire()
     {
         int currentBullets = playerItemsState.CurrentBullets;
         

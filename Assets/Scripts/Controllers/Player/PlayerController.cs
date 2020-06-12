@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject lightningEffect;
     [SerializeField] private GameObject endGameMenu;
 
+    [SerializeField] float horizontalSpeed = 0.1f;
+    
     //UI Singletons
     private CoinsTextSingleton coinsText;
     
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
     private int backgroundIndex;
     private bool flyTrigger = false;
     private float distanceTraveled = 0;
+    
     
     private static readonly int StateAnimId = Animator.StringToHash("State");
     
@@ -73,8 +76,51 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        directionTrigger = (int)Input.GetAxis("Horizontal");
-        flyTrigger = Input.GetButton("Jump") && jetpackController.CurrentEnergy >= 0.3f;
+        if(Input.touchCount > 0)
+        {
+            foreach(Touch touch in Input.touches)
+            {
+                // Joystick Controls
+
+                if(touch.position.x < Screen.width/2)
+                {
+                    Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+
+                    switch (touch.phase)
+                    {
+                        case TouchPhase.Began:
+                            if (jetpackController.CurrentEnergy >= 0.3f)
+                            {
+                                flyTrigger = true;
+                            }
+                            break;
+                
+                        case TouchPhase.Moved:
+                            
+                            // Get movement of the finger since last frame
+                            Vector2 touchDeltaPosition  = touch.deltaPosition;
+
+                            directionTrigger = (int)-touchDeltaPosition.x;
+                            //ACA HAY QUE VER COMO REEMPLAZAR EL DIRECTION TRIGGER
+                            //transform.Translate (-touchDeltaPosition.x * horizontalSpeed, 0, 0);
+                            break;
+                
+                        case TouchPhase.Ended:
+                            flyTrigger = false;
+                            break;
+                    }
+                }
+                
+                // Action Controls
+                if(touch.position.x > Screen.width/2)
+                {
+                    weaponController.Fire();
+                }
+            }
+        }
+
+        //directionTrigger = (int)Input.GetAxis("Horizontal");
+        //flyTrigger = Input.GetButton("Jump") && jetpackController.CurrentEnergy >= 0.3f;
         SetPlayerState();
     }
     private void SetPlayerState()
