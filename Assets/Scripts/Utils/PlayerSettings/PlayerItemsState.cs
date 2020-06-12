@@ -51,6 +51,19 @@ public class PlayerItemsState : MonoBehaviour {
             PlayerPrefs.SetInt("Gems", 4000);
     }
 
+    public void SaveCoins()
+    {
+        int newCoins = PlayerPrefs.GetInt("Coins") + CurrentCoins;
+        PlayerPrefs.SetInt("Coins", newCoins);
+        CurrentCoins = 0;
+    }
+
+    public void AddSaveGems(int amount)
+    {
+        int newGems = PlayerPrefs.GetInt("Gems") + amount;
+        PlayerPrefs.SetInt("Coins", newGems);
+    }
+    
     private bool HasPreference(string pref)
     {
         return (!PlayerPrefs.HasKey(pref) || PlayerPrefs.GetString(pref) == "");
