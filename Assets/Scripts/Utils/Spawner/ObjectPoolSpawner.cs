@@ -81,15 +81,26 @@ public class ObjectPoolSpawner : MonoBehaviour
         if (scale.HasValue)
             objectToSpawn.transform.localScale = scale.Value;
 
-        ObjectPoolInterface objectPoolInterface = objectToSpawn.GetComponent<ObjectPoolInterface>();
         
         objectToSpawn.SetActive(true);
-        if(objectPoolInterface != null)
-            objectPoolInterface.OnObjectSpawn();
+        OnSpawnMethodCaller(objectToSpawn);
         
         return objectToSpawn;
     }
 
+    private void OnSpawnMethodCaller(GameObject objectToSpawn)
+    {
+        ObjectPoolInterface objectPoolInterface = objectToSpawn.GetComponent<ObjectPoolInterface>();
+        if(objectPoolInterface != null)
+            objectPoolInterface.OnObjectSpawn();
+        //Do the same to the childs in case of Pattern
+        ObjectPoolInterface[] objectPoolInterfaces = objectToSpawn.GetComponentsInChildren<ObjectPoolInterface>();
+        foreach (var obj in objectPoolInterfaces)
+        {
+            if(obj != null)
+                obj.OnObjectSpawn();
+        }
+    }
     public GameObject SpawnObject(string tag, Vector2 position)
     {
         return SpawnObject(tag, position, null, null);

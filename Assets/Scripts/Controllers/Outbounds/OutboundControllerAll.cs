@@ -16,7 +16,7 @@ public class OutboundControllerAll : MonoBehaviour
             parent = parentNext;
             parentNext = parent.parent;
         };
-        print(other.tag);
+        //print(other.tag);
         if(!(other.CompareTag("Player") || other.CompareTag("Background")))
             if(parent == null)
                 other.gameObject.SetActive(false);

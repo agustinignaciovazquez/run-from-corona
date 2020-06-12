@@ -9,6 +9,11 @@ public class InfectedEnemy : AbstractEnemy
         base.OnTriggerEnter2D(other);
         
     }
+    
+    protected override void Update()
+    {
+        base.Update();
+    }
 
     public override void OnObjectSpawn()
     {

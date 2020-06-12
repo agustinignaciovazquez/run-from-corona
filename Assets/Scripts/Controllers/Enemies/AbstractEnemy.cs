@@ -5,10 +5,10 @@ using UnityEngine;
 
 public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
 {
-    private RandomSingleton Random;
-    private Rigidbody2D Rb;
-    private PlayerController PlayerController;
-    private float ScrollVelocity;
+    private RandomSingleton random;
+    private Rigidbody2D rb;
+    private PlayerController playerController;
+    private float scrollVelocity;
     private ObjectPoolSpawner objectPoolSpawner;
     private GameObject player;
     [SerializeField] private float infectProbability = 0.99f;
@@ -22,23 +22,11 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
             throw new ArgumentException();
         
         //Initializate variables
-        Random = RandomSingleton.GetSharedInstance;
-        Rb = GetComponent<Rigidbody2D>();
+        random = RandomSingleton.GetSharedInstance;
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.Find("Player");
-        PlayerController = player.GetComponent<PlayerController>();
+        playerController = player.GetComponent<PlayerController>();
         objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
-    }
-    
-    protected virtual void FixedUpdate()
-    {
-        //Update velocity acording to player every frame
-        SetBackgroundVelocity();
-    }
-    void SetBackgroundVelocity()
-    {
-        ScrollVelocity = PlayerController.GetScrollingSpeed();
-        //print("VELOCITA "+ScrollVelocity);
-        Rb.velocity = new Vector2(-ScrollVelocity * factorProportionalSpeed, Rb.velocity.y);
     }
     
     protected virtual void OnTriggerEnter2D(Collider2D other)
@@ -51,9 +39,9 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         {
             var infectionPlayerProbability = InfectPlayerProbability();
             
-            if(PlayerController.Inmunity == false && Random.RollDice(infectionPlayerProbability))
+            if(playerController.Inmunity == false && random.RollDice(infectionPlayerProbability))
             {
-                PlayerController.Die();
+                playerController.Die();
             }
             else
             {
@@ -85,25 +73,35 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
     
     private float InfectPlayerProbability()
     {
-        float playerInfectionDefense = PlayerController.GetInfectionDefense() > 0 ? PlayerController.GetInfectionDefense() : 0;
+        float playerInfectionDefense = playerController.GetInfectionDefense() > 0 ? playerController.GetInfectionDefense() : 0;
         float infectionProbability = GetInfectProbability() - playerInfectionDefense;
         return infectionProbability > 0 ? infectionProbability : 0;
     }
-
+    protected virtual void Update()
+    {
+        //Update velocity acording to player every frame
+        SetBackgroundVelocity();
+    }
+    public void SetBackgroundVelocity()
+    {
+        scrollVelocity = playerController.GetScrollingSpeed();
+        //print("VELOCITA "+ScrollVelocity);
+        rb.velocity = new Vector2(-scrollVelocity * factorProportionalSpeed, rb.velocity.y);
+    }
     public virtual void OnObjectSpawn()
     {
-        //SetBackgroundVelocity();
+        SetBackgroundVelocity();
     }
 
     public abstract void OnEnemyDeathAnimation();
     
-    public RandomSingleton Random1 => Random;
+    public RandomSingleton Random1 => random;
 
-    public Rigidbody2D Rb1 => Rb;
+    public Rigidbody2D Rb1 => rb;
 
-    public PlayerController PlayerController1 => PlayerController;
+    public PlayerController PlayerController1 => playerController;
 
-    public float ScrollVelocity1 => ScrollVelocity;
+    public float ScrollVelocity1 => scrollVelocity;
 
     public ObjectPoolSpawner ObjectPoolSpawner => objectPoolSpawner;
 

@@ -87,48 +87,50 @@ public class Spawner : MonoBehaviour
         GameObject self = this.gameObject;
         if(distance >= nextSpawn)
         {
-            SpawnItem item = SelectRandomItem(self, itemsToSpawn);
+            SpawnItem item = SelectRandomItem(itemsToSpawn);
             if(item != null)
-                SpawnPattern(self, item);
+                SpawnPattern(item);
             nextSpawn = distance + spawnDistance;
         }
     }
 
-    SpawnItem SelectRandomItem(GameObject self, List<SpawnItem> itemsToSpawn)
+    SpawnItem SelectRandomItem(List<SpawnItem> itemsToSpawn)
     {
         double rand = _random.NextDouble();
         float percentage = 0f;
+        
         foreach (SpawnItem item in itemsToSpawn)
         {
             if (item.SpawnProbability() > (rand - percentage))
                 return item;
+
             percentage += item.SpawnProbability();
         }
 
         return null;
     }
-    void SpawnItems(GameObject self, List<SpawnItem> itemsToSpawn)
+    /*Deprecated
+     void SpawnItems(List<SpawnItem> itemsToSpawn)
     {
        
         foreach(SpawnItem item in itemsToSpawn)
         {
             if (_random.RollDice(item.SpawnProbability()))
             {
-                SpawnPattern(self, item);
+                SpawnPattern(item);
             }
         }
-    }
-    void SpawnPattern(GameObject self, SpawnItem spawnItem)
+    }*/
+    void SpawnPattern(SpawnItem spawnItem)
     {
-        Transform transform1 = self.transform;
         int n = (int) _random.RandomBetween(spawnItem.RangeN().MinNum, spawnItem.RangeN().MaxNum);
-        float stepX = 0;
-        float stepY = 0;
+        float stepX = spawnItem.StepX;
+        float stepY = spawnItem.StepY;
         float paddingY = (float) _random.RandomBetween(spawnItem.PaddingY.MinNum, spawnItem.PaddingY.MaxNum);
         for (int i = 0; i < n; i++)
         {
             //Random positioner
-            Vector2 p = GetRandomPositionVector(spawnItem, transform1.position, stepX, paddingY + stepY);
+            Vector2 p = GetRandomPositionVector(spawnItem, transform.position, stepX, paddingY + stepY);
             
             //Random scale
             Vector2 scale = _random.GetRandomVector(spawnItem.RangeScale.MinNum, spawnItem.RangeScale.MaxNum);
@@ -143,9 +145,11 @@ public class Spawner : MonoBehaviour
         }
     }
      Vector2 GetRandomPositionVector(SpawnItem spawnItem, Vector2 position, float stepX, float stepY)
-    {
-        float x = (float) _random.RandomBetween(spawnItem.RangeX.MinNum, spawnItem.RangeX.MaxNum);
+     {
+         float x = (float) _random.RandomBetween(spawnItem.RangeX.MinNum, spawnItem.RangeX.MaxNum);
         float y = (float) _random.RandomBetween(spawnItem.RangeY.MinNum, spawnItem.RangeY.MaxNum);
-        return new Vector2(position.x + x + stepX + 2 * playerController.ScrollingSpeed , position.y + y + stepY); 
+        
+        return new Vector2(position.x + x + stepX , position.y + y + stepY); 
     }
+     
 }

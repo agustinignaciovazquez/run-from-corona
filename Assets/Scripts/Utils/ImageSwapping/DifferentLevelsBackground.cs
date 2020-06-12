@@ -113,6 +113,7 @@ public class DifferentLevelsBackground : ScrollingBackground
     private void DoFadeInTransition(int prevBackground)
     {
         PlayerController.Inmunity = true;
+        objectPoolSpawner.ResetPool();
         PlayerController.ScrollingBackgroundSpeed *= 3;
         
         sceneTransition.FadeOut();
