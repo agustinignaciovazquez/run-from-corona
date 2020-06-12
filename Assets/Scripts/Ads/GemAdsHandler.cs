@@ -37,9 +37,9 @@ public class GemAdsHandler : MonoBehaviour
         
         public void LoadRewardBasedAd(){
             #if UNITY_ANDROID
-            string adUnitId = "ca-app-pub-7549409007580145/5006191852";
+            string adUnitId = "ca-app-pub-1841714642549048/7662492394";
             #elif UNITY_IPHONE
-            string adUnitId = "ca-app-pub-7549409007580145/4158006433";
+            string adUnitId = "ca-app-pub-1841714642549048/4234862201";
             #else
             string adUnitId = "unexpected_platform";
             #endif

@@ -11,6 +11,7 @@ public class ReviveAdsHandler : MonoBehaviour
         
         private RewardBasedVideoAd rewardBasedVideoAd;
         void Start(){
+            
             playerController = GameObject.Find("Player").GetComponent<PlayerController>();
             
             rewardBasedVideoAd = RewardBasedVideoAd.Instance;
@@ -35,9 +36,9 @@ public class ReviveAdsHandler : MonoBehaviour
         
         public void LoadRewardBasedAd(){
             #if UNITY_ANDROID
-            string adUnitId = "ca-app-pub-7549409007580145/8649923395";
+            string adUnitId = "ca-app-pub-1841714642549048/5405647102";
             #elif UNITY_IPHONE
-            string adUnitId = "ca-app-pub-7549409007580145/4852975151";
+            string adUnitId = "ca-app-pub-1841714642549048/6191281012";
             #else
             string adUnitId = "unexpected_platform";
             #endif
@@ -53,6 +54,11 @@ public class ReviveAdsHandler : MonoBehaviour
         {
             if (rewardBasedVideoAd.IsLoaded()){
                 rewardBasedVideoAd.Show();
+                print("SE MOSTRO");
+            }
+            else
+            {
+                print("NO SE CARGO");
             }
         }
         
@@ -63,7 +69,7 @@ public class ReviveAdsHandler : MonoBehaviour
 
         public void HandleRewardBasedVideoFailedToLoad(object sender, AdFailedToLoadEventArgs args)
         {
-           //Try reload
+           //TODO SHOW ERROR LOADING AD
         }
 
         public void HandleRewardBasedVideoOpened(object sender, EventArgs args)
@@ -79,7 +85,8 @@ public class ReviveAdsHandler : MonoBehaviour
 
         public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
         {
-            //Back to the end game menu
+            //Load new add
+            this.LoadRewardBasedAd();
             //Unmute audio
             audioMixer.SetFloat("Volume", 0f);
         }
