@@ -10,16 +10,30 @@ public class EndGameMenu : MonoBehaviour
 {
     [SerializeField] private ReviveAdsHandler reviveAdsHandler;
     [SerializeField] private OcasionalAdsHandler ocasionalAdsHandler;
+    [SerializeField] private PlayerController playerController;
+    private BackgroundSettings backgroundSettings;
+    private AudioManager audioManager;
+    
     void Start()
     {
-    
+        audioManager = FindObjectOfType<AudioManager>();
+        backgroundSettings = BackgroundSettings.Instance;
     }
-    
+
+    private string GetCurrentBackgroundName()
+    {
+        return backgroundSettings.Backgrounds[playerController.BackgroundIndex].BackgroundImage.name;
+    }
+
+    private string GetFirstBackgroundName()
+    {
+        return backgroundSettings.Backgrounds[0].BackgroundImage.name;
+    }
     public void Restart()
     {
-        //TODO
-        //StartCoroutine(audioManager.FadeOut("x",0.01f,0.15f));
-        //StartCoroutine(audioManager.FadeIn("Airport",0.01f,0.15f));
+        
+        StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
+        StartCoroutine(audioManager.FadeIn(GetFirstBackgroundName(),0.01f,0.15f));
         FindObjectOfType<AudioManager>().Play("ButtonClick");
         Time.timeScale = 1f ;
         SceneManager.LoadScene("GameScene");
@@ -27,8 +41,7 @@ public class EndGameMenu : MonoBehaviour
     
     public void QuitToMenu()
     {
-        //TODO
-        //StartCoroutine(audioManager.FadeOut("x",0.01f,0.15f));
+        StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
         
         FindObjectOfType<AudioManager>().Play("ButtonClick");
         Time.timeScale = 1f;

@@ -96,12 +96,12 @@ public class PlayerController : MonoBehaviour
                         case TouchPhase.Moved:
                         case TouchPhase.Stationary:
                                 flyTrigger = JetpackEnergyCheck();
+                                directionTrigger = 0f;
+                           /* Juego mas simple sin movimiento a los costados
                             // Get movement of the finger since last frame
                             float touchDeltaPositionx  = touch.position.x - (jetpackJoystickScreen + jetpackJoystickScreen/2f);
 
-                            directionTrigger = touchDeltaPositionx * horizontalSpeed;
-                            //ACA HAY QUE VER COMO REEMPLAZAR EL DIRECTION TRIGGER
-                            //transform.Translate (-touchDeltaPosition.x * horizontalSpeed, 0, 0);
+                            directionTrigger = touchDeltaPositionx * horizontalSpeed;*/
                             break;
                        
                         case TouchPhase.Ended:

@@ -14,10 +14,13 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pauseButton;
     
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private PlayerController playerController;
+    private BackgroundSettings backgroundSettings;
     // Start is called before the first frame update
     void Start()
     {
         audioManager = FindObjectOfType<AudioManager>();
+        backgroundSettings = BackgroundSettings.Instance;
     }
 
     // Update is called once per frame
@@ -56,17 +59,21 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f ;
         GameIsPaused = true;
     }
-    
-    //TODO pitch sound lower when paused
-    
-    
+    private string GetCurrentBackgroundName()
+    {
+        print(backgroundSettings.Backgrounds[playerController.BackgroundIndex].BackgroundImage.name);
+        return backgroundSettings.Backgrounds[playerController.BackgroundIndex].BackgroundImage.name;
+    }
+    private string GetFirstBackgroundName()
+    {
+        return backgroundSettings.Backgrounds[0].BackgroundImage.name;
+    }
     public void Restart()
     {
         audioMixer.SetFloat("Volume", 0f);
         audioManager.Play("ButtonClick");
-        //TODO
-        //StartCoroutine(audioManager.FadeOut("x",0.01f,0.15f));
-        //StartCoroutine(audioManager.FadeIn("Airport",0.01f,0.15f));
+        StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
+        StartCoroutine(audioManager.FadeIn(GetFirstBackgroundName(),0.01f,0.15f));
         Time.timeScale = 1f ;
         SceneManager.LoadScene("GameScene");
     }
@@ -74,8 +81,7 @@ public class PauseMenu : MonoBehaviour
     public void QuitToMenu()
     {
         audioMixer.SetFloat("Volume", 0f);
-        //TODO
-        //StartCoroutine(audioManager.FadeOut("x",0.01f,0.15f));
+        StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
         audioManager.Play("ButtonClick");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");

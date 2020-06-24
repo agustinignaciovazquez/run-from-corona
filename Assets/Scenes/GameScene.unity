@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40999821}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.110762, y: 0, z: 0}
+  m_LocalPosition: {x: -23.226341, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -448,7 +448,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &91974946
 GameObject:
@@ -477,7 +477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91974946}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.110762, y: 0, z: 0}
+  m_LocalPosition: {x: -10.22634, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -1135,7 +1135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4661255427333356, guid: 229d9bea776b54f41818fc6e6b104eb6, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4661255427333356, guid: 229d9bea776b54f41818fc6e6b104eb6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2214,7 +2214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554495186}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.110764, y: -5, z: 0}
+  m_LocalPosition: {x: 36.22634, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2320,7 +2320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592303574}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.1107616, y: 0, z: 0}
+  m_LocalPosition: {x: 5.2263412, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -2712,7 +2712,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659182453}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 35.110764, y: -0.5, z: 0}
+  m_LocalPosition: {x: 36.22634, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2990,7 +2990,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724477840
 GameObject:
@@ -3147,7 +3147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4826171213261344, guid: c891ab3d79c8cf1419c2eabf39eee70b, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4826171213261344, guid: c891ab3d79c8cf1419c2eabf39eee70b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3364,28 +3364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocityToPlayerRate: 1
-  sceneTransition: {fileID: 1191961027}
-  backgrounds:
-  - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: 01de3a78aa4fc5a46853e14d8a4194c0, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: b24a79397ad25df419b5316a0d2e4b56, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: 119024040bcc46a42b331014d04c1ec5, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: d5a2cb3bba6c5284ca902779b8873197, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: e0bddf50bd6fcc74785b815d7ecd5dab, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: b8bf86bef572e434a8c981650128e360, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: f558537aa599c6d49ab534a6547aabd9, type: 3}
-    distanceToShow: 100
-  teleportEffect: {fileID: 349510876}
-  stageText: {fileID: 1733151731}
 --- !u!212 &797363596
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3548,7 +3526,7 @@ Transform:
   - {fileID: 1141738667}
   - {fileID: 1709970172}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &827332037
 GameObject:
@@ -4500,7 +4478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986417192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.110762, y: 0, z: 0}
+  m_LocalPosition: {x: 11.226341, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 806115922}
@@ -5415,6 +5393,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298809869}
   m_CullTransparentMesh: 0
+--- !u!1 &1334577385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1334577387}
+  - component: {fileID: 1334577386}
+  m_Layer: 0
+  m_Name: BackgroundSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1334577386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334577385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67096cd2eba6eb4d9f3db0c4fe03ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgrounds:
+  - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
+    distanceToShow: 150
+  - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
+    distanceToShow: 150
+  - backgroundImage: {fileID: 21300000, guid: 01de3a78aa4fc5a46853e14d8a4194c0, type: 3}
+    distanceToShow: 150
+  - backgroundImage: {fileID: 21300000, guid: b24a79397ad25df419b5316a0d2e4b56, type: 3}
+    distanceToShow: 150
+  - backgroundImage: {fileID: 21300000, guid: 119024040bcc46a42b331014d04c1ec5, type: 3}
+    distanceToShow: 150
+  - backgroundImage: {fileID: 21300000, guid: d5a2cb3bba6c5284ca902779b8873197, type: 3}
+    distanceToShow: 150
+  - backgroundImage: {fileID: 21300000, guid: e0bddf50bd6fcc74785b815d7ecd5dab, type: 3}
+    distanceToShow: 150
+  - backgroundImage: {fileID: 21300000, guid: b8bf86bef572e434a8c981650128e360, type: 3}
+    distanceToShow: 0
+  - backgroundImage: {fileID: 21300000, guid: f558537aa599c6d49ab534a6547aabd9, type: 3}
+    distanceToShow: 150
+  sceneTransition: {fileID: 1191961027}
+  teleportEffect: {fileID: 349510876}
+  stageText: {fileID: 1733151731}
+--- !u!4 &1334577387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334577385}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 349.20297, y: 135.05666, z: -262.93933}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1445775024
 GameObject:
   m_ObjectHideFlags: 0
@@ -6145,7 +6188,7 @@ RectTransform:
   - {fileID: 1233355774}
   - {fileID: 1964768808}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6165,10 +6208,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 467499364}
-  audioManager: {fileID: 0}
   playButton: {fileID: 692906920}
   pauseButton: {fileID: 1869923152}
   audioMixer: {fileID: 24100000, guid: b0e8957ec937e894cb958fcdad442ee2, type: 2}
+  playerController: {fileID: 374889529}
 --- !u!114 &1575735862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6225,6 +6268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reviveAdsHandler: {fileID: 1575735862}
   ocasionalAdsHandler: {fileID: 1575735864}
+  playerController: {fileID: 374889529}
 --- !u!1 &1597239814
 GameObject:
   m_ObjectHideFlags: 0
@@ -6379,7 +6423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1623559072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.110764, y: -0.5, z: 0}
+  m_LocalPosition: {x: 36.22634, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7558,28 +7602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocityToPlayerRate: 1
-  sceneTransition: {fileID: 1191961027}
-  backgrounds:
-  - backgroundImage: {fileID: 21300000, guid: 795f2f67b4a17b9479e7d12c5e9f4732, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: f4aa0eb367dda4664a9918079a47b104, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: 01de3a78aa4fc5a46853e14d8a4194c0, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: b24a79397ad25df419b5316a0d2e4b56, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: 119024040bcc46a42b331014d04c1ec5, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: d5a2cb3bba6c5284ca902779b8873197, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: e0bddf50bd6fcc74785b815d7ecd5dab, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: b8bf86bef572e434a8c981650128e360, type: 3}
-    distanceToShow: 100
-  - backgroundImage: {fileID: 21300000, guid: f558537aa599c6d49ab534a6547aabd9, type: 3}
-    distanceToShow: 100
-  teleportEffect: {fileID: 349510876}
-  stageText: {fileID: 1733151731}
 --- !u!212 &2101879990
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7854,7 +7876,7 @@ PrefabInstance:
     - target: {fileID: 1732572657749238524, guid: 0476426d12a39f84b88ecd31ac7b89b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1732572657749238524, guid: 0476426d12a39f84b88ecd31ac7b89b3,
         type: 3}

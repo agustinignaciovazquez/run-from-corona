@@ -104,6 +104,7 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
         s.volume = 0;
+        print("FADE IN A "+name);
         float audioVolume = s.volume;
         while (s.volume < maxVolume && keepFadeIn)
         {
@@ -120,7 +121,7 @@ public class AudioManager : MonoBehaviour
     {
         keepFadeIn = false;
         keepFadeOut = true;
-        
+        print("FADE OUT A "+name);
         Sound s = Array.Find(sounds, sound => sound.name == name);
         float audioVolume = s.volume;
         while (s.volume >= speed && keepFadeOut)

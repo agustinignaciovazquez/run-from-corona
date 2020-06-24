@@ -1,23 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class DifferentLevelsBackground : ScrollingBackground
 {
- 
-    
-    [System.Serializable]
-    public class ScenarioBackground
-    {
-        [SerializeField] private Sprite backgroundImage;
-        [SerializeField] private float distanceToShow;
-
-        public Sprite BackgroundImage => backgroundImage;
-
-        public float DistanceToShow => distanceToShow / 2; //Maths so distance to show really works as expected xd
-    }
-    [SerializeField] private SceneTransition sceneTransition;
-    
-    [SerializeField] private List<ScenarioBackground> backgrounds;
     
     private ObjectPoolSpawner objectPoolSpawner;
     private int indexCurrentBackground;
@@ -25,40 +11,27 @@ public class DifferentLevelsBackground : ScrollingBackground
     private SpriteRenderer spriteRenderer;
     private bool shouldTransition;
     private bool fadeIn;
-    
-    [SerializeField] private GameObject teleportEffect;
-    [SerializeField] private GameObject stageText;
-    
+    private BackgroundSettings backgroundSettings;
+
     protected override void Awake()
     {
         base.Awake();
         //totalDistance = GetTotalDistance();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        indexCurrentBackground = 0;
-        shouldTransition = false;
-        fadeIn = false;
-        distanceToNextBackground = backgrounds[indexCurrentBackground].DistanceToShow;
-        objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
+        
     }
 
     public void Start()
     {
-       
-
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        indexCurrentBackground = 0;
+        shouldTransition = false;
+        fadeIn = false;
+        
+        objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
+        backgroundSettings = BackgroundSettings.Instance;
+        distanceToNextBackground = backgroundSettings.Backgrounds[indexCurrentBackground].DistanceToShow;
     }
 
-   /* private float GetTotalDistance()
-    {
-        float distance = 0;
-        
-        foreach(ScenarioBackground df in backgrounds)
-        {
-            distance += df.BackgroundImage.bounds.size.x;
-        }
-        
-        return distance;
-    }*/
-   
     protected override void RepositionBackground(Transform backgroundTransform)
     {
         base.RepositionBackground(backgroundTransform);
@@ -71,7 +44,7 @@ public class DifferentLevelsBackground : ScrollingBackground
 
     private void ChangeBackground()
     {
-        int nextIndex = (indexCurrentBackground + 1) % backgrounds.Count;
+        int nextIndex = (indexCurrentBackground + 1) % backgroundSettings.Backgrounds.Count;
         if (nextIndex != PlayerController.BackgroundIndex)
         {
             PlayerController.BackgroundIndex = nextIndex;
@@ -79,7 +52,7 @@ public class DifferentLevelsBackground : ScrollingBackground
             fadeIn = true;
         }
       
-        ScenarioBackground nextBackground = backgrounds[nextIndex];
+        BackgroundSettings.ScenarioBackground nextBackground = backgroundSettings.Backgrounds[nextIndex];
         spriteRenderer.sprite = nextBackground.BackgroundImage;
         indexCurrentBackground = nextIndex;
         
@@ -98,7 +71,7 @@ public class DifferentLevelsBackground : ScrollingBackground
     {
         var prevBackground = indexCurrentBackground - 1;
         if (prevBackground < 0)
-            prevBackground = backgrounds.Count - 1;
+            prevBackground = backgroundSettings.Backgrounds.Count - 1;
         
         if (fadeIn)
         {
@@ -116,15 +89,15 @@ public class DifferentLevelsBackground : ScrollingBackground
         objectPoolSpawner.ResetPool();
         PlayerController.ScrollingBackgroundSpeed *= 3;
         
-        sceneTransition.FadeOut();
+        backgroundSettings.SceneTransition.FadeOut();
         fadeIn = false;
         
-        string songName = backgrounds[prevBackground].BackgroundImage.name;
+        string songName = backgroundSettings.Backgrounds[prevBackground].BackgroundImage.name;
         Debug.Log(songName);
         StartCoroutine(FindObjectOfType<AudioManager>().FadeOut(songName,0.1f));
         
-        teleportEffect.SetActive(true);
-        stageText.SetActive(true);
+        backgroundSettings.TeleportEffect.SetActive(true);
+        backgroundSettings.StageText.SetActive(true);
         
         StageTextSingleton stageTextSingleton = StageTextSingleton.SharedInstance;
         stageTextSingleton.AddStage();
@@ -133,17 +106,18 @@ public class DifferentLevelsBackground : ScrollingBackground
     private void DoFadeOutTransition()
     {
         objectPoolSpawner.ResetPool();
-        string songName = backgrounds[indexCurrentBackground].BackgroundImage.name;
+        string songName = backgroundSettings.Backgrounds[indexCurrentBackground].BackgroundImage.name;
         Debug.Log(songName);
         StartCoroutine(FindObjectOfType<AudioManager>().FadeIn(songName,0.01f,0.15f));
         
         shouldTransition = false;
-        sceneTransition.FadeIn();
+        backgroundSettings.SceneTransition.FadeIn();
         
-        teleportEffect.SetActive(false);
+        backgroundSettings.TeleportEffect.SetActive(false);
         PlayerController.ScrollingBackgroundSpeed /= 3;
         
-        stageText.SetActive(false);
+        backgroundSettings.StageText.SetActive(false);
         PlayerController.Inmunity = false;
     }
+    
 }
