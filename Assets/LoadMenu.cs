@@ -8,7 +8,7 @@ public class LoadMenu : MonoBehaviour
     void Start()
     {
         // Only specifying the sceneName or sceneBuildIndex will load the Scene with the Single mode
-        SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("GameScene");
     }
     
 }

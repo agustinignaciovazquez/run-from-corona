@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ShopMenu : MonoBehaviour
 {
     private GemAdsHandler gemAdHandler;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,5 +31,5 @@ public class ShopMenu : MonoBehaviour
     {
         gemAdHandler.ShowRewardBasedAd();
     }
-    
+   
 }

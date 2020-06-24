@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     public void StartGame()
     {
         FindObjectOfType<AudioManager>().Play("ButtonClick");
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Loading");
     }
 
     public void OpenConfig()

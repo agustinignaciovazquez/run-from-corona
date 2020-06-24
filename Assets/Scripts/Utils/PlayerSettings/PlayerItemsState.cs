@@ -34,6 +34,12 @@ public class PlayerItemsState : MonoBehaviour {
 
     private void SetDefaultsSettings()
     {
+        //Fix for releasing a debug version, we delete all coins and gems from that version
+        if(!PlayerPrefs.HasKey("Update_Fix_Coins_Gems")){
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetInt("Update_Fix_Coins_Gems", 1);
+        }
+        
         //Set default items
         PlayerPrefs.SetInt("Juan", 1);
         PlayerPrefs.SetInt("Water", 1);
@@ -46,9 +52,9 @@ public class PlayerItemsState : MonoBehaviour {
         if (HasPreference("Jetpack"))
             PlayerPrefs.SetString("Jetpack", "JetpackStandard");
         if(!PlayerPrefs.HasKey("Coins"))
-            PlayerPrefs.SetInt("Coins", 5000);
+            PlayerPrefs.SetInt("Coins", 0);
         if(!PlayerPrefs.HasKey("Gems"))
-            PlayerPrefs.SetInt("Gems", 4000);
+            PlayerPrefs.SetInt("Gems", 0);
     }
 
     public void SaveCoins()
@@ -58,10 +64,11 @@ public class PlayerItemsState : MonoBehaviour {
         CurrentCoins = 0;
     }
 
-    public void AddSaveGems(int amount)
+    public int AddSaveGems(int amount)
     {
         int newGems = PlayerPrefs.GetInt("Gems") + amount;
-        PlayerPrefs.SetInt("Coins", newGems);
+        PlayerPrefs.SetInt("Gems", newGems);
+        return newGems;
     }
     
     private bool HasPreference(string pref)

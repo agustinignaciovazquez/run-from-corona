@@ -21,7 +21,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject endGameMenu;
 
     [SerializeField] float horizontalSpeed = 0.003f;
-    
+
+    [SerializeField] private float jetpackLimit = 0.3f;
     //UI Singletons
     private CoinsTextSingleton coinsText;
     
@@ -82,23 +83,21 @@ public class PlayerController : MonoBehaviour
             {
                 // Joystick Controls
                 
-                if(touch.position.x < jetpackJoystickScreen)
+                if(FlyTriggerCheck(touch))
                 {
                     Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
                     switch (touch.phase)
                     {
                         case TouchPhase.Began:
-                            if (jetpackController.CurrentEnergy >= 0.3f)
-                            {
-                                flyTrigger = true;
-                            }
+                                flyTrigger = JetpackEnergyCheck();
                             break;
                         
                         case TouchPhase.Moved:
                         case TouchPhase.Stationary:
+                                flyTrigger = JetpackEnergyCheck();
                             // Get movement of the finger since last frame
-                            float touchDeltaPositionx  = touch.position.x - jetpackJoystickScreen/2f;
+                            float touchDeltaPositionx  = touch.position.x - (jetpackJoystickScreen + jetpackJoystickScreen/2f);
 
                             directionTrigger = touchDeltaPositionx * horizontalSpeed;
                             //ACA HAY QUE VER COMO REEMPLAZAR EL DIRECTION TRIGGER
@@ -109,11 +108,7 @@ public class PlayerController : MonoBehaviour
                             flyTrigger = false;
                             break;
                     }
-                }
-                
-                // Action Controls
-                if(touch.position.x > Screen.width/2f)
-                {
+                } else if (FireCheck(touch)){
                     weaponController.Fire();
                 }
             }
@@ -123,6 +118,21 @@ public class PlayerController : MonoBehaviour
         //flyTrigger = Input.GetButton("Jump") && jetpackController.CurrentEnergy >= 0.3f;
         SetPlayerState();
     }
+
+    private bool JetpackEnergyCheck()
+    {
+        return jetpackController.CurrentEnergy >= jetpackLimit;
+    }
+    private bool FlyTriggerCheck(Touch touch)
+    {
+        return touch.position.x > jetpackJoystickScreen ;
+    }
+    
+    private bool FireCheck(Touch touch)
+    {
+        return touch.position.x < jetpackJoystickScreen;
+    }
+    
     private void SetPlayerState()
     {
         if (coll.IsTouchingLayers(ground))
@@ -207,6 +217,7 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         PlayerItemsState.SaveCoins();
+        endGameMenu.GetComponentInParent<EndGameMenu>().ShowOcasionalAd();
         StartCoroutine(WaiterDie());
     }
     
@@ -222,7 +233,7 @@ public class PlayerController : MonoBehaviour
         
         yield return new WaitForSeconds(1f);
         smokeEffect.SetActive(false);
-        endGameMenu.SetActive(true);        
+        endGameMenu.SetActive(true);
     }
     
     public void Resurrect()

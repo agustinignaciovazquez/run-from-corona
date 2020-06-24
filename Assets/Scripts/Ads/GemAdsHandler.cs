@@ -1,13 +1,18 @@
 ﻿using System;
+using System.Collections;
 using GoogleMobileAds.Api;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 
 public class GemAdsHandler : MonoBehaviour
 {
         [SerializeField] private AudioMixer audioMixer;
-        
+        [SerializeField] private GameObject loadAdAlert;
+        [SerializeField] private GameObject couldNotLoadAdAlert;
+        [SerializeField] private Button gemsButton;
+        [SerializeField] private Text gemsText;
         private PlayerItemsState playerItemsState;
         private RewardBasedVideoAd rewardBasedVideoAd;
        
@@ -30,8 +35,7 @@ public class GemAdsHandler : MonoBehaviour
             rewardBasedVideoAd.OnAdClosed += HandleRewardBasedVideoClosed;
 
             rewardBasedVideoAd.OnAdLeavingApplication += HandleRewardBasedVideoLeftApplication;
-            
-            this.LoadRewardBasedAd();
+            LoadRewardBasedAd();
         }
       
         
@@ -53,24 +57,39 @@ public class GemAdsHandler : MonoBehaviour
 
         public void ShowRewardBasedAd()
         {
+            loadAdAlert.SetActive(true);
+            gemsButton.interactable = false;
+           
             if (rewardBasedVideoAd.IsLoaded()){
                 rewardBasedVideoAd.Show();
+            }
+            else
+            {
+                StartCoroutine(displayCouldNotLoadAlert());
+                LoadRewardBasedAd();
+                loadAdAlert.SetActive(false);
+                gemsButton.interactable = true;
             }
         }
         
         public void HandleRewardBasedVideoLoaded(object sender, EventArgs args)
         {
-           
+         
         }
 
         public void HandleRewardBasedVideoFailedToLoad(object sender, AdFailedToLoadEventArgs args)
         {
            //Try reload
+           StartCoroutine(displayCouldNotLoadAlert());
+           loadAdAlert.SetActive(false);
+           gemsButton.interactable = true;
         }
 
         public void HandleRewardBasedVideoOpened(object sender, EventArgs args)
         {
            //Pause game
+           loadAdAlert.SetActive(false);
+           gemsButton.interactable = true;
         }
 
         public void HandleRewardBasedVideoStarted(object sender, EventArgs args)
@@ -84,23 +103,38 @@ public class GemAdsHandler : MonoBehaviour
             //Back to the end game menu
             //Unmute audio
             audioMixer.SetFloat("Volume", 0f);
+            loadAdAlert.SetActive(false);
+            gemsButton.interactable = true;
         }
 
         public void HandleRewardBasedVideoRewarded(object sender, Reward args)
         {
             //Unmute audio
             audioMixer.SetFloat("Volume", 0f);
+            
             //RewardPlayer
             string type = args.Type;
             double amount = args.Amount;
-            playerItemsState.AddSaveGems((int)amount);
-            print("User rewarded with: " + amount + " " + type);
+            int currentGems = playerItemsState.AddSaveGems((int)amount);
+            gemsText.text = currentGems.ToString();
+            
+            loadAdAlert.SetActive(false);
+            gemsButton.interactable = true;
+            
         }
 
         public void HandleRewardBasedVideoLeftApplication(object sender, EventArgs args)
         {
-            
+            loadAdAlert.SetActive(false);
+            gemsButton.interactable = true;
         }
         
-    
+        IEnumerator displayCouldNotLoadAlert()
+        {
+            couldNotLoadAdAlert.SetActive(true);
+        
+            yield return new WaitForSeconds(0.4f);
+
+            couldNotLoadAdAlert.SetActive(false);
+        }
 }

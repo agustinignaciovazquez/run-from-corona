@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,13 +8,11 @@ using GoogleMobileAds.Api;
 
 public class EndGameMenu : MonoBehaviour
 {
-    private PlayerController playerController;
-    private ReviveAdsHandler reviveAdsHandler;
-
-    void Awake()
+    [SerializeField] private ReviveAdsHandler reviveAdsHandler;
+    [SerializeField] private OcasionalAdsHandler ocasionalAdsHandler;
+    void Start()
     {
-        reviveAdsHandler = GetComponent<ReviveAdsHandler>();
-        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+    
     }
     
     public void Restart()
@@ -30,14 +29,19 @@ public class EndGameMenu : MonoBehaviour
     {
         //TODO
         //StartCoroutine(audioManager.FadeOut("x",0.01f,0.15f));
+        
         FindObjectOfType<AudioManager>().Play("ButtonClick");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
+    }
+    public void ShowOcasionalAd()
+    {
+        ocasionalAdsHandler.ShowRewardBasedAd();
     }
 
     public void Continue()
     {
         reviveAdsHandler.ShowRewardBasedAd();
     }
-    
+
 }

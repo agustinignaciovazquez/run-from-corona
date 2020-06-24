@@ -1,18 +1,21 @@
 ﻿using System;
+using System.Collections;
 using GoogleMobileAds.Api;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 
 public class ReviveAdsHandler : MonoBehaviour
 {
         [SerializeField] private AudioMixer audioMixer;
-        private PlayerController playerController;
+        [SerializeField] private GameObject loadAdAlert;
+        [SerializeField] private GameObject couldNotLoadAdAlert;
+        [SerializeField] private Button reviveButton;
+        [SerializeField] private PlayerController playerController;
         
         private RewardBasedVideoAd rewardBasedVideoAd;
         void Start(){
-            
-            playerController = GameObject.Find("Player").GetComponent<PlayerController>();
             
             rewardBasedVideoAd = RewardBasedVideoAd.Instance;
             
@@ -30,7 +33,7 @@ public class ReviveAdsHandler : MonoBehaviour
 
             rewardBasedVideoAd.OnAdLeavingApplication += HandleRewardBasedVideoLeftApplication;
             
-            this.LoadRewardBasedAd();
+            LoadRewardBasedAd();
         }
       
         
@@ -52,24 +55,34 @@ public class ReviveAdsHandler : MonoBehaviour
 
         public void ShowRewardBasedAd()
         {
+            loadAdAlert.SetActive(true);
+            reviveButton.interactable = false;
+            
             if (rewardBasedVideoAd.IsLoaded()){
                 rewardBasedVideoAd.Show();
-                print("SE MOSTRO");
             }
             else
             {
-                print("NO SE CARGO");
+                StartCoroutine(displayCouldNotLoadAlert());
+                LoadRewardBasedAd();
             }
         }
         
+        
         public void HandleRewardBasedVideoLoaded(object sender, EventArgs args)
         {
-           
+            /*rewardBasedVideoAd.Show();
+            loadAdAlert.SetActive(false);
+            reviveButton.interactable = true;*/
         }
 
         public void HandleRewardBasedVideoFailedToLoad(object sender, AdFailedToLoadEventArgs args)
         {
-           //TODO SHOW ERROR LOADING AD
+            /*StartCoroutine(displayCouldNotLoadAlert());
+            loadAdAlert.SetActive(false);
+            reviveButton.interactable = true;*/
+            StartCoroutine(displayCouldNotLoadAlert());
+            
         }
 
         public void HandleRewardBasedVideoOpened(object sender, EventArgs args)
@@ -81,31 +94,47 @@ public class ReviveAdsHandler : MonoBehaviour
         {
             //Mute audio
             audioMixer.SetFloat("Volume", -80f);
+            loadAdAlert.SetActive(false);
+            reviveButton.interactable = true;
         }
 
         public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
         {
-            //Load new add
-            this.LoadRewardBasedAd();
             //Unmute audio
             audioMixer.SetFloat("Volume", 0f);
+            //RewardPlayer
+            playerController.Resurrect();
+            loadAdAlert.SetActive(false);
+            reviveButton.interactable = true;
         }
 
         public void HandleRewardBasedVideoRewarded(object sender, Reward args)
         {
             //Unmute audio
             audioMixer.SetFloat("Volume", 0f);
+
             //RewardPlayer
-            string type = args.Type;
-            double amount = args.Amount;
-            print("User rewarded with: " + amount + " " + type);
             playerController.Resurrect();
+            
+            loadAdAlert.SetActive(false);
+            reviveButton.interactable = true;
         }
 
         public void HandleRewardBasedVideoLeftApplication(object sender, EventArgs args)
         {
-            
+            //RewardPlayer
+            playerController.Resurrect();
         }
         
+        IEnumerator displayCouldNotLoadAlert()
+        {
+            couldNotLoadAdAlert.SetActive(true);
+        
+            yield return new WaitForSeconds(0.4f);
+
+            couldNotLoadAdAlert.SetActive(false);
+            loadAdAlert.SetActive(false);
+            reviveButton.interactable = true;
+        }
     
 }
