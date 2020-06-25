@@ -30,6 +30,7 @@ public class ShopMenu : MonoBehaviour
     public void GetGems()
     {
         gemAdHandler.ShowRewardBasedAd();
+        gemAdHandler.CreateAndLoadRewardedAd();
     }
    
 }

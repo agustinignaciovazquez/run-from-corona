@@ -51,11 +51,13 @@ public class EndGameMenu : MonoBehaviour
     public void ShowOcasionalAd()
     {
         ocasionalAdsHandler.ShowRewardBasedAd();
+        ocasionalAdsHandler.CreateAndLoadRewardedAd();
     }
 
     public void Continue()
     {
         reviveAdsHandler.ShowRewardBasedAd();
+	    reviveAdsHandler.CreateAndLoadRewardedAd();
     }
 
 }

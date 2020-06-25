@@ -8,110 +8,109 @@ using UnityEngine.UI;
 
 public class GemAdsHandler : MonoBehaviour
 {
-        [SerializeField] private AudioMixer audioMixer;
-        [SerializeField] private GameObject loadAdAlert;
-        [SerializeField] private GameObject couldNotLoadAdAlert;
-        [SerializeField] private Button gemsButton;
-        [SerializeField] private Text gemsText;
-        private PlayerItemsState playerItemsState;
-        private RewardBasedVideoAd rewardBasedVideoAd;
-       
-        void Start(){
-            
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private GameObject loadAdAlert;
+    [SerializeField] private GameObject couldNotLoadAdAlert;
+    [SerializeField] private Button gemsButton;
+    [SerializeField] private Text gemsText;
+    private PlayerItemsState playerItemsState;
+    private RewardedAd rewardedAd;
+        void Start()
+        {
             playerItemsState = PlayerItemsState.Instance;
-            
-            rewardBasedVideoAd = RewardBasedVideoAd.Instance;
-            
-            rewardBasedVideoAd.OnAdLoaded += HandleRewardBasedVideoLoaded;
-      
-            rewardBasedVideoAd.OnAdFailedToLoad += HandleRewardBasedVideoFailedToLoad;
-
-            rewardBasedVideoAd.OnAdOpening += HandleRewardBasedVideoOpened;
-
-            rewardBasedVideoAd.OnAdStarted += HandleRewardBasedVideoStarted;
-
-            rewardBasedVideoAd.OnAdRewarded += HandleRewardBasedVideoRewarded;
-
-            rewardBasedVideoAd.OnAdClosed += HandleRewardBasedVideoClosed;
-
-            rewardBasedVideoAd.OnAdLeavingApplication += HandleRewardBasedVideoLeftApplication;
-            LoadRewardBasedAd();
+            CreateAndLoadRewardedAd();
         }
-      
-        
-        public void LoadRewardBasedAd(){
+
+        public void CreateAndLoadRewardedAd()
+        {
             #if UNITY_ANDROID
-            string adUnitId = "ca-app-pub-1841714642549048/7662492394";
+                        string adUnitId = "ca-app-pub-1841714642549048/7662492394";
             #elif UNITY_IPHONE
-            string adUnitId = "ca-app-pub-1841714642549048/4234862201";
+                        string adUnitId = "ca-app-pub-1841714642549048/4234862201";
             #else
-            string adUnitId = "unexpected_platform";
+                        string adUnitId = "unexpected_platform";
             #endif
+            
+            this.rewardedAd = new RewardedAd(adUnitId);
+
+            // Called when an ad request has successfully loaded.
+            this.rewardedAd.OnAdLoaded += HandleRewardBasedVideoLoaded;
+            // Called when an ad request failed to load.
+            this.rewardedAd.OnAdFailedToLoad += HandleRewardBasedVideoFailedToLoad;
+            // Called when an ad is shown.
+            this.rewardedAd.OnAdOpening += HandleRewardBasedVideoOpened;
+            // Called when an ad request failed to show.
+            this.rewardedAd.OnAdFailedToShow += HandleRewardBasedVideoFailShow;
+            // Called when the user should be rewarded for interacting with the ad.
+            this.rewardedAd.OnUserEarnedReward += HandleRewardBasedVideoRewarded;
+            // Called when the ad is closed.
+            this.rewardedAd.OnAdClosed += HandleRewardBasedVideoClosed;
 
             // Create an empty ad request.
             AdRequest request = new AdRequest.Builder().Build();
-            
-            // Load the rewarded video ad with the request.
-            this.rewardBasedVideoAd.LoadAd(request, adUnitId);
+            // Load the rewarded ad with the request.
+            this.rewardedAd.LoadAd(request);
         }
-
         public void ShowRewardBasedAd()
         {
             loadAdAlert.SetActive(true);
             gemsButton.interactable = false;
-           
-            if (rewardBasedVideoAd.IsLoaded()){
-                rewardBasedVideoAd.Show();
+            
+            if (rewardedAd.IsLoaded()){
+                rewardedAd.Show();
             }
             else
             {
                 StartCoroutine(displayCouldNotLoadAlert());
-                LoadRewardBasedAd();
-                loadAdAlert.SetActive(false);
-                gemsButton.interactable = true;
             }
         }
         
+        
         public void HandleRewardBasedVideoLoaded(object sender, EventArgs args)
         {
-         
+            //rewardedAd.Show();
+            loadAdAlert.SetActive(false);
+            gemsButton.interactable = true;
         }
 
-        public void HandleRewardBasedVideoFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+        public void HandleRewardBasedVideoFailedToLoad(object sender, AdErrorEventArgs args)
         {
-           //Try reload
-           StartCoroutine(displayCouldNotLoadAlert());
-           loadAdAlert.SetActive(false);
-           gemsButton.interactable = true;
+            StartCoroutine(displayCouldNotLoadAlert());
+            loadAdAlert.SetActive(false);
+            gemsButton.interactable = true;
+            
         }
 
         public void HandleRewardBasedVideoOpened(object sender, EventArgs args)
         {
-           //Pause game
-           loadAdAlert.SetActive(false);
-           gemsButton.interactable = true;
+            loadAdAlert.SetActive(false);
+            gemsButton.interactable = true;
         }
 
         public void HandleRewardBasedVideoStarted(object sender, EventArgs args)
-        { 
-           //Mute Audio
-           audioMixer.SetFloat("Volume", -80f);
+        {
+            //Mute audio
+            audioMixer.SetFloat("Volume", -80f);
+            loadAdAlert.SetActive(false);
+            gemsButton.interactable = true;
         }
 
         public void HandleRewardBasedVideoClosed(object sender, EventArgs args)
         {
-            //Back to the end game menu
             //Unmute audio
             audioMixer.SetFloat("Volume", 0f);
+            //RewardPlayer
+           // playerController.Resurrect();
             loadAdAlert.SetActive(false);
             gemsButton.interactable = true;
+            StartCoroutine(LoadNewAd());
         }
 
         public void HandleRewardBasedVideoRewarded(object sender, Reward args)
         {
             //Unmute audio
             audioMixer.SetFloat("Volume", 0f);
-            
+
             //RewardPlayer
             string type = args.Type;
             double amount = args.Amount;
@@ -120,13 +119,15 @@ public class GemAdsHandler : MonoBehaviour
             
             loadAdAlert.SetActive(false);
             gemsButton.interactable = true;
-            
+            StartCoroutine(LoadNewAd());
         }
 
-        public void HandleRewardBasedVideoLeftApplication(object sender, EventArgs args)
+        public void HandleRewardBasedVideoFailShow(object sender, EventArgs args)
         {
+            StartCoroutine(displayCouldNotLoadAlert());
             loadAdAlert.SetActive(false);
             gemsButton.interactable = true;
+            StartCoroutine(LoadNewAd());
         }
         
         IEnumerator displayCouldNotLoadAlert()
@@ -136,5 +137,18 @@ public class GemAdsHandler : MonoBehaviour
             yield return new WaitForSeconds(0.4f);
 
             couldNotLoadAdAlert.SetActive(false);
+            loadAdAlert.SetActive(false);
+            gemsButton.interactable = true;
+            //CreateAndLoadRewardedAd();
         }
+        
+        IEnumerator LoadNewAd()
+        {
+            couldNotLoadAdAlert.SetActive(false);
+            loadAdAlert.SetActive(false);
+            gemsButton.interactable = true;
+            //CreateAndLoadRewardedAd();
+            yield return null;
+        }
+    
 }
