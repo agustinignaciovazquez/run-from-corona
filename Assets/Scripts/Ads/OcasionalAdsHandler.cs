@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class OcasionalAdsHandler : MonoBehaviour
 {
         
-        private RewardedAd rewardedAd;
+        private InterstitialAd rewardedAd;
         void Start()
         {
             CreateAndLoadRewardedAd();
@@ -18,25 +18,25 @@ public class OcasionalAdsHandler : MonoBehaviour
         public void CreateAndLoadRewardedAd()
         {
             #if UNITY_ANDROID
-                        string adUnitId = "ca-app-pub-1841714642549048/5405647102";
+                        string adUnitId = "ca-app-pub-1841714642549048/5797728452";
             #elif UNITY_IPHONE
-                        string adUnitId = "ca-app-pub-1841714642549048/6191281012";
+                        string adUnitId = "ca-app-pub-1841714642549048/1692916190";
             #else
                         string adUnitId = "unexpected_platform";
             #endif
             
-            this.rewardedAd = new RewardedAd(adUnitId);
+            this.rewardedAd = new InterstitialAd(adUnitId);
 
             // Called when an ad request has successfully loaded.
             this.rewardedAd.OnAdLoaded += HandleRewardBasedVideoLoaded;
             // Called when an ad request failed to load.
-            this.rewardedAd.OnAdFailedToLoad += HandleRewardBasedVideoFailedToLoad;
+            //this.rewardedAd.OnAdFailedToLoad += HandleRewardBasedVideoFailedToLoad;
             // Called when an ad is shown.
             this.rewardedAd.OnAdOpening += HandleRewardBasedVideoOpened;
             // Called when an ad request failed to show.
-            this.rewardedAd.OnAdFailedToShow += HandleRewardBasedVideoFailShow;
+            //this.rewardedAd.OnAdFailedToShow += HandleRewardBasedVideoFailShow;
             // Called when the user should be rewarded for interacting with the ad.
-            this.rewardedAd.OnUserEarnedReward += HandleRewardBasedVideoRewarded;
+            //this.rewardedAd.OnUserEarnedReward += HandleRewardBasedVideoRewarded;
             // Called when the ad is closed.
             this.rewardedAd.OnAdClosed += HandleRewardBasedVideoClosed;
 

@@ -31,6 +31,7 @@ public class EndGameMenu : MonoBehaviour
     }
     public void Restart()
     {
+        Amplitude.Instance.logEvent("RESTART_GAME");
         audioManager.Mute(GetCurrentBackgroundName());
         audioManager.Unmute(GetFirstBackgroundName());
         //StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
@@ -42,6 +43,7 @@ public class EndGameMenu : MonoBehaviour
     
     public void QuitToMenu()
     {
+        Amplitude.Instance.logEvent("QUIT_TO_MENU");
         audioManager.Mute(GetCurrentBackgroundName());
         //StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
         audioManager.Play("ButtonClick");
@@ -56,6 +58,7 @@ public class EndGameMenu : MonoBehaviour
 
     public void Continue()
     {
+        Amplitude.Instance.logEvent("REVIVE_AD_REQUEST");
         reviveAdsHandler.ShowRewardBasedAd();
 	    reviveAdsHandler.CreateAndLoadRewardedAd();
     }

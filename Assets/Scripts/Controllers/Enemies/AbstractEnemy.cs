@@ -41,10 +41,12 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
             
             if(playerController.Inmunity == false && random.RollDice(infectionPlayerProbability))
             {
+                Amplitude.Instance.logEvent("ENEMY_KILL_PLAYER");
                 playerController.Die();
             }
             else
             {
+                Amplitude.Instance.logEvent("PLAYER_SURVIVE_VIRUS");
                 //print("SAFASTE");
             }
             //Auto-Death
@@ -55,6 +57,7 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
         //Desinfect Bullet Collision
         if (other.gameObject.tag.StartsWith("Bullet"))
         {
+            Amplitude.Instance.logEvent("PLAYER_KILL_VIRUS");
             //Delete bullet
             other.gameObject.SetActive(false);
             

@@ -116,9 +116,19 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-
+        /* INPUT FOR UNITY ONLY DELETE IN RELEASE 
+        if(Input.GetButton("Jump"))
+            flyTrigger = JetpackEnergyCheck();
+        else
+            flyTrigger = false;
+        
+        if(Input.GetButton("Fire1"))
+            weaponController.Fire();
+        
         //directionTrigger = (int)Input.GetAxis("Horizontal");
-        //flyTrigger = Input.GetButton("Jump") && jetpackController.CurrentEnergy >= 0.3f;
+        //flyTrigger = Input.GetButton("Jump") && jetpackController.CurrentEnergy >= 0.3f;*/
+        ///* INPUT FOR UNITY ONLY DELETE IN RELEASE */
+
         SetPlayerState();
     }
 
@@ -198,6 +208,7 @@ public class PlayerController : MonoBehaviour
         playerItemsState = PlayerItemsState.Instance;
         playerItemsState.CurrentCoins += amount;
         coinsText.SetCoins(playerItemsState.CurrentCoins);
+        Amplitude.Instance.logEvent("COIN_PICKUP");
     }
 
     public float ScrollingSpeed
@@ -225,6 +236,13 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         PlayerItemsState.SaveCoins();
+        
+        Dictionary<string, object> deathProps = new Dictionary<string, object>() {
+            {"distance" ,  distanceTraveled},
+            {"coins", playerItemsState.CurrentCoins}
+        };
+        
+        Amplitude.Instance.logEvent("PLAYER_DIE", deathProps);
         endGameMenu.GetComponentInParent<EndGameMenu>().ShowOcasionalAd();
         StartCoroutine(WaiterDie());
     }
@@ -246,6 +264,7 @@ public class PlayerController : MonoBehaviour
     
     public void Resurrect()
     {
+        Amplitude.Instance.logEvent("PLAYER_RESURRECT");
         StartCoroutine(WaiterResurrect());
     }
 

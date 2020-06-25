@@ -94,6 +94,11 @@ public class Shop : MonoBehaviour
     
     private void OnButtonClickEquip(ShopItem item, GameObject itemObject)
     {
+        Dictionary<string, object> buyProps = new Dictionary<string, object>() {
+            {"itemName" , item.ItemName },
+            {"itemCost" , item.Cost}
+        };
+        
         if (shopType == 0) {
             PlayerPrefs.SetString("Weapon", item.ItemName);
             //PlayerItemsState.Instance.CurrentWeapon = (WeaponShopItem) item;
@@ -106,7 +111,7 @@ public class Shop : MonoBehaviour
             PlayerPrefs.SetString("Jetpack", item.ItemName);
             //PlayerItemsState.Instance.CurrentJetpack = (JetpackShopItem) item;
         }
-        
+        Amplitude.Instance.logEvent("EQUIP_ITEM", buyProps);
         FindObjectOfType<AudioManager>().Play(item.ItemName);
         ReloadItems();
     }
@@ -131,7 +136,11 @@ public class Shop : MonoBehaviour
         int coins = PlayerPrefs.GetInt("Coins");
         int gems = PlayerPrefs.GetInt("Gems");
         bool isSold = isItemSold(item);
-
+        Dictionary<string, object> buyProps = new Dictionary<string, object>() {
+            {"itemName" , item.ItemName },
+            {"itemCost" , item.Cost}
+        };
+        
         if (!isSold)
         {
             if (item.Currency == ShopItem.CurrencyEnum.Coins && coins >= item.Cost)
@@ -139,6 +148,8 @@ public class Shop : MonoBehaviour
                 int newCoins = coins - item.Cost;
                 PlayerPrefs.SetInt("Coins", newCoins);
                 PlayerPrefs.SetInt(item.ItemName, 1);
+                
+                Amplitude.Instance.logEvent("BUY_ITEM_COINS", buyProps);
                 return true;
             }
             if (item.Currency == ShopItem.CurrencyEnum.Gems && gems >= item.Cost)
@@ -146,6 +157,7 @@ public class Shop : MonoBehaviour
                 int newGems = gems - item.Cost;
                 PlayerPrefs.SetInt("Gems", newGems);
                 PlayerPrefs.SetInt(item.ItemName, 1);
+                Amplitude.Instance.logEvent("BUY_ITEM_GEMS",buyProps);
                 return true;
             }
             
