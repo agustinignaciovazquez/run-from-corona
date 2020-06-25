@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c155290dc186d6244b9250d989402d02, type: 3}
-  m_Name: Juana
+  m_Name: Donald
   m_EditorClassIdentifier: 
-  itemName: Juana
-  spriteName: Juana
-  sprite: {fileID: 6845387817368390924, guid: 0b197f994e796408aa25507b00e98c96, type: 3}
-  cost: 50
+  itemName: Donald
+  spriteName: Donald
+  sprite: {fileID: 7712413129018869235, guid: 54fb4bcfa8ea7c240b1f5aa79c97cc4c, type: 3}
+  cost: 0
   currency: 1
   currencySprite: {fileID: 21300000, guid: 050f4c62c52644c498abfec22890e5c3, type: 3}
-  infectionDefense: 0.1
-  audioName: OuchJuana
+  infectionDefense: 0.7
+  audioName: OuchDonald

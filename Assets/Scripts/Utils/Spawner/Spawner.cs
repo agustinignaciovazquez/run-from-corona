@@ -47,6 +47,7 @@ public class Spawner : MonoBehaviour
         public float MaxNum => maxNum;
     }
     [SerializeField] private float spawnDistance = 25f;
+    [SerializeField] private bool isBonus = false;
     [SerializeField] private DistanceReference distanceReference;
     [SerializeField] private List<SpawnItem> itemsToSpawn;
     
@@ -85,7 +86,7 @@ public class Spawner : MonoBehaviour
         float distance = distanceReference.Distance;
         distance = (distance < 0)? 0 : distance;
         GameObject self = this.gameObject;
-        if(distance >= nextSpawn)
+        if(distance >= nextSpawn && isBonus == playerController.ScenarioBackgroundIndex().IsBonus)
         {
             SpawnItem item = SelectRandomItem(itemsToSpawn);
             if(item != null)

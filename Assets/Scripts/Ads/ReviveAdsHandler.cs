@@ -71,23 +71,23 @@ public class ReviveAdsHandler : MonoBehaviour
         
         public void HandleRewardBasedVideoLoaded(object sender, EventArgs args)
         {
-            /*rewardBasedVideoAd.Show();
+            rewardBasedVideoAd.Show();
             loadAdAlert.SetActive(false);
-            reviveButton.interactable = true;*/
+            reviveButton.interactable = true;
         }
 
         public void HandleRewardBasedVideoFailedToLoad(object sender, AdFailedToLoadEventArgs args)
         {
-            /*StartCoroutine(displayCouldNotLoadAlert());
-            loadAdAlert.SetActive(false);
-            reviveButton.interactable = true;*/
             StartCoroutine(displayCouldNotLoadAlert());
+            loadAdAlert.SetActive(false);
+            reviveButton.interactable = true;
             
         }
 
         public void HandleRewardBasedVideoOpened(object sender, EventArgs args)
         {
-           //Pause game
+            loadAdAlert.SetActive(false);
+            reviveButton.interactable = true;
         }
 
         public void HandleRewardBasedVideoStarted(object sender, EventArgs args)
@@ -122,6 +122,8 @@ public class ReviveAdsHandler : MonoBehaviour
 
         public void HandleRewardBasedVideoLeftApplication(object sender, EventArgs args)
         {
+            loadAdAlert.SetActive(false);
+            reviveButton.interactable = true;
             //RewardPlayer
             playerController.Resurrect();
         }

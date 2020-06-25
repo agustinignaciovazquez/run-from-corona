@@ -45,7 +45,7 @@ public abstract class AbstractEnemy : MonoBehaviour, ObjectPoolInterface
             }
             else
             {
-                print("SAFASTE");
+                //print("SAFASTE");
             }
             //Auto-Death
             OnEnemyDeathAnimation();

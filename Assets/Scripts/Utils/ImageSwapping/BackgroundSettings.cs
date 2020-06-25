@@ -9,9 +9,10 @@ public class BackgroundSettings : MonoBehaviour
     {
         [SerializeField] private Sprite backgroundImage;
         [SerializeField] private float distanceToShow;
-
+        [SerializeField] private bool isBonus = false;
+        
         public Sprite BackgroundImage => backgroundImage;
-
+        public bool IsBonus => isBonus;
         public float DistanceToShow => distanceToShow / 2; //Maths so distance to show really works as expected xd
     }
     [SerializeField] private List<ScenarioBackground> backgrounds;
@@ -19,6 +20,7 @@ public class BackgroundSettings : MonoBehaviour
     [SerializeField] private SceneTransition sceneTransition;
     [SerializeField] private GameObject teleportEffect;
     [SerializeField] private GameObject stageText;
+    
     public static BackgroundSettings Instance { get; private set; }
     // Start is called before the first frame update
     private void Awake(){

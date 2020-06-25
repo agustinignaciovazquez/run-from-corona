@@ -49,7 +49,6 @@ public class DifferentLevelsBackground : ScrollingBackground
         int nextIndex = (indexCurrentBackground + 1) % backgroundSettings.Backgrounds.Count;
         if (nextIndex != PlayerController.BackgroundIndex)
         {
-            PlayerController.BackgroundIndex = nextIndex;
             shouldTransition = true;
             fadeIn = true;
         }
@@ -64,19 +63,19 @@ public class DifferentLevelsBackground : ScrollingBackground
     {
         if (other.gameObject.CompareTag("Player") && shouldTransition)
         {
-            DoTransition();
-            
+            DoTransition(indexCurrentBackground);
         }
     }
 
-    private void DoTransition()
+    private void DoTransition(int nextIndex)
     {
-        var prevBackground = indexCurrentBackground - 1;
+        int prevBackground = indexCurrentBackground - 1;
         if (prevBackground < 0)
             prevBackground = backgroundSettings.Backgrounds.Count - 1;
         
         if (fadeIn)
         {
+            PlayerController.BackgroundIndex = nextIndex;
             DoFadeInTransition(prevBackground);
         }
         else
@@ -102,7 +101,10 @@ public class DifferentLevelsBackground : ScrollingBackground
         backgroundSettings.StageText.SetActive(true);
         
         StageTextSingleton stageTextSingleton = StageTextSingleton.SharedInstance;
-        stageTextSingleton.AddStage();
+        if (backgroundSettings.Backgrounds[indexCurrentBackground].IsBonus)
+            stageTextSingleton.Bonus();
+        else
+            stageTextSingleton.AddStage();
     }
 
     private void DoFadeOutTransition()

@@ -24,4 +24,9 @@ public class StageTextSingleton : MonoBehaviour
     {
         stageText.text = "Stage " + (++stage) + " !";
     }
+
+    public void Bonus()
+    {
+        stageText.text = "Bonus Stage";
+    }
 }

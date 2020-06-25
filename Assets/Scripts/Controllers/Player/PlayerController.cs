@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jetpackLimit = 0.3f;
     //UI Singletons
     private CoinsTextSingleton coinsText;
+    private BackgroundSettings backgroundSettings;
     
     //Player variables
     [SerializeField] private float scrollingSpeed = 4f;
@@ -65,6 +66,8 @@ public class PlayerController : MonoBehaviour
 
         playerItemsState = PlayerItemsState.Instance;
         playerItemsState.ReloadSettings();
+        
+        backgroundSettings = BackgroundSettings.Instance;
         
         audioManager = FindObjectOfType<AudioManager>();
 
@@ -214,6 +217,11 @@ public class PlayerController : MonoBehaviour
         set => backgroundIndex = value;
     }
 
+    public BackgroundSettings.ScenarioBackground ScenarioBackgroundIndex()
+    {
+        return backgroundSettings.Backgrounds[backgroundIndex];
+    }
+    
     public void Die()
     {
         PlayerItemsState.SaveCoins();
