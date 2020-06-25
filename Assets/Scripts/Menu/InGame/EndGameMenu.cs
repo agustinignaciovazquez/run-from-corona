@@ -31,19 +31,20 @@ public class EndGameMenu : MonoBehaviour
     }
     public void Restart()
     {
-        
-        StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
-        StartCoroutine(audioManager.FadeIn(GetFirstBackgroundName(),0.01f,0.15f));
-        FindObjectOfType<AudioManager>().Play("ButtonClick");
+        audioManager.Mute(GetCurrentBackgroundName());
+        audioManager.Unmute(GetFirstBackgroundName());
+        //StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
+        //StartCoroutine(audioManager.FadeIn(GetFirstBackgroundName(),0.01f,0.15f));
+        audioManager.Play("ButtonClick");
         Time.timeScale = 1f ;
         SceneManager.LoadScene("GameScene");
     }
     
     public void QuitToMenu()
     {
-        StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
-        
-        FindObjectOfType<AudioManager>().Play("ButtonClick");
+        audioManager.Mute(GetCurrentBackgroundName());
+        //StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
+        audioManager.Play("ButtonClick");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }

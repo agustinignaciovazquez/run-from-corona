@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339245312dc38fb4481e00eacf45d107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioMixer: {fileID: 24100000, guid: b0e8957ec937e894cb958fcdad442ee2, type: 2}
+  audioMixer: {fileID: 24100000, guid: b0e8957ec937e894cb958fcdad442ee2, type: 2}
   sliders:
   - {fileID: 1089930943}
   - {fileID: 1058812614}

@@ -1,24 +1,45 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class Mute : MonoBehaviour
+public class AudioSetter : MonoBehaviour
 {
     [SerializeField] private Button muteButton;
     [SerializeField] private Button muteMusicButton;
 
+    [SerializeField] private AudioMixer audioMixer;
+
+    private AudioManager audioManager;
+
     private bool firstTime = true;
-    private void Awake()
+
+    public void Awake()
     {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
+    private void Start()
+    {
+        audioMixer.SetFloat("Volume", PlayerPrefs.GetFloat("Volume"));
+        audioMixer.SetFloat("MusicVolume", PlayerPrefs.GetFloat("MusicVolume"));
+        audioMixer.SetFloat("SoundEffectsVolume", PlayerPrefs.GetFloat("SoundEffectsVolume"));
+        
         if (PlayerPrefs.GetInt("MuteSound") == 1)
         {
             AudioListener.pause = true;
         }
-
+        else
+        {
+            audioManager.Unmute("Airport");
+            StartCoroutine(audioManager.FadeIn("Airport", 0.01f, 0.15f));
+        }
+        
         if (PlayerPrefs.GetInt("MuteMusic") == 1)
         {
-            FindObjectOfType<AudioManager>().MuteAudioMixerGroupMusic();
+            audioMixer.SetFloat("MusicVolume", -80f);
         }
 
     }
@@ -35,7 +56,7 @@ public class Mute : MonoBehaviour
         
         if (PlayerPrefs.GetInt("MuteMusic") == 0)
         {
-            FindObjectOfType<AudioManager>().MuteAudioMixerGroupMusic();
+            audioManager.MuteAudioMixerGroupMusic();
             PlayerPrefs.SetInt("MuteMusic", 1);
             muteMusicButton.transform.GetChild(0).gameObject.SetActive(true);
         }
@@ -43,10 +64,10 @@ public class Mute : MonoBehaviour
         {
             if (firstTime)
             {   
-                FindObjectOfType<AudioManager>().Play("Airport");
+                audioManager.Play("Airport");
                 firstTime = false;
             }
-            FindObjectOfType<AudioManager>().UnmuteAudioMixerGroupMusic();
+            audioManager.UnmuteAudioMixerGroupMusic();
             PlayerPrefs.SetInt("MuteMusic", 0);
             muteMusicButton.transform.GetChild(0).gameObject.SetActive(false);
         }

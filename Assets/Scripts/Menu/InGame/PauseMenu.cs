@@ -70,18 +70,21 @@ public class PauseMenu : MonoBehaviour
     }
     public void Restart()
     {
+        audioManager.Mute(GetCurrentBackgroundName());
+        audioManager.Unmute(GetFirstBackgroundName());
+        //StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
+        //StartCoroutine(audioManager.FadeIn(GetFirstBackgroundName(),0.01f,0.15f));
         audioMixer.SetFloat("Volume", 0f);
         audioManager.Play("ButtonClick");
-        StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
-        StartCoroutine(audioManager.FadeIn(GetFirstBackgroundName(),0.01f,0.15f));
         Time.timeScale = 1f ;
         SceneManager.LoadScene("GameScene");
     }
 
     public void QuitToMenu()
     {
+        audioManager.Mute(GetCurrentBackgroundName());
         audioMixer.SetFloat("Volume", 0f);
-        StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
+        //StartCoroutine(audioManager.FadeOut(GetCurrentBackgroundName(),0.1f));
         audioManager.Play("ButtonClick");
         Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");

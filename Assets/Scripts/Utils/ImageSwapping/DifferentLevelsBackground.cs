@@ -12,6 +12,7 @@ public class DifferentLevelsBackground : ScrollingBackground
     private bool shouldTransition;
     private bool fadeIn;
     private BackgroundSettings backgroundSettings;
+    private AudioManager audioManager;
 
     protected override void Awake()
     {
@@ -30,6 +31,7 @@ public class DifferentLevelsBackground : ScrollingBackground
         objectPoolSpawner = ObjectPoolSpawner.GetSharedInstance;
         backgroundSettings = BackgroundSettings.Instance;
         distanceToNextBackground = backgroundSettings.Backgrounds[indexCurrentBackground].DistanceToShow;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     protected override void RepositionBackground(Transform backgroundTransform)
@@ -94,7 +96,7 @@ public class DifferentLevelsBackground : ScrollingBackground
         
         string songName = backgroundSettings.Backgrounds[prevBackground].BackgroundImage.name;
         Debug.Log(songName);
-        StartCoroutine(FindObjectOfType<AudioManager>().FadeOut(songName,0.1f));
+        StartCoroutine(audioManager.FadeOut(songName,0.1f));
         
         backgroundSettings.TeleportEffect.SetActive(true);
         backgroundSettings.StageText.SetActive(true);
@@ -108,7 +110,8 @@ public class DifferentLevelsBackground : ScrollingBackground
         objectPoolSpawner.ResetPool();
         string songName = backgroundSettings.Backgrounds[indexCurrentBackground].BackgroundImage.name;
         Debug.Log(songName);
-        StartCoroutine(FindObjectOfType<AudioManager>().FadeIn(songName,0.01f,0.15f));
+        audioManager.Unmute(songName);
+        StartCoroutine(audioManager.FadeIn(songName,0.01f,0.15f));
         
         shouldTransition = false;
         backgroundSettings.SceneTransition.FadeIn();

@@ -678,6 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muteButton: {fileID: 2030197588}
   muteMusicButton: {fileID: 1974655051}
+  audioMixer: {fileID: 24100000, guid: b0e8957ec937e894cb958fcdad442ee2, type: 2}
 --- !u!1 &569765940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +1937,12 @@ PrefabInstance:
       propertyPath: sounds.Array.data[25].AudioMixerGroup
       value: 
       objectReference: {fileID: 5688074749371544403, guid: b0e8957ec937e894cb958fcdad442ee2,
+        type: 2}
+    - target: {fileID: 949983971336579407, guid: bc7004ec4ee03ea4e8a12dad361a75ae,
+        type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: b0e8957ec937e894cb958fcdad442ee2,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc7004ec4ee03ea4e8a12dad361a75ae, type: 3}

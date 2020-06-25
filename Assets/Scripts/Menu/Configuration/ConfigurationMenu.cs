@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class ConfigurationMenu : MonoBehaviour
 {
-    public AudioMixer AudioMixer;
+    [SerializeField] AudioMixer audioMixer;
     [SerializeField] private Slider[] sliders;
 
     void Start()
@@ -27,19 +27,19 @@ public class ConfigurationMenu : MonoBehaviour
 
     public void SetMasterVolume(float volume)
     {
-        AudioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat("Volume", volume);
         PlayerPrefs.SetFloat("Volume", volume);
     }
 
     public void SetMusicVolume(float volume)
     {
-        AudioMixer.SetFloat("MusicVolume", volume);
+        audioMixer.SetFloat("MusicVolume", volume);
         PlayerPrefs.SetFloat("MusicVolume", volume);
     }
 
     public void SoundEffectsVolume(float volume)
     {
-        AudioMixer.SetFloat("SoundEffectsVolume", volume);
+        audioMixer.SetFloat("SoundEffectsVolume", volume);
         PlayerPrefs.SetFloat("SoundEffectsVolume", volume);
     }
 

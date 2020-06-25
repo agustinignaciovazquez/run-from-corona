@@ -9,7 +9,7 @@ public class AudioManager : MonoBehaviour
     
     public static AudioManager instance;
     
-    public AudioMixer AudioMixer;
+    public AudioMixer audioMixer;
     private static bool keepFadeIn;
     private static bool keepFadeOut;
     
@@ -86,12 +86,12 @@ public class AudioManager : MonoBehaviour
 
     public void MuteAudioMixerGroupMusic()
     {
-        AudioMixer.SetFloat("MusicVolume", -80f);
+        audioMixer.SetFloat("MusicVolume", -80f);
     }
     
     public void UnmuteAudioMixerGroupMusic()
     {
-        AudioMixer.SetFloat("MusicVolume", 0f);
+        audioMixer.SetFloat("MusicVolume", 0f);
     }
 
     
@@ -115,7 +115,6 @@ public class AudioManager : MonoBehaviour
         }
         
     }
-    
    
     public IEnumerator FadeOut(string name, float speed)
     {
